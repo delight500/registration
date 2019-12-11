@@ -1,0 +1,112 @@
+/* Below line is used for online Google font */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+hr{
+margin: 10px -50px;
+border: 0;
+border-top: 1px solid #ccc;
+margin-bottom: 40px;
+}
+div.container{
+
+width: 400px;
+height: 610px;
+margin:35px auto;
+font-family: 'Raleway', sans-serif;
+}
+    
+    /* Standard syntax */
+    @keyframes move {
+        from {background-color:rgb(238, 237, 232);}
+        to {background-color: rgb(255, 255, 255);}
+    }
+   
+div.main{
+    background-color:rgb(241, 246, 248);
+    -webkit-animation: move 7s infinite; /* Chrome, Safari, Opera */
+    animation: move 7s infinite;
+width:430px;
+padding: 10px 50px 25px;
+border: 2px solid gray;
+border-radius: 10px;
+font-family: raleway;
+float:left;
+margin-top:50px;
+}
+#ddd{
+ /* box-shadow: 3px 0px 20px 10px rgba(0, 0, 0, 0.2); */
+ -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+ animation: mymove 5s infinite;
+}
+/* Standard syntax */
+@keyframes mymove {
+    50% {box-shadow: 0px 6px 10px 15px rgba(19, 5, 27, 0.13);}
+}
+input[type=text],input[type=password], input[type=email]{
+width: 100%;
+height: 40px;
+padding: 5px;
+margin-bottom: 25px;
+margin-top: 5px;
+border: 2px solid #ccc;
+color: #4f4f4f;
+font-size: 16px;
+border-radius: 5px;
+}
+
+label{
+color: #464646;
+
+font-size: 14px;
+font-weight: bold;
+}
+center{
+font-size:32px;
+}
+.note{
+color:red;
+}
+.valid{
+color:green;
+}
+.back{
+text-decoration: none;
+border: 1px solid rgb(0, 143, 255);
+background-color: rgb(0, 214, 255);
+padding: 3px 20px;
+border-radius: 2px;
+color: black;
+}
+.btn {
+    font-size: 16px;
+    background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
+    border: 1px solid #e5a900;
+    color: #4E4D4B;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+    outline:none;
+  }
+btn:hover{
+background: linear-gradient(#ffdd7f 5%, #ffbc00 100%);
+}
+.right{
+    position: absolute;
+    right: 0px;
+}
+#container {
+width: 300;
+height: 20px;
+background: green;
+position: relative;
+border-radius: 10px;
+}
+#box {
+width: 0px;
+height: 20px;
+background: blue;
+    border-radius: 10px;
+position: absolute;
+text-align:center
+}

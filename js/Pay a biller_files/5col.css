@@ -1,0 +1,26 @@
+/*	5-column layout
+	60 px columns, 24 px gutters, 42 px margins, 480 px total
+	---------------------------------------------------------
+	1     2      3      4      5
+	60px  144px  228px  312px  396px	*/
+
+
+	body {
+		width: 100%;
+		padding:0px;
+		-webkit-transition: width 0.5s linear;
+-moz-transition: width 0.5s linear;
+-ms-transition: width 0.5s linear;
+-o-transition: width 0.5s linear;
+transition: width 0.5s linear;
+	}
+
+.wrapper {
+	width:390px;
+	min-height:400px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-200px 0 0 -195px;
+	border:0px solid #adafaf;
+}

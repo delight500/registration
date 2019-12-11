@@ -1,0 +1,2937 @@
+var MESSAGE_BUNDLE = {
+  getKey: function(key, params) {
+    if (params) {
+      return Handlebars.compile(this[key])(params);
+    } else {
+      // console.log('key: ', key, this[key]);
+      return this[key] || key;
+    }
+  }
+};
+
+MESSAGE_BUNDLE['core.staffid.not.exist'] =
+  'User Does Not Exists, Please Enter A Unique Staff ID';
+MESSAGE_BUNDLE['core.revenue.insuffient.amount'] =
+  'Amount entered will not cover charges. Amount must be greater than  ';
+MESSAGE_BUNDLE['core.forgotpass.please.wait.processing'] =
+  'Please Wait... Your Request is being Processed;';
+MESSAGE_BUNDLE['core.forgotpass.user.name.emailed'] =
+  'Your User Name has been mailed to your registered email address.';
+MESSAGE_BUNDLE['core.forgotpass.password.emailed'] =
+  'A new Password has been mailed to your registered email address.';
+MESSAGE_BUNDLE['core.forgotpass.password.recovery.info'] =
+  'Password Recovery Information was not set for this account, Please Contact support@remita.net to reset your password';
+MESSAGE_BUNDLE['core.forgotpass.no.answers'] =
+  'No answers defined on the system, Please contact Support for assistance';
+MESSAGE_BUNDLE['core.forgotpass.invalid.staff.or.corpid'] =
+  'Invalid Staff ID or Corporate ID';
+MESSAGE_BUNDLE['core.forgotpass.invalid.registered.email'] =
+  'Invalid Registered Email';
+MESSAGE_BUNDLE['core.loading.please.wait'] = 'Loading. Please wait...';
+MESSAGE_BUNDLE['core.captcha.info'] =
+  'To Confirm your transaction, you need to key in the <br/>characters in the image into the  box below it.';
+MESSAGE_BUNDLE['core.enter.xters'] = 'Key in the above characters here';
+MESSAGE_BUNDLE['core.captcha.failed'] = 'Captcha Challenge Failed';
+MESSAGE_BUNDLE['core.enter.email'] = 'Please Enter an Email Address';
+MESSAGE_BUNDLE['core.enter.mobile'] = 'Please Enter a Mobile Phone number';
+MESSAGE_BUNDLE['core.enter.valid.mobile'] =
+  'Please Enter a Valid Mobile Phone number';
+MESSAGE_BUNDLE['core.email.required'] = 'Email Address is required';
+MESSAGE_BUNDLE['core.mobile.required'] = 'Moble Number is required';
+MESSAGE_BUNDLE['core.already.exists.reg.bad'] =
+  'already exists. Registration cannot continue.';
+MESSAGE_BUNDLE['core.personal.details'] = 'PERSONAL DETAILS';
+MESSAGE_BUNDLE['core.corp.details'] = 'CORPORATE DETAILS';
+MESSAGE_BUNDLE['core.corpid.required'] = 'Corporate ID is required';
+MESSAGE_BUNDLE['core.corpid.no.spaces.or.special.xters'] =
+  'Corporate ID cannot contain spaces or special characters';
+MESSAGE_BUNDLE['core.ensure.correct.word'] =
+  'Please ensure you have entered the word above correctly';
+MESSAGE_BUNDLE['core.spaces.not.required'] = 'spaces are not required';
+MESSAGE_BUNDLE['core.forgot.personal.account.available'] =
+  'We have noticed you own a personal account. Do you want to reset this password?';
+MESSAGE_BUNDLE['core.payment.iteration.required'] =
+  'Please ensure a Payment Iteration has been selected';
+MESSAGE_BUNDLE['core.full.name.format'] =
+  'Please enter Full Name (for example: Jackson Joe)';
+MESSAGE_BUNDLE['core.amount.greater.zero'] =
+  'The amount value must be greater than 0';
+MESSAGE_BUNDLE['core.amount.total.greater'] =
+  'Total amount value must not be greater than {0} ';
+MESSAGE_BUNDLE['core.amount.not.cover.charge'] =
+  'Amount entered will not cover charges. Amount must be greater than  ';
+MESSAGE_BUNDLE['core.problem.validatiing.amount'] =
+  'Problem was encountered while validating amount. please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.budget.limit.exceeded'] = 'Budget Limit Exceeded';
+MESSAGE_BUNDLE['core.problem.validating.budget.code'] =
+  'Problem was encountered while validating budget code. Please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.invalid.trans.ref'] = 'Invalid Transaction Reference';
+MESSAGE_BUNDLE['core.ensure.company.selected'] =
+  'Please ensure a company is selected';
+MESSAGE_BUNDLE['core.problem.validating.transactionref'] =
+  'Problem was encountered while validating transaction ref. Please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.amount.not.equal.transamount'] =
+  'Entered amount not equal to the Transaction Reference Amount';
+MESSAGE_BUNDLE['core.problem.validating.amount.against.transamount'] =
+  'problem validating amount against the transaction ref entered';
+MESSAGE_BUNDLE['core.problem.loading.custom.fields'] =
+  'A problem was encountered while loading custom fields...';
+MESSAGE_BUNDLE['core.variable.amount.direct.debit.by'] =
+  'Variable Amount - Direct Debit by ';
+MESSAGE_BUNDLE['core.ten.digit.required'] = 'Please enter 10 digits';
+MESSAGE_BUNDLE['core.amount.required'] = 'Enter the amount to be paid';
+MESSAGE_BUNDLE['core.reenter.same.amount'] =
+  'Re-enter the same amount to be paid as above';
+MESSAGE_BUNDLE['core.please.wait'] = 'Please Wait...';
+MESSAGE_BUNDLE['core.processing.please.wait'] = 'Processing, Please Wait...';
+MESSAGE_BUNDLE['core.invalid.payer.tin'] = 'Invalid Payer Tin';
+MESSAGE_BUNDLE['core.no.file.selected'] =
+  'No file Selected. Please Select a  File';
+MESSAGE_BUNDLE['core.required.file.type.msg'] =
+  'Files of type  %1$s is not accepted. \n Only files of type .csv or .xls or .zip or .xml or xlsx  can be uploaded!';
+MESSAGE_BUNDLE['core.beneficiary.account.number'] =
+  'Beneficiary Account Number';
+MESSAGE_BUNDLE['core.beneficiary.mobile.number'] =
+  'Beneficiary Mobile Number';
+MESSAGE_BUNDLE['core.payer.account.number'] = 'Payer Account Number';
+MESSAGE_BUNDLE['core.payer.mobile.number'] = 'Payer Mobile Number';
+MESSAGE_BUNDLE['core.about.delete.payment'] =
+  'You are about to Delete this Payment. Are you Sure?';
+MESSAGE_BUNDLE['core.funding.beneficairy.account.same'] =
+  'Funding Account and Beneficiary Account are same. ';
+MESSAGE_BUNDLE['core.enter.valid.phone.number'] =
+  'Please Enter a valid Phone Number without Country Code';
+MESSAGE_BUNDLE['core.another.document.no.supplied'] =
+  'You Have supplied Document No. %1$s To Make Payment for %2$s Do You Want To Proceed?';
+MESSAGE_BUNDLE['core.invalid.value.supplied'] = 'Invalid Value Supplied';
+MESSAGE_BUNDLE['core.field.cannot.be.validated'] =
+  'Field cannot be validated..... ';
+MESSAGE_BUNDLE['core.max.debit.amount'] =
+  'Maximum Debit Amount per Transaction';
+MESSAGE_BUNDLE['core.amount.to.pay'] = 'Specify Amount To Pay';
+MESSAGE_BUNDLE['core.payment.infavour'] =
+  'This Payment in favour of %1$s can only be initated from Biller Website.  Please visit %2$s';
+MESSAGE_BUNDLE['core.incorrect.gifims.code'] =
+  'The Gifmis Code supplied is not correct.';
+MESSAGE_BUNDLE['core.valid.upload.file.format'] =
+  'Only files of extension  type(.csv,.txt,.enc,.xls,.xlsx) can be uploaded';
+MESSAGE_BUNDLE['core.enter.name.of.service'] =
+  'Please enter the Name of Service';
+MESSAGE_BUNDLE['core.select.account.payment.to.be.made'] =
+  'Please Select an Account into which payment should be made';
+MESSAGE_BUNDLE['core.select.account.to.pay'] =
+  'Please Select an Amount to pay';
+MESSAGE_BUNDLE['core.specify.amount'] = 'Please Specify an Amount';
+MESSAGE_BUNDLE['core.field.name.filled.correct'] =
+  'please ensure all Field Name are filled correctly';
+MESSAGE_BUNDLE['core.field.type.filled.correct'] =
+  'please ensure all Field types are filled correctly';
+MESSAGE_BUNDLE['core.numeric.value.required'] =
+  'Numeric value is required in Field Size';
+MESSAGE_BUNDLE['core.field.size.correct'] =
+  'please ensure Field Sizes are entered correctly';
+MESSAGE_BUNDLE['core.enter.value.1to30'] =
+  'Please enter value between 1 to 30';
+MESSAGE_BUNDLE['core.enter.value.1to100'] =
+  'Please enter value between 1 to 100';
+MESSAGE_BUNDLE['core.supply.total.amount.or.define.amount.list'] =
+  'Please Supply Total Amount or Define amount for List of Items';
+MESSAGE_BUNDLE['core.enter.protal.url'] = 'Please enter the Portal Url';
+MESSAGE_BUNDLE['core.field.description.requried'] =
+  'Description field must not be empty';
+MESSAGE_BUNDLE['core.select.account'] = 'Please Select Account';
+MESSAGE_BUNDLE['core.please.wait'] = 'Please Wait ...';
+MESSAGE_BUNDLE['core.payer.specifies.single.amount'] =
+  'Payer Specifies a Single Amount';
+MESSAGE_BUNDLE['core.payer.specifies.multiple.amount'] =
+  'Payer Specifies Amount for Number of Items';
+MESSAGE_BUNDLE['core.specifiy.total.amount'] = 'Specify Total Amount';
+MESSAGE_BUNDLE['core.fix.amount.for.serveral.items'] =
+  'Fix Amount for Several Items';
+MESSAGE_BUNDLE['core.limit.exceeded'] = 'you have exceeded Limit';
+MESSAGE_BUNDLE['core.field.name.required'] = 'Field Name  is Required';
+MESSAGE_BUNDLE['core.field.type.required'] = 'Field Type  is Required';
+MESSAGE_BUNDLE['core.field.size.required'] = 'Field Size  is Required';
+MESSAGE_BUNDLE['core.squence.no.required'] = 'Sequence No is Required';
+MESSAGE_BUNDLE['core.duplicate.account.selected'] =
+  'Duplicate Account Selected.. ';
+MESSAGE_BUNDLE['core.sequence.no.must.be.ordered'] =
+  'Sequence numbers must follow each other!';
+MESSAGE_BUNDLE['core.sequence.no.must.be.greater.last.one'] =
+  'You must specify a sequence number greater than the last one';
+MESSAGE_BUNDLE['core.select.account.before.adding.more'] =
+  'Please Select An account Before Adding More Account';
+MESSAGE_BUNDLE['core.save.and.continue'] = 'Save & Continue';
+MESSAGE_BUNDLE['core.please.enter.value'] = 'Please Enter value';
+MESSAGE_BUNDLE['core.ensure.all.price.entered'] =
+  'Please ensure all prices are entered';
+MESSAGE_BUNDLE['core.defne.list.items'] = 'Define List Items';
+MESSAGE_BUNDLE['core.defne.list.with.price'] =
+  'Define Select List With Price';
+MESSAGE_BUNDLE['core.drop.down.list'] = 'Drop Down List';
+MESSAGE_BUNDLE['core.select.list'] = 'Select List';
+MESSAGE_BUNDLE['core.select.from.list'] = 'Select From A List';
+MESSAGE_BUNDLE['core.retrieving.details.please.wait'] =
+  'Retrieving Details, Please Wait ';
+MESSAGE_BUNDLE['core.name.of.additional.field'] = 'Name of Additional Field';
+MESSAGE_BUNDLE['core.sequence.number'] = 'Sequence Number';
+MESSAGE_BUNDLE['core.field.type'] = 'Field Type';
+MESSAGE_BUNDLE['core.data.type'] = 'Type of Data';
+MESSAGE_BUNDLE['core.text'] = 'Text';
+MESSAGE_BUNDLE['core.alphabet.only'] = 'Alphabet Only';
+MESSAGE_BUNDLE['core.numeric.only'] = 'Numeric Only';
+MESSAGE_BUNDLE['core.alphanumeric.only'] = 'AlphaNumeric';
+MESSAGE_BUNDLE['core.date'] = 'Date';
+MESSAGE_BUNDLE['core.select.single.item.from.list'] =
+  'Select Single Item from a List';
+MESSAGE_BUNDLE['core.select.multiple.item.from.list'] =
+  'Select Multiple Item from a List';
+MESSAGE_BUNDLE['core.select.list.with.price'] = 'Select List With Price';
+MESSAGE_BUNDLE['core.value.required.b4.adding'] =
+  'value required before adding new one';
+MESSAGE_BUNDLE['core.problem.encountered'] =
+  'problem encountered while saving custom fields';
+MESSAGE_BUNDLE['core.please.select.file'] = 'Please Select a File';
+MESSAGE_BUNDLE['core.only.csv.required'] = 'Only  .csv File is needed here';
+MESSAGE_BUNDLE['core.add'] = 'Add';
+MESSAGE_BUNDLE['core.firs.provide.feedback.file.aready.opened'] =
+  'You have already uploaded the file. Are you sure you wish to Upload same File';
+MESSAGE_BUNDLE['core.firs.provide.feedback.file.ext.restiction'] =
+  'Only files of extension  type(.csv) can be uploaded';
+MESSAGE_BUNDLE['core.firs.provide.feedback.file.upload.procesing'] =
+  'Please Wait. File Upload In Progress...';
+MESSAGE_BUNDLE['core.firs.provide.feedback.file.ext.restiction.required'] =
+  'File required. Only files of extension  type(.csv) can be uploaded!';
+MESSAGE_BUNDLE['core.firs.provide.feedback.about.toclose.file'] =
+  'You are about to close Do you want to Proceed? ';
+MESSAGE_BUNDLE['core.firs.provide.feedback.session.closing'] =
+  'Please Wait Session Closing In Progress...';
+MESSAGE_BUNDLE['core.submit'] = 'Submit';
+MESSAGE_BUNDLE['report.info'] = 'Info.';
+MESSAGE_BUNDLE['report.cordcorp'] = 'Coordinating Corporate';
+MESSAGE_BUNDLE['report.cordcorpmda'] = 'Coordinating Corporate / MDA';
+MESSAGE_BUNDLE['report.bank'] = 'Bank';
+MESSAGE_BUNDLE['report.ok'] = 'OK';
+MESSAGE_BUNDLE['report.validate.numbers'] = 'Put in a numeric value';
+MESSAGE_BUNDLE['report.all'] = 'ALL';
+MESSAGE_BUNDLE['report.between'] = 'Between';
+MESSAGE_BUNDLE['report.compacted'] = 'Compacted';
+MESSAGE_BUNDLE['report.expanded'] = 'Expanded';
+MESSAGE_BUNDLE['report.expanded.printable'] = 'Expanded (Printable)';
+MESSAGE_BUNDLE['report.grade.level'] = 'Grade Level';
+MESSAGE_BUNDLE['report.job.title'] = 'Job Title';
+MESSAGE_BUNDLE['report.staff.name'] = 'Staff Name';
+MESSAGE_BUNDLE['report.paygroup'] = 'Pay Group';
+MESSAGE_BUNDLE['report.payperiod'] = 'Pay Period';
+MESSAGE_BUNDLE['report.payroll.title'] = 'Payroll Report';
+MESSAGE_BUNDLE['report.payslip'] = 'Payslip ';
+MESSAGE_BUNDLE['report.pension.title'] = 'Pension Report';
+MESSAGE_BUNDLE['report.tax.report'] = 'Tax Report';
+MESSAGE_BUNDLE['report.variance'] = 'Variance Report';
+MESSAGE_BUNDLE['report.staff.list'] = ' Staff List ';
+MESSAGE_BUNDLE['report.staff.records'] = 'Staff Records';
+MESSAGE_BUNDLE['report.all.staff.cap'] = 'ALL STAFF';
+MESSAGE_BUNDLE['report.select.validdate'] = 'Select A Valid Date!';
+MESSAGE_BUNDLE['report.gender'] = 'Gender';
+MESSAGE_BUNDLE['report.employmentdate'] = 'Date of Employment';
+MESSAGE_BUNDLE['report.status'] = 'Status';
+MESSAGE_BUNDLE['report.pfa'] = 'PFA';
+MESSAGE_BUNDLE['report.tax.office'] = 'Tax Office';
+MESSAGE_BUNDLE['report.all'] = 'All';
+MESSAGE_BUNDLE['report.all.cap'] = 'ALL';
+MESSAGE_BUNDLE['report.accounting.units'] = 'Accounting Units';
+MESSAGE_BUNDLE['report.funding'] = 'Funding ';
+MESSAGE_BUNDLE['report.beneficiary'] = 'Beneficiary ';
+MESSAGE_BUNDLE['report.summaryby.servicetype'] =
+  'Show Summary by Service Type';
+MESSAGE_BUNDLE['payroll.paygroup.hint'] = 'Pay Group Hint';
+MESSAGE_BUNDLE['payroll.approval.hint'] = 'Approval Hint';
+MESSAGE_BUNDLE['payroll.taxpension.hint'] = 'Tax/Pension Hint';
+MESSAGE_BUNDLE['payroll.biometrics.hint'] = 'Biometrics Hint';
+MESSAGE_BUNDLE['payroll.supplyvalue'] = 'You need to supply value';
+MESSAGE_BUNDLE['payroll.norecord'] = 'You have not checked any record';
+MESSAGE_BUNDLE['payroll.searching.paygroup'] = 'Searching  paygroup...';
+MESSAGE_BUNDLE['payroll.loadingupload.paygroup'] = 'Loading Upload form...';
+MESSAGE_BUNDLE['payroll.loadingd.paygroup'] =
+  'Loading data for selected paygroup...';
+MESSAGE_BUNDLE['payroll.submitfor'] = 'Submitting data for';
+MESSAGE_BUNDLE['payroll.cont'] = '...';
+MESSAGE_BUNDLE['payroll.loadingpaygradeform'] = 'Loading Paygrade form...';
+MESSAGE_BUNDLE['payroll.refreshingform'] = 'Refreshing form fields...';
+MESSAGE_BUNDLE['payroll.loadingpaygrade'] =
+  ' Loading data for selected Paygrade...';
+MESSAGE_BUNDLE['payroll.savingdatafor'] = ' Saving data for ';
+MESSAGE_BUNDLE['payroll.Paygrade'] = ' Paygrade...';
+MESSAGE_BUNDLE['payroll.disengagequestion'] =
+  'Do you want to disengage this staff ?';
+MESSAGE_BUNDLE['payroll.selectstaff'] = 'Please select Staff Record';
+MESSAGE_BUNDLE['payroll.entercomment'] =
+  'Please enter Comment For Disengagement.';
+MESSAGE_BUNDLE['payroll.selectapproval'] = 'You must select an Approver.';
+MESSAGE_BUNDLE['payroll.selectreason'] = 'Please select Reason.';
+MESSAGE_BUNDLE['payroll.selectremove'] =
+  'Are you sure, you want to remove the selected record ?';
+MESSAGE_BUNDLE['payroll.approvalfield'] = 'Approver Field is Empty!';
+MESSAGE_BUNDLE['payroll.batchperiod'] = 'Batch period is Empty!';
+MESSAGE_BUNDLE['payroll.pensionername'] = 'Pensioner Name is Empty!';
+MESSAGE_BUNDLE['payroll.processing'] = 'Processing, Please Wait...';
+MESSAGE_BUNDLE['payroll.please.wait'] = 'Please Wait...';
+MESSAGE_BUNDLE['payroll.uploadpath.incorrect'] =
+  'Upload Path is not correct!';
+MESSAGE_BUNDLE['payroll.uploadformat.correct'] =
+  'Only files of extension  type(.csv,.txt) can be uploaded';
+MESSAGE_BUNDLE['payroll.filllastrow'] =
+  'Please Fill the Last row before adding new one';
+MESSAGE_BUNDLE['payroll.cannotremovelastrow'] = 'cannot remove last row!';
+MESSAGE_BUNDLE['payroll.hidebankaccounts'] =
+  ' Hide Bank Accounts for Cooperatives and Unions ';
+MESSAGE_BUNDLE['payroll.amendbankaccounts'] =
+  ' Amend/Create Bank Account Number for Cooperatives and Unions ';
+MESSAGE_BUNDLE['payroll.pleasefill'] = 'Please Fill Row ';
+MESSAGE_BUNDLE['payroll.forbranch'] = ' for branch (';
+MESSAGE_BUNDLE['payroll.beforenewrows'] = ') before adding new rows.';
+MESSAGE_BUNDLE['payroll.currentamount'] = 'Current Amount (';
+MESSAGE_BUNDLE['payroll.greaterthan.prevoiousamount'] =
+  ') Must be Greater Than Previous Amount (';
+MESSAGE_BUNDLE['payroll.enterbranchname'] = 'Please enter a branch name.';
+MESSAGE_BUNDLE['payroll.addmore'] = 'Add More';
+MESSAGE_BUNDLE['payroll.upto'] = 'up to';
+MESSAGE_BUNDLE['payroll.limit'] = 'Limit';
+MESSAGE_BUNDLE['payroll.amount'] = 'Amount';
+MESSAGE_BUNDLE['payroll.organisationbranch'] =
+  '[Select Organization Branch]';
+MESSAGE_BUNDLE['payroll.branch.colon'] = 'Branch:';
+MESSAGE_BUNDLE['payroll.enter.validamount'] = 'Enter a valid amount.';
+MESSAGE_BUNDLE['payroll.unlimited'] = 'Unlimited';
+MESSAGE_BUNDLE['payroll.branchnameproceed'] =
+  'Enter a branch name to proceed.';
+MESSAGE_BUNDLE['payroll.selectanotherbranch'] =
+  'Please select another branch, Branch name is actively in use.';
+MESSAGE_BUNDLE['payroll.branchalreadyinuse'] =
+  'Branch Already in use, select another branch.';
+MESSAGE_BUNDLE['payroll.shortname.colon'] = 'Short Name:';
+MESSAGE_BUNDLE['payroll.description.colon'] = 'Description:';
+MESSAGE_BUNDLE['payroll.attachvalidbanks.colon'] = 'Attach valid bank(s):';
+MESSAGE_BUNDLE['payroll.shortnameisempty'] = 'Short Name is empty';
+MESSAGE_BUNDLE['payroll.descriptionisempty'] = 'Description is empty.';
+MESSAGE_BUNDLE['payroll.entershortname'] =
+  'Please enter a valid Short Name.';
+MESSAGE_BUNDLE['payroll.enterdescription'] =
+  'Please enter a valid description.';
+MESSAGE_BUNDLE['payroll.doyouwanttosave'] = 'Do you want to save?';
+MESSAGE_BUNDLE['core.revenue.validation.error'] =
+  'Problem was encountered while validating amount. please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.budget.budgetunit.approve.modifications'] =
+  'You are about to APPROVE modifications to the Organizational Unit structure. Do you want to continue?';
+MESSAGE_BUNDLE['core.budget.budgetunit.reject.modifications'] =
+  'You are about to REJECT modifications to the Organizational Unit structure. Do you want to continue?';
+MESSAGE_BUNDLE['core.budget.budgetunit.initialization.wait'] =
+  'Initializing Organizational Unit Structure. Please wait...';
+MESSAGE_BUNDLE['core.budget.budgetunit.code.exists'] = 'Code already exists';
+MESSAGE_BUNDLE['core.budget.budgetunit.delete.confirmation'] =
+  'Are you sure you want to delete this Budget Level?';
+MESSAGE_BUNDLE['core.budget.budgetunit.removae.level'] =
+  'Removing Level. Please wait...';
+MESSAGE_BUNDLE['core.budget.budgetunit.delete.successfull'] =
+  'Level Deleted Successfully';
+MESSAGE_BUNDLE['core.budget.budgetunit.delete.failed'] =
+  'Deletion Unsuccessful. Please ensure the level is not currently in use';
+MESSAGE_BUNDLE['core.budget.budgetunit.send.approval'] =
+  'You are about to send this Organizational Unit structure for approval. Do you want to continue?';
+MESSAGE_BUNDLE['core.budget.budgetunit.created.structure'] =
+  'internal organizational structure not yet created';
+MESSAGE_BUNDLE['core.budget.budgetunit.org.structure'] =
+  'organizational structure';
+MESSAGE_BUNDLE['core.budget.budgetunit.subsidiaries'] = 'SUBSIDIARIES';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.monthly.breakdown'] =
+  'Revenue Monthly Target Break Down ';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.monthly.breakdown.for'] =
+  'Revenue Monthly Target Break Down for ';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.enter.amount'] =
+  'Enter the amount to be paid';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.detail.confirm'] =
+  'Please ensure you have filled your Company Target Details';
+MESSAGE_BUNDLE[
+  'core.budget.budgetunit.revenuetarget.approved.unequal.running'
+] = 'Approved Total Target is not equal to your Running Total';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.amount.greater.zero'] =
+  'The amount value must be greater than 0';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.amount.not.greater.zero'] =
+  'Total amount value must not be greater than {0} ';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.validating.wait'] =
+  'Please Wait. Validating';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.budget.processing'] =
+  'Please Wait. Processing Budget';
+MESSAGE_BUNDLE['core.budget.budgetunit.revenuetarget.nreakdown.unequal.bulk'] =
+  'BreakDown Amount is not equal To Bulk Amount';
+MESSAGE_BUNDLE['core.enter.amount.to.save'] = 'Enter the amount to be paid';
+MESSAGE_BUNDLE['core.monthly.budget.breakdown'] = 'Budget Monthly BreakDown';
+MESSAGE_BUNDLE['core.capital'] = 'capital';
+MESSAGE_BUNDLE['core.recurrent'] = 'recurrent';
+MESSAGE_BUNDLE['core.overhead'] = 'overHead';
+MESSAGE_BUNDLE['core.month.january'] = 'january';
+MESSAGE_BUNDLE['core.month.february'] = 'february';
+MESSAGE_BUNDLE['core.month.march'] = 'march';
+MESSAGE_BUNDLE['core.month.april'] = 'april';
+MESSAGE_BUNDLE['core.month.may'] = 'may';
+MESSAGE_BUNDLE['core.month.june'] = 'june';
+MESSAGE_BUNDLE['core.month.july'] = 'july';
+MESSAGE_BUNDLE['core.month.august'] = 'august';
+MESSAGE_BUNDLE['core.month.september'] = 'september';
+MESSAGE_BUNDLE['core.month.october'] = 'october';
+MESSAGE_BUNDLE['core.month.november'] = 'november';
+MESSAGE_BUNDLE['core.month.december'] = 'december';
+MESSAGE_BUNDLE['core.monthly.budget.breakdown.for'] =
+  'Budget Monthly BreakDown  for';
+MESSAGE_BUNDLE['core.wait.loading.budget'] =
+  'Please Wait Loading Budget Details';
+MESSAGE_BUNDLE['core.budget.code.exists'] = 'Budget Code already exist';
+MESSAGE_BUNDLE['core.assigned.amount.for'] = ' Assigned Amount for ';
+MESSAGE_BUNDLE['core.exceed.limit'] = ' exceeds its limit.';
+MESSAGE_BUNDLE['core.select.mda'] = 'Please Select an MDA';
+MESSAGE_BUNDLE['core.supply.budget.owner'] = 'Please Supply Budget Owner';
+MESSAGE_BUNDLE['core.supply.budget.year'] = 'Please Supply Budget Year';
+MESSAGE_BUNDLE['core.wait.validating'] = 'Please Wait. Validating';
+MESSAGE_BUNDLE['core.save'] = 'Save';
+MESSAGE_BUNDLE['core.already.set.year.budget'] =
+  'Budget already Setup for year ';
+MESSAGE_BUNDLE['core.allocated.supplementary.amount'] =
+  'Allocated supplementary Budget Amount';
+MESSAGE_BUNDLE['core.allocated.budget.amount'] = 'Allocated Budget Amount';
+MESSAGE_BUNDLE['core.breakdown.unequal.bulk'] =
+  'BreakDown Amount is not equal To Bulk Amount';
+MESSAGE_BUNDLE['core.suplimentary.budget.prompt'] =
+  ' Do you want to Create a Suplimentary Budget';
+MESSAGE_BUNDLE['core.main.budget.processing.alert'] =
+  'Main Budget is under going Processing. supplementary Budget Can only be created when the Main Budget has been Approved';
+MESSAGE_BUNDLE['core.approved.unequal.breakdown.sum'] =
+  'Approved Budget Amount is not equel to Total Sum of Break Down';
+MESSAGE_BUNDLE['core.no.duplicates'] = 'No Duplicates';
+MESSAGE_BUNDLE['core.not.fully.allocated'] =
+  ' has not been fully allocated.';
+MESSAGE_BUNDLE['core.monthly.breakdown.load.error'] =
+  'A problem was encountered while loading monthly breakdown.';
+MESSAGE_BUNDLE['core.enter.amount.to.pay'] = 'Enter the amount to be paid';
+MESSAGE_BUNDLE['core.custom.field.load.error'] =
+  'a problem was encountered while loading custom fields';
+MESSAGE_BUNDLE['core.monthly.budget.setup'] = 'Monthly Budget Setup';
+MESSAGE_BUNDLE['core.please.wait'] = 'Please Wait';
+MESSAGE_BUNDLE['core.no.duplicate.format'] = 'No Duplicates';
+MESSAGE_BUNDLE['core.removing.level'] = 'Removing Level. ';
+MESSAGE_BUNDLE['core.level.deleted'] = 'Level Deleted Successfully';
+MESSAGE_BUNDLE['core.level.delete.constraint.fail'] =
+  'Deletion Unsuccessful. Please ensure the level is not currently in use';
+MESSAGE_BUNDLE['core.account.funding.equals.beneficiary'] =
+  'Funding Account and Beneficiary Account are same. ';
+MESSAGE_BUNDLE['core.valid.phone.absent.country.code'] =
+  'Please Enter a valid Phone Number without Country Code';
+MESSAGE_BUNDLE['core.fields.cannot.validate'] = 'Field cannot be validated';
+MESSAGE_BUNDLE['core.supplied.document.number'] =
+  'You Have supplied Document No. ';
+MESSAGE_BUNDLE['core.dialog.opening'] = 'opening dialog';
+MESSAGE_BUNDLE['core.close'] = 'Close';
+MESSAGE_BUNDLE['core.monthly.breakdown.unequal.bulk'] =
+  'Monthly BreakDown Amount is not equal To Bulk Item Amount';
+MESSAGE_BUNDLE['core.wait.loading.monthly.budget'] =
+  'Please Wait Loading Budget Monthly  Details ';
+MESSAGE_BUNDLE['core.supplementary'] = 'Supplementary';
+MESSAGE_BUNDLE['core.supplementary.budget'] = 'SUPBUDGET';
+MESSAGE_BUNDLE['core.setup.budget.category'] = 'Budget Category Setup';
+MESSAGE_BUNDLE['core.setup.budget.category.for'] =
+  'Budget Category Setup for';
+MESSAGE_BUNDLE['core.budget.processing'] = 'Please Wait. Processing Budget';
+MESSAGE_BUNDLE['core.approved.total.budget'] =
+  'Approved Total Budget Amount';
+MESSAGE_BUNDLE['core.load.analysis'] = 'Loading Analyses. Please wait';
+MESSAGE_BUNDLE['core.analysis.load.error'] =
+  'A problem was encountered while loading analyses. Please contact the adminsitrator';
+MESSAGE_BUNDLE['core.select.analysis.item'] = 'Select Analysis Item';
+MESSAGE_BUNDLE['core.pending.payments.send.confirmation'] =
+  'therefore only pending payments will be send. Do you want to continue?';
+MESSAGE_BUNDLE['core.no.new.payments.added'] =
+  'You have not added any new payments (You have selected no account to pay from';
+MESSAGE_BUNDLE['core.ensure.payment.iteration.selected'] =
+  'Please ensure a Payment Iteration has been selected';
+MESSAGE_BUNDLE['core.fullname.entry.prompt'] =
+  'Please enter Full Name (for example';
+MESSAGE_BUNDLE['core.amount.not.cover.charges'] =
+  'Amount entered will not cover charges. Amount must be greater than  ';
+MESSAGE_BUNDLE['core.budget.code.validation.error'] =
+  'Problem was encountered while validating budget code. Please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.invalid.transaction.reference'] =
+  'Invalid Transaction Reference';
+MESSAGE_BUNDLE['core.transactionref.validation.problem'] =
+  'Problem was encountered while validating transaction ref. Please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.amount.unequal.transaction.ref'] =
+  'Entered amount not equal to the Transaction Reference Amount';
+MESSAGE_BUNDLE['core.validation.transaction.ref.amount'] =
+  'problem validating amount against the transaction ref entered';
+MESSAGE_BUNDLE['core.custom.field.loading.error'] =
+  'a problem was encountered while loading custom fields';
+MESSAGE_BUNDLE['core.renter.amount.to.pay'] =
+  'Re-enter the same amount to be paid as above';
+MESSAGE_BUNDLE['core.variable.direct.debit'] =
+  'Variable Amount - Direct Debit by ';
+MESSAGE_BUNDLE['core.digit.length.info'] = 'Please enter 10 digits';
+MESSAGE_BUNDLE['core.files.of.type'] = 'Files of type  ';
+MESSAGE_BUNDLE['core.not.accepted'] = ' is not accepted.';
+MESSAGE_BUNDLE['core.only.files.of.type'] = 'Only files with extension type';
+MESSAGE_BUNDLE['core.can.be.uploaded'] = 'can be uploaded!';
+MESSAGE_BUNDLE['core.select'] = 'Select';
+MESSAGE_BUNDLE['core.payer.delete.confirmation'] =
+  'You are about to Delete this Payment. Are you Sure?';
+MESSAGE_BUNDLE['core.to.make.payment.for'] = ' To Make Payment for ';
+MESSAGE_BUNDLE['core.want.to.proceed'] = ' Do You Want To Proceed?';
+MESSAGE_BUNDLE['core.invalid.supplied.value'] = 'Invalid value supplied';
+MESSAGE_BUNDLE['core.view.structure'] = 'view structure';
+MESSAGE_BUNDLE['core.file.cannot.validate'] = 'Filed cannot be validated';
+MESSAGE_BUNDLE['core.month.upper.january'] = 'January';
+MESSAGE_BUNDLE['core.month.upper.february'] = 'February';
+MESSAGE_BUNDLE['core.month.upper.march'] = 'March';
+MESSAGE_BUNDLE['core.month.upper.april'] = 'April';
+MESSAGE_BUNDLE['core.month.upper.may'] = 'May';
+MESSAGE_BUNDLE['core.month.upper.june'] = 'June';
+MESSAGE_BUNDLE['core.month.upper.july'] = 'July';
+MESSAGE_BUNDLE['core.month.upper.august'] = 'August';
+MESSAGE_BUNDLE['core.month.upper.september'] = 'September';
+MESSAGE_BUNDLE['core.month.upper.october'] = 'October';
+MESSAGE_BUNDLE['core.month.upper.november'] = 'November';
+MESSAGE_BUNDLE['core.month.upper.december'] = 'December';
+MESSAGE_BUNDLE['core.initialize.budget.structure'] =
+  'Initializing Budget Structure';
+MESSAGE_BUNDLE['core.please.contact.administrator'] =
+  'Please contact the administrator';
+MESSAGE_BUNDLE['core.no.budget.category.info'] =
+  ' This could be because you have no budget categories setup at the moment. ';
+MESSAGE_BUNDLE['core.added'] = 'added';
+MESSAGE_BUNDLE['core.modified'] = 'modified';
+MESSAGE_BUNDLE['core.amount.must.less.zero'] =
+  'Total amount value must not be greater than {0} ';
+MESSAGE_BUNDLE['core.nothing.available.now'] =
+  'Nothing available at this time';
+MESSAGE_BUNDLE['core.code.exists'] = 'Code already exists';
+MESSAGE_BUNDLE['core.account.delete.prompt'] =
+  'Are you sure you want to delete this Account Level?';
+MESSAGE_BUNDLE['core.budget.approval.confirm'] =
+  'You are about to send this Budget Structure for approval. Do you want to continue?';
+MESSAGE_BUNDLE['core.as.value.of.amount.field'] =
+  ' as the value of the amount field for this unit';
+MESSAGE_BUNDLE['core.note.to.set'] =
+  'Please note that you can set a maximum of ';
+MESSAGE_BUNDLE['core.warrant.removal.confirmation'] =
+  'You are about to remove this warrant. Do you want to continue?';
+MESSAGE_BUNDLE['core.loading'] = 'Loading. ';
+MESSAGE_BUNDLE['core.loading.warrant.history'] = 'Loading warrant history. ';
+MESSAGE_BUNDLE['core.total.amount.value.less.zero'] =
+  'Total amount value must not be greater than ';
+MESSAGE_BUNDLE['core.send.saved.warrant.for.approval'] =
+  'You are about to send these saved warrants for approval. Do you want to continue?';
+MESSAGE_BUNDLE['core.approve.warrant.confirm'] =
+  'You are about to APPROVE this warrant(s). Do you want to continue?';
+MESSAGE_BUNDLE['core.loading.warrant'] = 'Loading warrant. ';
+MESSAGE_BUNDLE['core.approving'] = 'Approving';
+MESSAGE_BUNDLE['core.rejecting'] = 'Rejecting';
+MESSAGE_BUNDLE['core.reject.warrant.confirm'] =
+  'You are about to REJECT this warrant(s). Do you want to continue?';
+MESSAGE_BUNDLE['core.no.duplicates.allowed'] = 'No Duplicates Allowed';
+MESSAGE_BUNDLE['core.loading.analysis'] = 'Loading Analysis. ';
+MESSAGE_BUNDLE['core.approve.analysis.confirm'] =
+  'You are about to APPROVE this analysis(s). Do you want to continue?';
+MESSAGE_BUNDLE['core.reject.analysis.confirm'] =
+  'You are about to REJECT this analysis(s). Do you want to continue?';
+MESSAGE_BUNDLE['core.saving.wait'] = 'Saving. Please wait...';
+MESSAGE_BUNDLE['core.send.saved.analysis.for.approval'] =
+  'You are about to send these saved analyses for approval. Do you want to continue?';
+MESSAGE_BUNDLE['core.remove.analysis.confirm'] =
+  'You are about to remove this analysis(s). Do you want to continue?';
+MESSAGE_BUNDLE['core.save.send.analysis.for.approval'] =
+  'You are about to save this analysis and send all saved analyses for approval. Do you want to continue?';
+MESSAGE_BUNDLE['core.file.cannot be empty'] = 'File cannot be empty ';
+MESSAGE_BUNDLE['core.who.introduced.you'] =
+  'Please Select Who Introduced You To This Platform';
+MESSAGE_BUNDLE['core.userid.no.space'] =
+  'User ID cannot contain spaces or special characters';
+MESSAGE_BUNDLE['core.corpid.no.space'] =
+  'Corporate ID cannot contain spaces or special characters';
+MESSAGE_BUNDLE['core.user.not.empty'] = 'User must not be empty';
+MESSAGE_BUNDLE['core.userid.not.empty'] = 'User ID must not be empty';
+MESSAGE_BUNDLE['core.surname.not.empty'] = 'Surname must not be empty';
+MESSAGE_BUNDLE['core.othername.not.empty'] = 'Other Name must not be empty';
+MESSAGE_BUNDLE['core.phoneno.not.empty'] = 'Phone Number must not be empty';
+MESSAGE_BUNDLE['core.pan.not.empty'] = 'PAN Number must not be empty';
+MESSAGE_BUNDLE['core.accountno.not.empty'] =
+  'Account Number must not be empty';
+MESSAGE_BUNDLE['core.email.not.empty'] = 'Email must not be empty';
+MESSAGE_BUNDLE['core.duplicate.user'] = 'Duplicate User ID';
+MESSAGE_BUNDLE['core.account.no.unique'] =
+  'Account Numbers entered are identical for the branch selected. Please enter unique account number per Branch';
+MESSAGE_BUNDLE['core.dupe.email.officer'] =
+  'You Have Provided The Same Email Address For Different Officers. Please Supply Unique Email Addresses Per Officer';
+MESSAGE_BUNDLE['core.duple.phone.officer'] =
+  'You Have Provided The Same Phone Number For Different Officers. Please Supply Unique Phone Numbers Per Officer';
+MESSAGE_BUNDLE['core.corp.fullname'] =
+  'Please ensure You have entered a Corporate full name';
+MESSAGE_BUNDLE['core.userids'] = ' User Ids';
+MESSAGE_BUNDLE['core.dupes.in'] = 'Duplicates in the ';
+MESSAGE_BUNDLE['core.approver'] = 'Approver';
+MESSAGE_BUNDLE['core.initiator'] = 'Initiator';
+MESSAGE_BUNDLE['core.please.fill.all'] =
+  'Please Fill All fields In the Approver before adding new rows.';
+MESSAGE_BUNDLE['core.approver.lim.exceeded'] =
+  'You have exceded Approvers Limit';
+MESSAGE_BUNDLE['core.please.fill.all.initiator'] =
+  'Please Fill All fields in the Initiator before adding new rows.';
+MESSAGE_BUNDLE['core.initiator.lim.exceeded'] =
+  'You have exceded Initiators Limit';
+MESSAGE_BUNDLE['core.please.select.branch'] = 'Please Select Branch';
+MESSAGE_BUNDLE['core.acctno.nuban'] =
+  'Account Number must be 10 digits NUBAN';
+MESSAGE_BUNDLE['core.fill.card.before'] =
+  'Please Fill All fields in the Remita Card before adding new rows.';
+MESSAGE_BUNDLE['core.pls.branch.and'] = 'Please select a Branch and ';
+MESSAGE_BUNDLE['core.pls.acctno.and'] = 'Please enter Account Number and ';
+MESSAGE_BUNDLE['core.enter.cardalias.and'] = 'Please enter Card Alias and ';
+MESSAGE_BUNDLE['core.pls.fill.acct.details'] =
+  'Please Fill All the Account Details before adding new rows.';
+MESSAGE_BUNDLE['core.remove.init.officer'] = 'Remove Initiating Officer';
+MESSAGE_BUNDLE['core.remove.spc'] = 'Remove ';
+MESSAGE_BUNDLE['core.officer.spc'] = ' Officer';
+MESSAGE_BUNDLE['core.appr.officer'] = 'Remove Approving Officer';
+MESSAGE_BUNDLE['core.reject.appln.form'] =
+  'Are you sure want to reject this application Form?';
+MESSAGE_BUNDLE['core.txn.daily.limit'] =
+  'Transaction Daily Limit  must not be empty';
+MESSAGE_BUNDLE['core.file.of.type'] = ' Files of type  ';
+MESSAGE_BUNDLE['core.is.not.accepted'] = ' is not accepted.';
+MESSAGE_BUNDLE['core.can.be.uploaded'] = ' can be uploaded';
+MESSAGE_BUNDLE['core.only.files.of.type'] = ' Only files of type ';
+MESSAGE_BUNDLE['core.or'] = 'OR';
+MESSAGE_BUNDLE['core.details.not.available'] = 'Details not available';
+MESSAGE_BUNDLE['core.invalid.reference.number'] = 'Invalid Reference Number';
+MESSAGE_BUNDLE['core.problem.validating.budget.cost'] =
+  'Problem was encountered while validating budget code. Please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.value.be.more.than.zero'] =
+  'The value {0} must greater than 0';
+MESSAGE_BUNDLE['core.start.by.entering'] = 'Start by entering an ';
+MESSAGE_BUNDLE['core.loading.invoice'] = 'loading invoice ';
+MESSAGE_BUNDLE['core.invoice.view'] = 'Invoice (View)';
+MESSAGE_BUNDLE['core.details'] = 'Details';
+MESSAGE_BUNDLE['core.retrieving.details'] = 'Retrieving Details ';
+MESSAGE_BUNDLE['core.mandate.rrr.details'] = 'Mandate RRR Details ';
+MESSAGE_BUNDLE['core.receipt.print'] = 'Receipt (Print)';
+MESSAGE_BUNDLE['core.generate.retrieval.reference'] =
+  'Generate Remita Retrieval Reference';
+MESSAGE_BUNDLE['core.proceed.to.payment'] = 'Proceed to Payment';
+MESSAGE_BUNDLE['core.employer.code'] = 'Employer Code';
+MESSAGE_BUNDLE['core.employer.tin'] = 'Employer TIN';
+MESSAGE_BUNDLE['core.this'] = 'This';
+MESSAGE_BUNDLE['core.visit.to.make.payment'] =
+  " Please visit www.remita.net to make your payment by clicking on 'Pay e-Invoices' ";
+MESSAGE_BUNDLE['core.not.meant.for.payment.to'] =
+  ' is not meant for payment to ';
+MESSAGE_BUNDLE['core.of.net.pay'] =
+  ' Of Your Net Pay. Please Re-Enter A Valid Loan Amount';
+MESSAGE_BUNDLE['core.loan.supplied.more.than'] =
+  'The Loan Amount Supplied is More Than';
+MESSAGE_BUNDLE['core.renter.amount'] = 'Re-enter the same amount as above';
+MESSAGE_BUNDLE['core.renter.loan.amount'] = 'Enter Loan amount';
+MESSAGE_BUNDLE['core.staff.required'] = 'Staff Name is required';
+MESSAGE_BUNDLE['core.payment.reference.not.paid'] =
+  'This Payment Reference were not paid to any of Remita Payroll Staff';
+MESSAGE_BUNDLE['core.repayment.amount'] = 'Repayment Amount';
+MESSAGE_BUNDLE['core.monthly.repayment'] = 'Monthly Repayment ';
+MESSAGE_BUNDLE['core.loan.payable'] = 'Loan Amount Payable';
+MESSAGE_BUNDLE['core.select.prefered.bank.to.view'] =
+  'Please select Preferred Bank to view their Loan Terms & Condictions';
+MESSAGE_BUNDLE['core.check.balance'] = 'Check Balance';
+MESSAGE_BUNDLE['core.completed'] = 'COMPLETED';
+MESSAGE_BUNDLE['core.checking.balance'] = 'Checking Balance';
+MESSAGE_BUNDLE['core.retrieving.dan.challenge'] = 'Retrieving DAN Challenge';
+MESSAGE_BUNDLE['core.ensure.you.entered.dan.answer'] =
+  "Please ensure you've entered the DAN Answer";
+MESSAGE_BUNDLE['core.ensure.access.code.entered'] =
+  "Please ensure you've entered the access code";
+MESSAGE_BUNDLE['core.loading.accounts.for'] = 'Loading Account(s) for ';
+MESSAGE_BUNDLE['core.request.cannot.be.completed'] =
+  'Your request cannot be completed at this time';
+MESSAGE_BUNDLE['core.type.your'] = 'Type your ';
+MESSAGE_BUNDLE['core.if.available'] = ' if available';
+MESSAGE_BUNDLE['core.searching.for'] = 'Searching for ';
+MESSAGE_BUNDLE['core.no.reference.no.record'] =
+  'No record found for Reference Number';
+MESSAGE_BUNDLE['core.loading.info.details'] =
+  'loading information details for beneficiary';
+MESSAGE_BUNDLE['core.deposit.slip.no.required'] =
+  'Deposite Slip Number is required';
+MESSAGE_BUNDLE['core.enter.numeric.value.amount'] =
+  'Enter A Numeric Value For Amount';
+MESSAGE_BUNDLE['core.reconfirm.total.collected'] =
+  'Please Re-confirm Total Amount Collected';
+MESSAGE_BUNDLE['core.about.to.submit.transaction'] =
+  'You are about to submit this transaction';
+MESSAGE_BUNDLE['core.proceed.confirmation'] = 'Do you want to proceed?';
+MESSAGE_BUNDLE['core.inbox.loading'] = 'Please Wait InBox is loading';
+MESSAGE_BUNDLE['core.ensure.cheque.number.entered'] =
+  'Please ensure you have entered a cheque number, selected a bank and entered a value date';
+MESSAGE_BUNDLE['core.pluse.service.charge.of'] = 'Plus Service Charge of';
+MESSAGE_BUNDLE['core.send.service.type'] = 'Select Service Type';
+MESSAGE_BUNDLE['core.loading.service.type'] = 'loading service type';
+MESSAGE_BUNDLE['core.files.of.type'] = '                    Files of type  ';
+MESSAGE_BUNDLE['core.only.files.of.type'] = 'Only files of extension type ';
+MESSAGE_BUNDLE['core.can.be.uploaded'] = ' can be uploaded!';
+MESSAGE_BUNDLE['core.name.is.required'] = 'Name is required';
+MESSAGE_BUNDLE['core.field.is.required'] = 'This field is required';
+MESSAGE_BUNDLE['core.mobile.no.is.required'] = 'Mobile No is required';
+MESSAGE_BUNDLE['core.email.is.required'] = 'Email is required';
+MESSAGE_BUNDLE['core.not.selected.compare.file'] =
+  'You have not selected an ealier file against which this file can be compared. Continue?';
+MESSAGE_BUNDLE['core.no.file.specified'] = 'No File has been specified!';
+MESSAGE_BUNDLE['core.choosen.to.compare.with.existing.record'] =
+  'You have choosen to compare with an existing record. Note that this will take a while! Click OK to contine or CANCEL to stop process ';
+MESSAGE_BUNDLE['core.file.required'] = 'File required!';
+MESSAGE_BUNDLE['payroll.recordmustbe.selectedtoproceed'] =
+  'A record(s) must be selected to proceed';
+MESSAGE_BUNDLE['payroll.emailsent'] = 'Email Sent...';
+MESSAGE_BUNDLE['payroll.startdate.notempty'] = 'Start date Cannot be Empty';
+MESSAGE_BUNDLE['payroll.enddate.notempty'] = 'End Date cannot be empty';
+MESSAGE_BUNDLE['payroll.publicholidays.notempty'] =
+  'Public Holidays Date cannot be empty';
+MESSAGE_BUNDLE['payroll.addingpublic.holidayssetup'] =
+  'Adding Public Holidays Setup...';
+MESSAGE_BUNDLE['payroll.removingpublic.holidayssetup'] =
+  'Removing Public Holidays Setups...';
+MESSAGE_BUNDLE['payroll.process'] = 'process...';
+MESSAGE_BUNDLE['payroll.loadingdaterange.data'] =
+  ' Loading data for selected Date Range...';
+MESSAGE_BUNDLE['payroll.sureyouwant.deleterow'] =
+  'Are you sure you want to delete this Row ?';
+MESSAGE_BUNDLE['core.enter.account.details'] =
+  'Please Enter Account Details!!';
+MESSAGE_BUNDLE['core.invalid.nuban.number'] = 'Invalid Nuban Number';
+MESSAGE_BUNDLE['core.alphanumeric.character.required'] =
+  'Please only Alphanumeric characters are allowed';
+MESSAGE_BUNDLE['core.1992.2003.copyright'] =
+  'Copyright \u00A9 1992-2003 SystemSpecs Limited, All Rights Reserved.';
+MESSAGE_BUNDLE['core.cannot.be.zero.or.less'] = ' cannot be  zero or less.';
+MESSAGE_BUNDLE['core.payment.to.vendors.and.suppliers'] =
+  'Payments To Vendors  and Suppliers';
+MESSAGE_BUNDLE['core.submit.for.payment'] = 'Submit For Payment';
+MESSAGE_BUNDLE['core.send.for.approval'] = 'Send For Approval';
+MESSAGE_BUNDLE['core.select.retry.checkbox'] =
+  'Please select the Retry Checkbox before submitting';
+MESSAGE_BUNDLE['core.enter.number.value.for.batch.number'] =
+  'Please Enter Number Value For Batch Number and/or';
+MESSAGE_BUNDLE['core.number.value.for.trans.ref'] =
+  '\nNumber Value For Transaction Reference';
+MESSAGE_BUNDLE['core.rrr.details.not.available'] =
+  'RRR Details not available';
+MESSAGE_BUNDLE['core.invalid.reference.number'] =
+  'Invalid Reference Number: ';
+MESSAGE_BUNDLE['core.problem.encountered.validating.budget.code'] =
+  'Problem was encountered while validating budget code. Please try again. If problem persists, contact the administrator';
+MESSAGE_BUNDLE['core.value.greater.than.zero'] =
+  'The value {0} must greater than 0';
+MESSAGE_BUNDLE['core.transid.list'] = 'List of Transaction Group Ids';
+MESSAGE_BUNDLE['core.type.of.tax'] = 'Type Of Tax';
+MESSAGE_BUNDLE['core.code'] = 'Code';
+MESSAGE_BUNDLE['core.description'] = 'Description';
+MESSAGE_BUNDLE['core.company.info.gone.for.approval'] =
+  'Company Information has already gone for Approval';
+MESSAGE_BUNDLE['core.cac.registration.required'] =
+  'CAC Registration Number is required';
+MESSAGE_BUNDLE['core.cac.registration.numeric'] =
+  'CAC Registration Number must be Numeric';
+MESSAGE_BUNDLE['core.userid.no.space.special.character'] =
+  'User ID cannot contain spaces or special characters';
+MESSAGE_BUNDLE['core.duplicate.userid'] = 'Duplicate User ID';
+MESSAGE_BUNDLE['core.invalid.mobile.no'] = 'Invalid Mobile No';
+MESSAGE_BUNDLE['core.loading.user.for'] = 'Loading users for ';
+MESSAGE_BUNDLE['core.profile.udergoing.amendments'] =
+  "{{surname}}, {{firstname}} {othername}'s profile is currently undergoing amendments pending approval. Please have {{approvers}} finalize the pending modification(s) before you can act on this user's profile.";
+MESSAGE_BUNDLE['core.find.existing.branch'] = 'Find Existing Branch..';
+MESSAGE_BUNDLE['core.send.for.approval'] = 'Send for Approval';
+MESSAGE_BUNDLE['core.surname.required'] = 'Surname is required';
+MESSAGE_BUNDLE['core.firstname.required'] = 'First  Name is required';
+MESSAGE_BUNDLE['core.invalid.email.address'] =
+  'Invalid Email Address, Enter a Valid Email Address';
+MESSAGE_BUNDLE['core.userid.required'] = 'User Id is required';
+MESSAGE_BUNDLE['core.invalid.mobile.number'] =
+  'Invalid Mobile Number, Enter a Valid Mobile Number';
+MESSAGE_BUNDLE['core.select.user.role'] =
+  ' You must select a role for this user before submitting';
+MESSAGE_BUNDLE['core.no.user.menu.yet'] =
+  'This user has no menu yet. Please assign menu(s) to this user';
+MESSAGE_BUNDLE['core.populationg.user.menu.please.wait'] =
+  'Populating user menu, Please wait...';
+MESSAGE_BUNDLE['core.user.already.exist'] =
+  'User Already Exists, Please Enter A Unique Staff ID';
+MESSAGE_BUNDLE['core.staffid.cannot.contain.space.special.character'] =
+  'Staff ID cannot contain spaces or special characters';
+MESSAGE_BUNDLE['core.building.menus.please.wait'] =
+  'Building Menus from Role(s). Please wait...';
+MESSAGE_BUNDLE['core.preparing.menus.please.wait'] =
+  'Preparing Menus. Please wait...';
+MESSAGE_BUNDLE['core.adding.user'] = 'Adding User';
+MESSAGE_BUNDLE['core.saving.user.info'] = 'Saving User Information';
+MESSAGE_BUNDLE['core.adding.user.info.and.sending.for.approval'] =
+  'Adding User Information and Sending for Approval';
+MESSAGE_BUNDLE['core.authentication.setup.for.atleast.one.approval'] =
+  'Authentication Should be setup for at least one Approval Level for Each Transaction Type ';
+MESSAGE_BUNDLE['core.incomplete.branch.setup'] =
+  '{0} has not been fully setup.\nYou need to complete the Branch Setup under the Administration Menu before you can assign a Staff to this Branch.';
+MESSAGE_BUNDLE['core.user.not.movable'] =
+  'You cannot move this user because is the only one in this approval Level in this {0}';
+MESSAGE_BUNDLE['core.select.approval.level'] = 'Select Approval Level';
+MESSAGE_BUNDLE['core.teller.details'] = 'Teller Details';
+MESSAGE_BUNDLE['core.approver.details'] = 'Approver Details';
+MESSAGE_BUNDLE['core.limitless.approval.route'] = 'Limitless Approval Route';
+MESSAGE_BUNDLE['core.to'] = ' to ';
+MESSAGE_BUNDLE['core.please.ensure.selected.transaction.type'] =
+  "Please ensure you've selected a Transaction Type before adding more";
+MESSAGE_BUNDLE['core.please.ensure.assigned.atleast.onelevel'] =
+  "Please ensure you've assigned at least onelevel for each Transaction Type added";
+MESSAGE_BUNDLE['core.remove.approver'] = 'Remove Approver';
+MESSAGE_BUNDLE['core.duplicate.transaction.type'] =
+  'Please no duplicate transaction types can be selected.';
+MESSAGE_BUNDLE['core.user.can.not.be.moved'] =
+  'Please you Cannot remove this user from  this level. He/She is the Only Person in this Group';
+MESSAGE_BUNDLE['core.forwarding.for.approval.pls.wait'] =
+  'Forwarding for Approval. Please wait...';
+MESSAGE_BUNDLE['core.members.cannot.be.empty'] =
+  'Members of this approval group cannot be empty';
+MESSAGE_BUNDLE['core.saving.approval.group.info'] =
+  'Saving Approval<br>Group Information';
+MESSAGE_BUNDLE['core.loading.group.info'] =
+  'Loading {{group_name}} group information. Please wait...';
+MESSAGE_BUNDLE['core.preparing.group.profile'] =
+  'Preparing {{group_name}} Group Profile. Please wait...';
+MESSAGE_BUNDLE['core.preparing.new.group.view'] =
+  'preparing new<br> group view';
+MESSAGE_BUNDLE['core.populating.menu.please.wait'] =
+  'Populating Menu List. Please wait...';
+MESSAGE_BUNDLE['payroll.sureyouwantremove'] =
+  'Are You Sure You want to Remove ';
+MESSAGE_BUNDLE['payroll.sureyouwant.removepaygroup'] =
+  'Are You Sure You want to Remove the selected paygroup';
+MESSAGE_BUNDLE['payroll.sureyouwant.removerecords'] =
+  'Are You Sure You want to Remove the selected Record(s)';
+MESSAGE_BUNDLE['payroll.saved'] = 'Saved...';
+MESSAGE_BUNDLE['payroll.checkatleast.onerecord'] =
+  'Kindly Check at least one record';
+MESSAGE_BUNDLE['payroll.all'] = 'All';
+MESSAGE_BUNDLE['payroll.publicholiday.datecannotbeempty'] =
+  'Public Holiday date cannot be empty';
+MESSAGE_BUNDLE['payroll.selectvalid.dateofbirth'] =
+  'Please Select Valid Date of Birth';
+MESSAGE_BUNDLE['payroll.invalidaccountnumber.length'] =
+  'Invalid Account Number Length it must not be less than ';
+MESSAGE_BUNDLE['payroll.invalidaccountnumber.length2'] =
+  'Invalid Account Number Length it must not be more than ';
+MESSAGE_BUNDLE['payroll.inlength'] = ' in length';
+MESSAGE_BUNDLE['payroll.selectlga'] = '--Select a Local Government Area --';
+MESSAGE_BUNDLE['payroll.pleasewait.forpayslip'] =
+  'Please Wait for Payslip to display';
+MESSAGE_BUNDLE['payroll.staff.name'] = 'Staff Name';
+MESSAGE_BUNDLE['payroll.selectanitem'] = '--Select an Item--';
+MESSAGE_BUNDLE['payroll.selectcompanytorunpayrun'] =
+  'Select Company to run payrun';
+MESSAGE_BUNDLE['payroll.fieldcannotbeempty'] = 'Key Field cannot be empty.';
+MESSAGE_BUNDLE['payroll.downloadpayroll.paymentfile'] =
+  'Download Payroll Payment File';
+MESSAGE_BUNDLE['payroll.areyousure.closepayrun'] =
+  'Are You Sure You Want To Close Payroll and Pay Selected Staff?';
+MESSAGE_BUNDLE['payroll.areyousure.closepayrun2'] =
+  'Are you sure you want to close Payroll & Pay All Staff ?';
+MESSAGE_BUNDLE['payroll.amadmincannot.closepayrun'] =
+  'An Admin User cannot Close Payroll & Pay Staff';
+MESSAGE_BUNDLE['payroll.selectprocessing.montyear'] =
+  'Please select processing month and year';
+MESSAGE_BUNDLE['payroll.selectcompanyto.viewstaffdetails'] =
+  'Select Company to view Staff Details';
+MESSAGE_BUNDLE['payroll.loading'] = 'Loading';
+MESSAGE_BUNDLE['payroll.startperiod'] = 'Start Period';
+MESSAGE_BUNDLE['core.enter.email.below'] =
+  'Please enter your email<br />address below';
+MESSAGE_BUNDLE['core.email.unavailable'] = 'Email is unavailable for use';
+MESSAGE_BUNDLE['core.reset.security.question'] =
+  'Please input the answer<br/> to your security question below';
+MESSAGE_BUNDLE['core.question.required'] = 'Please your answer is required';
+MESSAGE_BUNDLE['core.reset.otp'] =
+  'Please enter your <br/>verification code below';
+MESSAGE_BUNDLE['core.otp.required'] = 'Please enter your OTP';
+MESSAGE_BUNDLE['core.invalid.email.corp.combo'] =
+  'Invalid Corporate and Email Combination';
+MESSAGE_BUNDLE['core.user.already.deactivated'] =
+  'User has already been Deactivated';
+MESSAGE_BUNDLE['core.system.error'] = 'System Error. Please try again';
+MESSAGE_BUNDLE['core.device.activating'] = 'Activating Device. Please wait';
+MESSAGE_BUNDLE['core.thanks.for.correct.response'] =
+  'Thank you for your correct response';
+MESSAGE_BUNDLE['core.invalid.ensure.right.answer.provided'] =
+  'Invalid Answer. Please ensure you have provided the right answer';
+MESSAGE_BUNDLE['core.entry.code.successfully.sent'] =
+  'Entry Code Sent Successfully';
+MESSAGE_BUNDLE['core.entry.code.could.not.be.sent.to.you'] =
+  'Entry Code could not be sent to you. Please try again or Contact the administrator';
+MESSAGE_BUNDLE['core.verifying.correctness.please.wait'] =
+  'Verifying correctness. Please wait...';
+MESSAGE_BUNDLE['core.problem.validating.pass.code.email'] =
+  'Problem Validating Pass-Code Email. Please contact the administrator';
+MESSAGE_BUNDLE['core.invalid.answer.account.reset'] =
+  'Invalid Answer. Your Account will now be reset. Please contact the administrator';
+MESSAGE_BUNDLE['core.security.code.sent.for.added.security'] =
+  'For your added security, a security code has been sent to your phone<br/>You need to enter the code in the box below before this change can be accepted';
+MESSAGE_BUNDLE['core.enter.dan.answer'] = 'Enter DAN Challenge Answer Here';
+MESSAGE_BUNDLE['core.security.code.from.email'] =
+  'Enter Security Code From Your Email Here';
+MESSAGE_BUNDLE['core.security.code.from.phone'] =
+  'Enter Security Code From Your Phone Here';
+MESSAGE_BUNDLE['core.security.code.sent.to.email'] =
+  'For your added security, a security code has been sent to your registered email.<br/> You need to enter the right code in the box below before this change can be accepted';
+MESSAGE_BUNDLE['core.dan.challenge.sent.to.email'] =
+  'For your added security, a DAN Challenge has been sent to your registered email.<br/> You need to enter the right challenge answer in the box below before this change can be accepted.';
+MESSAGE_BUNDLE['core.have.one.last.try'] =
+  'Invalid Answer. You have <b>ONE</b> last try after which you will be logged out if unsuccessful. Choose carefully';
+MESSAGE_BUNDLE['core.resetting.question.1.same.with.2'] =
+  'Question 1 is the same with Question 2, Resetting Question 1.';
+MESSAGE_BUNDLE['core.resetting.question.1.same.with.3'] =
+  'Question 1 is the same with Question 3, Resetting Question 1.';
+MESSAGE_BUNDLE['core.resetting.question.2.same.with.1'] =
+  'Question 2 is the same with Question 1, Resetting Question 2.';
+MESSAGE_BUNDLE['core.resetting.question.2.same.with.3'] =
+  'Question 2 is the same with Question 3, Resetting Question 2.';
+MESSAGE_BUNDLE['core.resetting.question.3.same.with.1'] =
+  'Question 3 is the same with Question 1, Resetting Question 3.';
+MESSAGE_BUNDLE['core.resetting.question.3.same.with.2'] =
+  'Question 3 is the same with Question 2, Resetting Question 3.';
+MESSAGE_BUNDLE['core.select.valid.question.for.1'] =
+  'Select a valid question for Question 1';
+MESSAGE_BUNDLE['core.select.valid.question.for.2'] =
+  'Select a valid question for Question 2';
+MESSAGE_BUNDLE['core.select.valid.question.for.3'] =
+  'Select a valid question for Question 3';
+MESSAGE_BUNDLE['core.answer.for.question.1'] =
+  'Answer is required for Question 1';
+MESSAGE_BUNDLE['core.answer.for.question.2'] =
+  'Answer is required for Question 2';
+MESSAGE_BUNDLE['core.answer.for.question.3'] =
+  'Answer is required for Question 3';
+MESSAGE_BUNDLE['core.enter.security.code'] = 'Enter Security Code';
+MESSAGE_BUNDLE['core.confirming.password'] = 'Confirming Password...';
+MESSAGE_BUNDLE['core.incorrect.current.password'] =
+  'Incorrect Current Password';
+MESSAGE_BUNDLE['core.passwords.do.not.match'] = 'Passwords Do not match';
+MESSAGE_BUNDLE['core.sending.entry.code.wait'] =
+  'Sending Entry code. Please wait...';
+MESSAGE_BUNDLE['core.cannot.reuse.current.password'] =
+  'You cannot reuse your Current Password';
+MESSAGE_BUNDLE['core.verify.new.password'] =
+  'Please verify your new password.';
+MESSAGE_BUNDLE['core.enter.new.password'] = 'Please enter a new password.';
+MESSAGE_BUNDLE['core.re-enter.new.password'] = 'Re-enter your new password';
+MESSAGE_BUNDLE['core.re-enter.same.new.password'] =
+  'Please re-enter the same new password';
+MESSAGE_BUNDLE['core.re-enter.the.code'] = 'Re-enter the code';
+MESSAGE_BUNDLE['core.select.an.operand'] = 'Please select an operand';
+MESSAGE_BUNDLE['core.enter.2.to.4.digit.number'] =
+  'Please enter a 2 to 4 digit number';
+MESSAGE_BUNDLE['core.only.digits.allowed'] =
+  'Please only digits are allowed';
+MESSAGE_BUNDLE['core.enter.2.to.4.digits'] = 'Please enter 2 to 4 digits';
+MESSAGE_BUNDLE['core.expected'] = 'Expected: ';
+MESSAGE_BUNDLE['core.result.in.textbox'] = 'Enter Result in textbox';
+MESSAGE_BUNDLE['core.valid.passcode.access.granted'] =
+  'valid passcode (Access will be granted)';
+MESSAGE_BUNDLE['core.invalid.passcode.access.will.not.be.granted'] =
+  'invalid passcode (Access will <b>NOT</b> be granted)';
+MESSAGE_BUNDLE['core.sending.entry.code.email'] =
+  'Sending Entry code email. Please wait...';
+MESSAGE_BUNDLE['core.sending.entry.code.sms'] =
+  'Sending Entry code sms. Please wait...';
+MESSAGE_BUNDLE['core.successfull.email.sent'] = 'Email Sent Successfully';
+MESSAGE_BUNDLE['core.couldnt.send.emil.contact.admin'] =
+  'Email could not be sent to you. Please try again or Contact the administrator';
+MESSAGE_BUNDLE['core.confirm.entry.code.and.retry'] =
+  'Problem Validating Entry code. Please confirm you have entered the correct Entry code and Retry';
+MESSAGE_BUNDLE['core.invalid.answer.try.again'] =
+  'Invalid Answer. Please Try Again';
+MESSAGE_BUNDLE['core.approval.workflow.setup'] = 'Approval Workflow Setup';
+MESSAGE_BUNDLE['core.amendments.awaiting.approval'] =
+  'Amendments Awaiting Approval';
+MESSAGE_BUNDLE['core.already.exist.on.approval.chain'] =
+  'Already Exists on the Approval Chain!';
+MESSAGE_BUNDLE['core.ensure.transactiontype.selected'] =
+  'Please ensure you have select a Transaction Type';
+MESSAGE_BUNDLE['core.atleast.notification.for.an.officer'] =
+  'At Least One Approving Officer Should Receive Notification.';
+MESSAGE_BUNDLE['core.new.account.id.code.does.not.match'] =
+  'Sorry your new Account Identification Code - AIC/PIN does not match!';
+MESSAGE_BUNDLE['core.loading.account.pls.wait'] =
+  'Loading Accounts. Please wait...';
+MESSAGE_BUNDLE['core.processing.pls.wait'] = 'Processing. please wait...';
+MESSAGE_BUNDLE['core.ensure.one.item.is.checked'] =
+  'please ensure you have checked at least one item';
+MESSAGE_BUNDLE['core.cannot.be.validated.try.later'] =
+  ' cannot be validated at this time. Please try again later';
+MESSAGE_BUNDLE['core.not.available.for.us'] = ' is not available for use';
+MESSAGE_BUNDLE['core.validating.payment.ref.pls.wait'] =
+  'validating payment ref. please wait...';
+MESSAGE_BUNDLE['core.no.duplicate.pls'] = 'no duplicates allowed please';
+MESSAGE_BUNDLE['core.payments'] = ' payments';
+MESSAGE_BUNDLE['core.payment'] = ' payment';
+MESSAGE_BUNDLE['core.do.you.want.to.continue'] =
+  '. Do you want to continue?';
+MESSAGE_BUNDLE['core.you.are.about.to.confirm'] =
+  'You are about to confirm ';
+MESSAGE_BUNDLE['payroll.max4.qualification'] =
+  'You are only allowed to enter maximum number of 4 qualifications';
+MESSAGE_BUNDLE['payroll.sureyouwanttodelete.qualification'] =
+  'Are you sure you want to delete this qualification ?';
+MESSAGE_BUNDLE['payroll.bankaccount.numberalreadyexists'] =
+  'Bank Account Number already Exists';
+MESSAGE_BUNDLE['payroll.bvn.numberalreadyexists'] =
+  'Bank Verification Number (bvn) already Exists';
+MESSAGE_BUNDLE['payroll.checkstaff.exists'] =
+  'Please wait.Checking if the staff with staff number (';
+MESSAGE_BUNDLE['payroll.exists'] = ') exists...';
+MESSAGE_BUNDLE['payroll.selecta'] = 'Select a  ';
+MESSAGE_BUNDLE['payroll.sureyouwant.topaystafffrom'] =
+  'Are you sure you want to pay the staff from this ';
+MESSAGE_BUNDLE['payroll.selectvalid.expirydate'] =
+  'Please Select Valid Expiry Date.';
+MESSAGE_BUNDLE['payroll.selectapprover'] = 'You must select an Approver. ';
+MESSAGE_BUNDLE['payroll.staffwithstaffnumber'] = 'Staff with staff number (';
+MESSAGE_BUNDLE['payroll.existsloading.staffdata'] =
+  ") exists. Loading staff's data.";
+MESSAGE_BUNDLE['payroll.sStaffnumber.isamandatoryfield'] =
+  'Staff Number is a mandatory field!';
+MESSAGE_BUNDLE['payroll.dobcantbe.greaterthantoday'] =
+  'Date of Birth cannot be greater or equal to today';
+MESSAGE_BUNDLE['payroll.selectdob'] = 'Please Select Date of Birth';
+MESSAGE_BUNDLE['payroll.selecteffectivedate'] =
+  'Please Select An Effective Date';
+MESSAGE_BUNDLE['payroll.selectvaliddate'] =
+  'Please Select Valid Expiry Date.';
+MESSAGE_BUNDLE['core.phone.challenge'] =
+  'What numbers are missing in your Phone Number ';
+MESSAGE_BUNDLE['core.user.already.deactivated'] =
+  'Invalid Operation! User has already been Deactivated.';
+MESSAGE_BUNDLE['core.user.already.deactivated_OLD'] =
+  'Invalid Operation! User has already been Deactivated.';
+MESSAGE_BUNDLE['core.user.already.deactivated'] =
+  'Invalid Operation! User not eligible to be reset. <br/>Please contact support. (deactivated)';
+MESSAGE_BUNDLE['core.user.already.disabled'] =
+  'Invalid Operation! User not eligible to be reset. <br/>Please contact support. (disabled)';
+MESSAGE_BUNDLE['core.unable.reset.pass'] =
+  'Unable to reset password for the user';
+MESSAGE_BUNDLE['core.pass.reset.success'] = 'Password Changed Successfully.';
+MESSAGE_BUNDLE['core.invalid.answer'] = 'The answer is invalid.';
+MESSAGE_BUNDLE['core.password.reset'] = 'Password Recovery';
+MESSAGE_BUNDLE['core.password.reset.error'] = 'Error Occurred';
+MESSAGE_BUNDLE['core.enter.otp'] = 'Enter your OTP';
+MESSAGE_BUNDLE['core.otp.input'] =
+  'An OTP has been sent to your mobile number';
+MESSAGE_BUNDLE['core.reset.password.success'] =
+  'Password change<br>successful';
+MESSAGE_BUNDLE['core.passwordreset.email.note'] =
+  'An email has been sent to you<br>with a temporary password. Please<br>login to reset your password';
+MESSAGE_BUNDLE['core.preparing.authentication.challenge'] =
+  'Preparing Authentication Challenge';
+MESSAGE_BUNDLE['payroll.select.staff'] = 'Select a Staff';
+MESSAGE_BUNDLE['payroll.select.newpaygroup'] =
+  'Kindly Select a New PayGroup';
+MESSAGE_BUNDLE['payroll.select.basic'] = 'Select a New Basic.';
+MESSAGE_BUNDLE['payroll.nopaygroup'] =
+  'No Paygroup Selected. Will go ahead without Paygroup!';
+MESSAGE_BUNDLE['payroll.demoting'] =
+  'You are demoting this staff. Current Basic is greater than New Basic';
+MESSAGE_BUNDLE['core.create.mandate'] = 'Create Mandate';
+MESSAGE_BUNDLE['core.file.path.cannot.be.empty'] =
+  'File path cannot be empty';
+MESSAGE_BUNDLE['payroll.file.required'] = 'File required!';
+MESSAGE_BUNDLE['payroll.grade.level'] = 'Grade Level';
+MESSAGE_BUNDLE['payroll.sex'] = 'Sex';
+MESSAGE_BUNDLE['payroll.type'] = 'Type';
+MESSAGE_BUNDLE['payroll.courses'] = 'Courses';
+MESSAGE_BUNDLE['payroll.qualification'] = 'Qualification';
+MESSAGE_BUNDLE['payroll.institutiontypes'] = 'Institution Types';
+MESSAGE_BUNDLE['payroll.relationship'] = 'Relationship';
+MESSAGE_BUNDLE['payroll.paygroup'] = 'Pay Group';
+MESSAGE_BUNDLE['payroll.paygroupitem'] = 'Pay Group Item';
+MESSAGE_BUNDLE['payroll.payitem'] = 'Pay Item';
+MESSAGE_BUNDLE['payroll.religion'] = 'Religion';
+MESSAGE_BUNDLE['payroll.country'] = 'Country';
+MESSAGE_BUNDLE['payroll.taxstate'] = 'Tax State';
+MESSAGE_BUNDLE['payroll.bank'] = 'Bank';
+MESSAGE_BUNDLE['payroll.banks'] = 'Banks';
+MESSAGE_BUNDLE['payroll.state'] = 'State';
+MESSAGE_BUNDLE['payroll.pfas'] = 'PFAs';
+MESSAGE_BUNDLE['payroll.title'] = 'Title';
+MESSAGE_BUNDLE['payroll.titles'] = 'Titles';
+MESSAGE_BUNDLE['payroll.lga'] = 'Local Government Area';
+MESSAGE_BUNDLE['payroll.employmenttypes'] = 'Employment Types';
+MESSAGE_BUNDLE['payroll.uploadpath.isnotcorrect'] =
+  'Upload Path is not correct!';
+MESSAGE_BUNDLE['payroll.analysis'] = 'Analysis';
+MESSAGE_BUNDLE['payroll.maritalstatus'] = 'Marital codes';
+MESSAGE_BUNDLE['payroll.bankaccounttype'] = 'Bank Account Type';
+MESSAGE_BUNDLE['payroll.invalidrtgs.session'] =
+  'Error: Invalid RTGS session number entered:';
+MESSAGE_BUNDLE['payroll.invalidbatch.number'] =
+  'Error: Invalid batch number entered.';
+MESSAGE_BUNDLE['payroll.invalidpfa.session'] =
+  'Error: Invalid PFA session number entered.';
+MESSAGE_BUNDLE['core.invalid.answer.one.try.left'] =
+  'Invalid Answer. You have one last try after which you will be logged out if unsuccessful. Choose carefully.';
+MESSAGE_BUNDLE['core.invalid.otp'] = 'Invalid OTP Provided';
+MESSAGE_BUNDLE['core.otp.resend'] =
+  "Please <span class='text-success'>[Click Here to RESEND]</span> the OTP if you did not receive it";
+MESSAGE_BUNDLE['downloading.please.wait'] =
+  "DOWNLOADING <BR> AFTER THE DOWNLOAD,<br>CLICK ON ANY OTHER MENU TO RELOAD THE PAGE','Please WAIT..";
+MESSAGE_BUNDLE['core.you.have.selected.to'] = 'You have selected to ';
+MESSAGE_BUNDLE['payroll.enter.amount'] = 'Enter an Amount';
+MESSAGE_BUNDLE['payroll.between.1.999'] = 'Number must be between 1 and 999';
+MESSAGE_BUNDLE['payroll.select.type'] = 'Select a Loan Type.';
+MESSAGE_BUNDLE['payroll.loan.type.zero'] = 'Loan amount cannot be Zero.';
+MESSAGE_BUNDLE['payroll.interest.blank'] =
+  'Interest Start Date cannot be blank.';
+MESSAGE_BUNDLE['payroll.trans.selected'] = 'Transaction(s) selected';
+MESSAGE_BUNDLE['payroll.loan.history'] = 'Loan History';
+MESSAGE_BUNDLE['payroll.nooftime.pay'] = 'No. of Times to Pay';
+MESSAGE_BUNDLE['payroll.tenure'] = 'Tenure';
+MESSAGE_BUNDLE['payroll.nwday'] = 'Normal Work Day';
+MESSAGE_BUNDLE['payroll.prem.wday'] = 'Premium Work Day';
+MESSAGE_BUNDLE['payroll.hol.wday'] = 'Public Holiday Work Day';
+MESSAGE_BUNDLE['payroll.sel.items'] =
+  "<option value='-1'>--Select an Item--</option>";
+MESSAGE_BUNDLE['payroll.loan.amt.zero'] = 'Loan Amount cannot be Zero.';
+MESSAGE_BUNDLE['payroll.tenure.empty'] = 'Tenure cannot be Zero.';
+MESSAGE_BUNDLE['payroll.overtime'] = 'Overtime';
+MESSAGE_BUNDLE['payroll.weekday'] = 'WeekDay Hours';
+MESSAGE_BUNDLE['payroll.nof.deduct'] = 'No. of Times to Deduct.';
+MESSAGE_BUNDLE['payroll.deduction'] = 'deduction';
+MESSAGE_BUNDLE['payroll.allowance'] = 'allowance';
+MESSAGE_BUNDLE['payroll.staff.recieved.leave'] =
+  'Staff has already recieved leave allowance. ';
+MESSAGE_BUNDLE['payroll.removing'] = 'You are removing ';
+MESSAGE_BUNDLE['payroll.allowance.question'] = "'s Allowance? ";
+MESSAGE_BUNDLE['payroll.deduction.question'] = "'s Deduction?";
+MESSAGE_BUNDLE['payroll.remove.question'] =
+  'Are you sure, you want to remove this record ?';
+MESSAGE_BUNDLE['payroll.enter.staff'] = 'Enter a Staff';
+MESSAGE_BUNDLE['payroll.blank.interest.date'] =
+  'Interest Start Date cannot be blank.';
+MESSAGE_BUNDLE['payroll.select.variation'] = 'Select a Variation';
+MESSAGE_BUNDLE['payroll.enter.description'] = 'Enter a description';
+MESSAGE_BUNDLE['payroll.enter.allowance.type'] = 'Enter Allowance Type';
+MESSAGE_BUNDLE['payroll.enter.deduction.type'] = 'Enter Deduction Type';
+MESSAGE_BUNDLE['core.and'] = ' and';
+MESSAGE_BUNDLE['core.flag'] = ' flag';
+MESSAGE_BUNDLE['core.as.paid.transaction'] = ' as paid transaction';
+MESSAGE_BUNDLE['core.do.you.want.to.continue'] = ' Do you want to continue?';
+MESSAGE_BUNDLE['core.transaction.status.not.changed'] =
+  'You have not changed the status of any Transaction.';
+MESSAGE_BUNDLE['core.card.number.max.length'] =
+  'Invalid Card Number.Card number must start with 62805112 and have a maximum length of 19';
+MESSAGE_BUNDLE['core.card.number.min.length'] =
+  'Invalid Card Number.Card number must start with 62805112 and have a minimum length of 18';
+MESSAGE_BUNDLE['core.card.number.start.with'] =
+  'Invalid Card Number.Card number must start with 62805112';
+MESSAGE_BUNDLE['core.daily.trans.limit.not.changed'] =
+  'You have not change the Daily Transaction Limit';
+MESSAGE_BUNDLE['core.validating.card.please.wait'] =
+  'Validating Card Number. Please wait...';
+MESSAGE_BUNDLE['core.invalid.card.number.start.with'] =
+  'Invalid Card Number.Card number must start with 62805112';
+MESSAGE_BUNDLE['core.loading.limit.details.for'] =
+  'Loading Limit details for ';
+MESSAGE_BUNDLE['core.please.enter.amount'] = 'Please Enter Amount';
+MESSAGE_BUNDLE['core.please.enter.reference.number'] =
+  'Please Enter Reference number';
+MESSAGE_BUNDLE['core.please.enter.valuefor.reference.number'] =
+  'Please enter number value for reference number';
+MESSAGE_BUNDLE['core.please.enter.valuefor.amount'] =
+  'Please enter number value for amount';
+MESSAGE_BUNDLE['core.pleasewait.sendingfor.approval'] =
+  'Please Wait Sending for Approval...';
+MESSAGE_BUNDLE['core.youareaboutto.sendingfor.approval'] =
+  'You are about to Send for Approval Do you want to Proceed?';
+MESSAGE_BUNDLE['core.incomeaccount.and.fha.mustnotbeempty'] =
+  'Income Account Number and Funds Holding Account Number must not be Empty. Both Must be avaliable.';
+MESSAGE_BUNDLE['core.incomeaccount.and.fha.mustnotbesame'] =
+  'Income Account Number  must not be the Same with Funds Holding Account Number.';
+MESSAGE_BUNDLE['core.next'] = 'Next';
+MESSAGE_BUNDLE['core.login'] = 'Login';
+MESSAGE_BUNDLE['core.paid.count'] =
+  ' flag {{paidCount}} as paid transaction';
+MESSAGE_BUNDLE['core.paid.count'] = ' flag {{paidCount}} as paid transaction';
+MESSAGE_BUNDLE['core.password.reset.corporate'] =
+  'User ID/Password Recovery';
+MESSAGE_BUNDLE['core.enter.userid'] = 'Enter your user id';
+MESSAGE_BUNDLE['core.enter.corpid'] = 'Enter your corporate id';
+MESSAGE_BUNDLE['core.enter.email'] = 'Enter your email address';
+MESSAGE_BUNDLE['core.enter.details.below'] =
+  'Please enter your user details below';
+MESSAGE_BUNDLE['core.user.not.found'] = 'User Not Found';
+MESSAGE_BUNDLE['core.number.should.not.exceed.11.digits'] =
+  'The number should not exceed 11 digits.';
+MESSAGE_BUNDLE['core.account.number.is.required'] =
+  'Account Number is required';
+MESSAGE_BUNDLE['core.please.select.a.currency'] = 'Please select a currency';
+MESSAGE_BUNDLE['core.please.enter.the.payers.name'] =
+  " Please enter the payer's name";
+MESSAGE_BUNDLE['core.please.enter.the.paying.account.number'] =
+  'Please enter the paying account number';
+MESSAGE_BUNDLE['core.please.enter.the.beneficiarys.full.name'] =
+  "Please enter the Beneficiary's full name";
+MESSAGE_BUNDLE['core.please.select.a.bank.for.the.beneficiary'] =
+  'Please select a bank for the beneficiary';
+MESSAGE_BUNDLE['core.reset.userid.success'] =
+  'User Id mailed<br>successfully';
+MESSAGE_BUNDLE['core.reset.userid.note'] =
+  'An email has been sent to you<br>with your user id.';
+MESSAGE_BUNDLE['label.phone.preferred.countries'] = ['ng', 'us', 'gb'];
+MESSAGE_BUNDLE['core.email.address'] = 'Email Address';
+MESSAGE_BUNDLE['core.first.name'] = 'First Name';
+MESSAGE_BUNDLE['core.surname'] = 'Surname';
+MESSAGE_BUNDLE['core.phone.number'] = 'Phone Number';
+MESSAGE_BUNDLE['core.proceed'] = 'Proceed';
+MESSAGE_BUNDLE['core.refres.captcha'] = 'Refresh Captcha';
+MESSAGE_BUNDLE['core.reset.userid.note'] =
+  'An email has been sent to you<br>with your user id. Please<br>login to reset your password';
+MESSAGE_BUNDLE['core.incomeaccount.numberalreadyexist'] =
+  'Income Account Number already Exist for another Branch';
+MESSAGE_BUNDLE['core.retry.count'] = ' retry {{b_count}} transaction';
+MESSAGE_BUNDLE['core.reject.count'] = ' reject {{d_count}} transaction';
+MESSAGE_BUNDLE['core.fafi.count'] = ' FAFI {{q_count}} transaction';
+MESSAGE_BUNDLE['core.paid.count'] =
+  ' flag {{paid_count}} as paid transaction';
+MESSAGE_BUNDLE['core.load.count'] = ' load {{load_count}} transaction';
+MESSAGE_BUNDLE['core.retry.transit.mirror.count'] =
+  ' retry  TRANSIT CBN MIRROR {{cbnMirrorConfirm_count}} transaction';
+MESSAGE_BUNDLE['core.retry.mirror.count'] =
+  ' retry CBN MIRROR {{cbnMirrorUnConfirm_count}} transaction';
+MESSAGE_BUNDLE['core.registration.success'] =
+  'An email has been sent to you<br>with your user id. Please<br>login to reset your password';
+MESSAGE_BUNDLE['core.registration.success.title'] =
+  'Registration Successful';
+MESSAGE_BUNDLE['core.payable.amount.exceeds.available.agent.limit'] =
+  ' Payable Amount exceeds Availbale Agent Limit';
+MESSAGE_BUNDLE['core.page.loading.please.wait'] =
+  'Page Loading Please Wait...';
+MESSAGE_BUNDLE['core.payable.amount.exceeds.available.tellers.limit'] =
+  " Payable Amount exceeds Available Teller's Limit";
+MESSAGE_BUNDLE['core.payable.amount.exceeds.available.agent.limit'] =
+  ' Payable Amount exceeds Available Agent Limit';
+MESSAGE_BUNDLE['core.bulk.code'] = 'Bulk Codes';
+MESSAGE_BUNDLE['core.tax.code'] = 'Tax Codes';
+MESSAGE_BUNDLE['core.pension.code'] = 'Pension Codes';
+MESSAGE_BUNDLE['core.proceed.to.payment'] = 'Proceed To Payment';
+MESSAGE_BUNDLE['core.submit.for.processing'] = 'Submit For Processing';
+MESSAGE_BUNDLE['core.start.date.must.be.greater.or.equal.today'] =
+  'Start Date must be greater than or Equal to Today';
+MESSAGE_BUNDLE['core.end.date.must.be.greater.or.equal.today'] =
+  'End Date must be greater than or Equal to Today';
+MESSAGE_BUNDLE['core.start.date.must.less.end.date'] =
+  'Start Date must not be Greater than End Date';
+MESSAGE_BUNDLE['core.no.collection.service.setup.for.selected.company'] =
+  'No Collection Service is set up for the selected Company.';
+MESSAGE_BUNDLE['core.cannot.be.empty'] = ' cannot be Empty.';
+MESSAGE_BUNDLE['core.field.must.not.be.empty'] = ' Field must not be Empty';
+MESSAGE_BUNDLE['core.amount.cannot.be.less.zero'] =
+  'Amount cannot be less than Zero';
+MESSAGE_BUNDLE['core.receiving.account.number.is.required'] =
+  'Receiving Account Number is Required';
+MESSAGE_BUNDLE['core.frequency.is.required'] = 'Frequency is required';
+MESSAGE_BUNDLE['core.day.is.required'] = 'Day is required';
+MESSAGE_BUNDLE['core.loading.plese.wait'] = 'Loading, Pleas wait...';
+MESSAGE_BUNDLE['core.downloading.click.other.menu.to.reload'] =
+  'Downloading. After the download, click on any other menu to reload the page. Please wait...';
+MESSAGE_BUNDLE['core.please.check.tax.transction.to.download'] =
+  'Please check any of the Tax transaction you want to download';
+MESSAGE_BUNDLE['core.please.select.user'] = 'Please Select User';
+MESSAGE_BUNDLE['core.please.select.an.approver'] =
+  'Please Select an Approver';
+MESSAGE_BUNDLE['core.please.enter.account.number'] =
+  'Please enter Account Number';
+MESSAGE_BUNDLE['core.approver.and.user.cnnot.be.the.same'] =
+  'the approver and the user cannot be the same';
+MESSAGE_BUNDLE['core.loading.fund.holding.accounts.for.selected.branch'] =
+  'Loading Funds Holding Accounts for selected branch';
+MESSAGE_BUNDLE['core.processing'] = 'Processing...';
+MESSAGE_BUNDLE['core.teller.funds.holding.accounts'] =
+  'Teller Funds Holding Account(s)';
+MESSAGE_BUNDLE['core.email.not.available'] =
+  'Email is not available for use';
+MESSAGE_BUNDLE['core.suspended.monthly.salary.items'] =
+  'Suspended Monthly Salary Items';
+MESSAGE_BUNDLE['core.start.date.is.empty'] = 'Start Date is Empty!';
+MESSAGE_BUNDLE['core.end.date.is.empty'] = 'End Date is Empty!';
+MESSAGE_BUNDLE['core.pensioner.name.is.empty'] = 'Pensioner Name is Empty!';
+MESSAGE_BUNDLE['core.approver.field.is.empty'] = 'Approver Field is Empty!';
+MESSAGE_BUNDLE['core.please.select.a.pensioner'] =
+  'Please Select a Pensioner!';
+MESSAGE_BUNDLE['core.please.select.an.approver'] =
+  'Please Select an Approver!';
+MESSAGE_BUNDLE['core.monthly.salary.items'] = 'Monthly Salary Items';
+MESSAGE_BUNDLE['core.sure.to.remove.selected.pensioner'] =
+  'Are you sure you want to remove the selected Pensioner?';
+MESSAGE_BUNDLE['core.pay.item'] = 'Pay Item';
+MESSAGE_BUNDLE['core.file.extension.type.csv.can.be.uploaded'] =
+  'Only file of extension type(.csv) can be uploaded';
+MESSAGE_BUNDLE['core.browse.a.csv.file'] = 'Browse a CSV File!';
+MESSAGE_BUNDLE['core.retiree.audit.details'] = 'Retiree Audit Details ';
+MESSAGE_BUNDLE['core.retiree.audit.details.for'] =
+  'Retiree Audit Details for ';
+MESSAGE_BUNDLE['core.validating.pin.please.wait'] =
+  'Validating PIN. Please Wait...';
+MESSAGE_BUNDLE['core.incorrect.account.identification.code'] =
+  'INCORRECT Account Identification Code - AIC/PIN';
+MESSAGE_BUNDLE['core.your.request.cannot.be.completed'] =
+  'Your Request cannot be completed';
+MESSAGE_BUNDLE['core.wait.while.payment.is.processed'] =
+  'Please wait while your payment is being Processed...';
+MESSAGE_BUNDLE['payroll.processing.request.please.wait'] =
+  'Processing Request....Please wait..';
+MESSAGE_BUNDLE['payroll.invalidchararacter.detectedforaccount'] =
+  'Invalid Chararacter Detected For Account Number Entry!';
+MESSAGE_BUNDLE['payroll.processing.pls.wait'] = 'Processing. please wait...';
+MESSAGE_BUNDLE['payroll.percentage.types'] = 'Percentage Types';
+MESSAGE_BUNDLE['payroll.retrieving.retiree.details'] =
+  'Retrieving retiree details....Please wait..';
+MESSAGE_BUNDLE['payroll.select.a.local.goverment.area'] =
+  'Select a Local Government Area ';
+MESSAGE_BUNDLE['payroll.sure.to.remove.selected.pensioner'] =
+  'Are you sure you want to remove the selected Pensioner?';
+MESSAGE_BUNDLE['payroll.retrieving retiree details.pleasewait'] =
+  'Retrieving retiree details....Please wait..';
+MESSAGE_BUNDLE['payroll.select.a.pensioner'] = 'Select a Pensioner';
+MESSAGE_BUNDLE['payroll.name.is.empty'] = 'Pensioner Name is empty';
+MESSAGE_BUNDLE['payroll.effective.date.is.empty'] =
+  'Effective date is empty';
+MESSAGE_BUNDLE[
+  'payroll.selectedpaygroup.mustnotbethesame.withcurrentpaygroup'
+] = ' Selected Pay Group must not be the same with Current Pay Group';
+MESSAGE_BUNDLE['payroll.type.to.select.pensioner'] =
+  'Type to Select Pensioner';
+MESSAGE_BUNDLE['payroll.are.you.sure.you.want.to.remove.this.record'] =
+  'Are you sure, you want to remove this record ?';
+MESSAGE_BUNDLE['payroll.upload.path.is.not.correct'] =
+  'Upload Path is not correct!';
+MESSAGE_BUNDLE['payroll.only.files.of.extension.type'] =
+  'Only files of extension  type(.csv,.txt) can be uploaded';
+MESSAGE_BUNDLE['payroll.retrieving.selected.paygroup.items'] =
+  'Retrieving selected paygroup items....Please wait.';
+MESSAGE_BUNDLE['payroll.retrieving.pensioner.details'] =
+  'Retrieving Pensioner details....Please wait.';
+MESSAGE_BUNDLE['payroll.payment.type'] = 'Payment Type';
+MESSAGE_BUNDLE['payroll.amount.types'] = 'Amount Types';
+MESSAGE_BUNDLE['core.pay.family.and.friends'] = 'Pay Family & Friends';
+MESSAGE_BUNDLE['core.pay.a.biller'] = 'Pay a Biller';
+MESSAGE_BUNDLE[
+  'core.sorry.you.cannot.complete.your.operation.on.this.page.right.now.please.contact.remita.support.to.proceed'
+] =
+  'Sorry, you cannot complete your operation on this page right now. Please contact Remita Support to proceed';
+MESSAGE_BUNDLE['core.please.select.how.you.want.to.pay'] =
+  'Please select how you want to pay';
+MESSAGE_BUNDLE['core.please.select.one.item.from.the.select.list'] =
+  'Please select one item from the select list';
+MESSAGE_BUNDLE['core.the.code.you.enter.do.not.match'] =
+  'The code you enter do not match';
+MESSAGE_BUNDLE['core.beneficiary.information'] = 'BENEFICIARY INFORMATION';
+MESSAGE_BUNDLE['core.biller.information'] = 'BILLER INFORMATION';
+MESSAGE_BUNDLE['core.payment.receipt'] = 'Payment Receipt';
+MESSAGE_BUNDLE['core.payment.successful'] = 'Payment Successful';
+MESSAGE_BUNDLE['core.print.reciept'] = 'PRINT RECEIPT';
+MESSAGE_BUNDLE['core.payment.failed'] = 'Payment failed';
+MESSAGE_BUNDLE['core.print.invoice'] = 'PRINT INVOICE';
+MESSAGE_BUNDLE['core.retry.payment'] = 'RETRY PAYMENT';
+MESSAGE_BUNDLE['core.select.your.mobile.money.provider'] =
+  'Select Your mobile money provider';
+MESSAGE_BUNDLE['core.select.your.wallet.provider'] =
+  'Select Your wallet provider';
+MESSAGE_BUNDLE['core.select.your.bank'] = 'Select your bank';
+MESSAGE_BUNDLE['core.workin.progress'] = 'Work In Progress!!!';
+MESSAGE_BUNDLE['payroll.skillset.fieldmust.notbe.empty'] =
+  'Skill set field must not be empty!!!';
+MESSAGE_BUNDLE['payroll.youare.aboutto.forwardthe.kpito.anotheruser'] =
+  'You are about to Foward the Kpi to Another User. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.kindlystate.thereason.forsendingback'] =
+  'Kindly State the reason for sending back in the Comment Field';
+MESSAGE_BUNDLE['payroll.areyou.sureyou.wantto.removethe.selectedtask'] =
+  'Are You Sure You want to Remove the selected task(s)';
+MESSAGE_BUNDLE['payroll.youare.aboutto.sendthekip.backfor.modification'] =
+  'You are about to Send the Kpi Back for Modification. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.kindlyselect.anapproval'] =
+  'Kindly Select an Approval';
+MESSAGE_BUNDLE['payroll.youare.aboutto.approvethe.kpi.doyouwant.tocontinue'] =
+  'You are about to approve the Kpi. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.targetfieldmust.notbe.empty'] =
+  'Target field must not be empty!!!';
+MESSAGE_BUNDLE['payroll.viewtask.for.staff'] = 'View Task for Staff';
+MESSAGE_BUNDLE['payroll.training.and.developmentfield.mustnot.beempty'] =
+  'Training and Development field must not be empty!!';
+MESSAGE_BUNDLE['payroll.youare.aboutto.holdyour.apprasial'] =
+  'You are about to hold your appraisal. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.ensure.thatevery.section.israted'] =
+  'Ensure that Every Section is Rated';
+MESSAGE_BUNDLE['payroll.youare.aboutto.submityour.appraisal'] =
+  'You are about to submit your appraisal. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.please.entera.numericvalue.lessorequalto'] =
+  'Please enter a numeric value less or equal to';
+MESSAGE_BUNDLE['payroll.thesession.wouldtimeoutsoon.kindlysavescores'] =
+  'The Session Would time out soon,Kindly Save Scores and Comment by Clicking the Hold Button';
+MESSAGE_BUNDLE['payroll.you.have.confirmed'] = 'You have confirmed!';
+MESSAGE_BUNDLE['payroll.enter.coment'] = 'Enter Comment';
+MESSAGE_BUNDLE['payroll.remove'] = 'Remove';
+MESSAGE_BUNDLE['payroll.previous.comments'] = 'Previous Comments';
+MESSAGE_BUNDLE['payroll.selectnext.appraiser'] =
+  'Please select Next Appraiser';
+MESSAGE_BUNDLE['payroll.youareabout.tocloseappraiser'] =
+  'You are about to close the appraisal. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.loadingprevious.comments.pleasewait'] =
+  'Loading previous comments. Please wait...';
+MESSAGE_BUNDLE['payroll.problemencountered.gettingpreviouscomment'] =
+  'A problem was encountered while getting previous comment. Please try again or call Admin to sort you out.';
+MESSAGE_BUNDLE['payroll.sessionwould.timeoutsoon'] =
+  'The Session Would time out soon,Kindly Save Scores and Comment by Clicking the Hold Button';
+MESSAGE_BUNDLE['payroll.removingtraining.pleasewait'] =
+  'Removing Training. Please wait...';
+MESSAGE_BUNDLE['payroll.problemwasencountered.whileremoving'] =
+  'A problem was encountered while removing. Please try again or call Admin to sort you out.';
+MESSAGE_BUNDLE['payroll.removingtarget.pleasewait'] =
+  'Removing Target. Please wait...';
+MESSAGE_BUNDLE[
+  'payroll.youareabouttoapprove.theappraisal.doyouwanttocontinue'
+] = 'You are about to approve the appraisal. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.pleaseenteranumeric.valuelessorequalto'] =
+  'Please enter a numeric value less or equal to ';
+MESSAGE_BUNDLE['payroll.file.is.required'] = 'File is required!';
+MESSAGE_BUNDLE['payroll.aproblem.wasoccured.whilegetting.previouscomment'] =
+  'A problem was encountered while getting previous comment. Please try again or call Admin to sort you out.';
+MESSAGE_BUNDLE['payroll.loading.previous.comments'] =
+  'Loading previous comments. Please wait...';
+MESSAGE_BUNDLE[
+  'payroll.kindlystate.thereasonfor.sendingback.inthe.observationsection'
+] = 'Kindly State the reason for sending back in the Observation Section';
+MESSAGE_BUNDLE['payroll.youare.aboutto.approvethe.apprasial'] =
+  'You are about to approve the appraisal. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.please.selectnext.appraiser'] =
+  'Please select Next Appraiser';
+MESSAGE_BUNDLE['core.payment.in.favor.of.biller'] =
+  "This Payment in favour of <b>{{billername}}</b> can only be initated from Biller Website.  Please visit <a href='{{url}}' target='_blank'>{{url}}</a>";
+MESSAGE_BUNDLE['payroll.staff.already.applied.for.leave'] =
+  'Staff has already applied for leave allowance. ';
+MESSAGE_BUNDLE['payroll.pls.select.a.staff'] = 'Please select Staff Record';
+MESSAGE_BUNDLE['payroll.pls.select.a.relief.officer'] =
+  'Please select a relief Officer';
+MESSAGE_BUNDLE['payroll.leave.type.cannot.be.empty'] =
+  'Leave Type cannot be empty';
+MESSAGE_BUNDLE['payroll.startdate.cannot.be.empty'] =
+  'Start Date cannot be empty';
+MESSAGE_BUNDLE['payroll.enddate.cannot.be.empty'] =
+  'End Date cannot be empty';
+MESSAGE_BUNDLE['payroll.duration.cannot.be.empty'] =
+  'Duration cannot be empty';
+MESSAGE_BUNDLE['payroll.startdate.cannot.be.greater.than.enddate'] =
+  'Start Date cannot be greater than End Date';
+MESSAGE_BUNDLE['payroll.you.must.select.an.approver'] =
+  'You must select an Approver. ';
+MESSAGE_BUNDLE['payroll.leave.limit.is'] = ' Leave Limit is ';
+MESSAGE_BUNDLE['payroll.leave.taken.is'] = ' Leave Taken is ';
+MESSAGE_BUNDLE['payroll.leave.balance.is'] = ' Leave Balance is ';
+MESSAGE_BUNDLE['payroll.still.pending.leave'] =
+  'There are still some pending {0} Leave yet to be approved.';
+MESSAGE_BUNDLE['claims.detail.description.required'] =
+  'Detail Description is required';
+MESSAGE_BUNDLE['claims.reference.number.required'] =
+  'Reference Number is required';
+MESSAGE_BUNDLE['claims.type.required'] = 'Claim Type is required';
+MESSAGE_BUNDLE['claims.short.description.required'] =
+  'Short Description is required';
+MESSAGE_BUNDLE['claims.date.required'] = 'Claim Date is required';
+MESSAGE_BUNDLE['claims.approver.required'] = 'Approver is required';
+MESSAGE_BUNDLE['core.problem.processing'] =
+  'A problem was encountered while processing your request. Please contact the adminsitrator';
+MESSAGE_BUNDLE['core.process'] = 'Process';
+MESSAGE_BUNDLE['core.register.with.remita'] = 'Register With Remita';
+MESSAGE_BUNDLE['core.mandate.stop.are.you.sure'] =
+  'You are about to stop this mandate. Are you Sure?';
+MESSAGE_BUNDLE['core.select.type.of.tax'] = '[-Select Type of Tax-]';
+MESSAGE_BUNDLE['core.select.service.purpose'] =
+  '[-Select Service/Purpose-] ';
+MESSAGE_BUNDLE['core.amount.is'] = ', amount is ';
+MESSAGE_BUNDLE['core.letter.s'] = 's';
+MESSAGE_BUNDLE['core.could.lead.to.double.debit.credit'] =
+  ', This could lead to multiple Debits/Credits on this account. Do you wish to continue?';
+MESSAGE_BUNDLE['core.allowable.file..extension'] =
+  'Only files of extension  type(.csv,.txt,.enc,.xls,.xlsx) can be uploaded';
+MESSAGE_BUNDLE['core.no.file.selected'] =
+  'No File selected. Please select file of extension  type(.csv,.txt,.enc,.xls,.xlsx) ';
+MESSAGE_BUNDLE['core.please.select.a.category'] = 'Please select a Category';
+MESSAGE_BUNDLE['payroll.select.a.claim.to.start'] =
+  'Select a Claim Form to Start';
+MESSAGE_BUNDLE['payroll.claim.journal'] = 'Loading Claim Journal...';
+MESSAGE_BUNDLE['payroll.data'] = 'Data';
+MESSAGE_BUNDLE['core.mandate.stop.are.you.sure'] =
+  'You are about to stop this mandate. Are you Sure?';
+MESSAGE_BUNDLE['core.what.did.you.forget'] = 'Did you forget your';
+MESSAGE_BUNDLE['core.user.id.caps'] = 'USER ID';
+MESSAGE_BUNDLE['core.password.caps'] = 'PASSWORD';
+MESSAGE_BUNDLE['core.corporate.id'] = 'Corporate ID';
+MESSAGE_BUNDLE['core.enter.corp.id'] = 'Enter your corporate Id';
+MESSAGE_BUNDLE['core.user.id'] = 'User ID';
+MESSAGE_BUNDLE['core.enter.user.id'] = 'Enter your user id';
+MESSAGE_BUNDLE['core.registered.email'] = 'Registered Email Address';
+MESSAGE_BUNDLE['core.enter.your.email'] = 'Enter your email address';
+MESSAGE_BUNDLE['core.security.question'] = 'Security Question';
+MESSAGE_BUNDLE['core.enter.ans.here'] = 'Enter your answer here';
+MESSAGE_BUNDLE['please.select.pay.run'] = 'Please select Pay run';
+MESSAGE_BUNDLE['please.select.a.staff'] = 'Please select a staff';
+MESSAGE_BUNDLE['please.select.a.payrun'] = 'Please select a Payrun';
+MESSAGE_BUNDLE['core.personal.details'] = 'Personal Details';
+MESSAGE_BUNDLE['core.corp.org.details'] = 'Corporate Organization Details';
+MESSAGE_BUNDLE['core.corp.id'] = 'Corporate ID';
+MESSAGE_BUNDLE['core.cac'] = 'CAC Registration Number: RC(if available)';
+MESSAGE_BUNDLE['core.pencom.id'] = 'Pencom ID: RC(if available)';
+MESSAGE_BUNDLE['core.tax.no'] = 'Tax Number: RC(if available)';
+MESSAGE_BUNDLE['core.introduced'] =
+  'Please select who introduced you to this platform';
+MESSAGE_BUNDLE['core.corp.info'] = 'Corporate Information';
+MESSAGE_BUNDLE['core.corp.full.name'] = 'Corporate Full Name';
+MESSAGE_BUNDLE['core.type.institution'] = 'Type of Institution';
+MESSAGE_BUNDLE['core.subsidiary.of'] =
+  'This company is a subsidiary of (if applicable)';
+MESSAGE_BUNDLE['report.report.bracket'] = 'Report, (';
+MESSAGE_BUNDLE['report.already.exists.overwite.it'] =
+  '), already exists! Overwrite it?';
+MESSAGE_BUNDLE['report.reporthasno.description.continue'] =
+  'Report has no description. Continue?';
+MESSAGE_BUNDLE['report.selected.options'] = 'Selected Options';
+MESSAGE_BUNDLE['report.selected'] = 'Selected:';
+MESSAGE_BUNDLE['report.limit'] = 'Limit';
+MESSAGE_BUNDLE['report.maximumlimit.fordefined.itemis'] =
+  'Maximum limit for defined items is';
+MESSAGE_BUNDLE['report.youare.attemptingto.define'] =
+  'You are attempting to define';
+MESSAGE_BUNDLE['report.items'] = 'items';
+MESSAGE_BUNDLE['report.please.adjust.accordinlgy'] =
+  'Please adjust accordingly';
+MESSAGE_BUNDLE['report.please.entera.reportname'] =
+  'Please enter a report name';
+MESSAGE_BUNDLE['report.please.wait'] = 'Please wait...';
+MESSAGE_BUNDLE['report.userdefined.report'] = 'User Defined Report';
+MESSAGE_BUNDLE['report.name'] = 'name';
+MESSAGE_BUNDLE['report.successfully.deleted'] = 'successfully deleted';
+MESSAGE_BUNDLE['report.deleting.userdefined.report'] =
+  'Error deleting User Defined Report';
+MESSAGE_BUNDLE['report.selecta.report'] = 'Please select a report';
+MESSAGE_BUNDLE['report.selecta.filter.option'] = 'Select a Filter Option';
+MESSAGE_BUNDLE['report.selectedsmall'] = 'selected';
+MESSAGE_BUNDLE['report.claimsreport'] = 'Claims Report';
+MESSAGE_BUNDLE['report.claims.summary.report'] = 'Claims Summary Report';
+MESSAGE_BUNDLE['report.detailed.claims.report'] = 'Detailed Claims Report';
+MESSAGE_BUNDLE['report.unretired.advances.report'] =
+  'Unretired Advances Report';
+MESSAGE_BUNDLE['report.claim.journal.entries.report'] =
+  'Claim Journal Entries Report';
+MESSAGE_BUNDLE['report.select.acompany'] = 'Select a Company';
+MESSAGE_BUNDLE['payroll..claim.journal'] = 'Loading Claim Journal...';
+MESSAGE_BUNDLE['payroll.project.lead'] = 'Project Lead';
+MESSAGE_BUNDLE['payroll.supply.projectname'] =
+  'Please Supply the Project Name';
+MESSAGE_BUNDLE['payroll.select.startdate'] = 'Select Start Date';
+MESSAGE_BUNDLE['payroll.select.enddate'] = 'Select End Date';
+MESSAGE_BUNDLE['payroll.select.project.lead'] =
+  'Please Select The Project Lead';
+MESSAGE_BUNDLE['payroll.selectthe.approval'] = 'Please Select the Approval';
+MESSAGE_BUNDLE['payroll.select.periodfrom'] = 'Select Period From';
+MESSAGE_BUNDLE['payroll.select.periodto'] = 'Select Period To';
+MESSAGE_BUNDLE['payroll.select.anappriasal.form'] =
+  'Select an appriasal Form';
+MESSAGE_BUNDLE['payroll.select.aproject'] = 'Please select a project';
+MESSAGE_BUNDLE['payroll.onlyallowed.fileexttype'] =
+  'Only file of extension type(.csv) can be uploaded';
+MESSAGE_BUNDLE['payroll.staff.appraiserform'] = 'Staff Appraisal Form';
+MESSAGE_BUNDLE['payroll.browse.a.csv.file'] = 'Browse a CSV File!';
+MESSAGE_BUNDLE['payroll.seqno'] = 'Seq No';
+MESSAGE_BUNDLE['payroll.onlyfilesof.extensiontype.canbeuploaded'] =
+  'Only files of extension  type (.csv) can be uploaded';
+MESSAGE_BUNDLE['payroll.pocket.money'] = 'Pocket Money';
+MESSAGE_BUNDLE['payroll.pleaseenter.avalid.accountnumber'] =
+  'Please enter a Valid Account Number';
+MESSAGE_BUNDLE['payroll.pleaseonly.enternumericvalues'] =
+  'Please only enter numeric values';
+MESSAGE_BUNDLE['payroll.plus.service.charge.of'] =
+  'Plus Service Charge of N ';
+MESSAGE_BUNDLE['payroll.about.to.submit.transaction.request.to.proceed'] =
+  'You are about to submit this transaction.\n Do you want to proceed?';
+MESSAGE_BUNDLE['core.ensure.you.select.a.team'] =
+  'Please ensure you have selected a theme';
+MESSAGE_BUNDLE['core.enter.proper.validity.range'] =
+  'Please enter a proper validity day range';
+MESSAGE_BUNDLE['core.enter.proper.warning.day.period'] =
+  'Please enter a proper warning day period';
+MESSAGE_BUNDLE['core.enter.a.password.message'] =
+  'Please enter a password message';
+MESSAGE_BUNDLE['core.valid.time.required'] = 'Valid Time Required';
+MESSAGE_BUNDLE['payroll.enterfixed.monthlypay.item'] =
+  'Enter fixed monthly pay item';
+MESSAGE_BUNDLE['payroll.enter.deduction.description'] =
+  'Enter Deduction Description';
+MESSAGE_BUNDLE['payroll.enter.loan.description'] = 'Enter Loan Description';
+MESSAGE_BUNDLE['payroll.enter.calcitem'] =
+  'Kindly select a Calculation Item';
+MESSAGE_BUNDLE['payroll.display'] = 'Display';
+MESSAGE_BUNDLE['payroll.enter.calcitem'] =
+  'Kindly select a Calculation Item';
+MESSAGE_BUNDLE['payroll.enter.calctab'] = 'Calculation Table';
+MESSAGE_BUNDLE['payroll.loan.type'] = 'Loan Type';
+MESSAGE_BUNDLE['payroll.types'] = 'Types';
+MESSAGE_BUNDLE['payroll.how.to.pay'] = 'How To Pay';
+MESSAGE_BUNDLE['core.corpid.na'] = 'Corporate ID is not available for use';
+MESSAGE_BUNDLE['core.cac.required'] = 'CAC is required.';
+MESSAGE_BUNDLE['core.cac.na'] = 'CAC is not available for use';
+MESSAGE_BUNDLE['core.invalid.answer.one.last.try'] =
+  'Invalid Answer. You have one last try after which you will be logged out if unsuccessful. Choose carefully.';
+MESSAGE_BUNDLE['core.thanks.correct.response'] =
+  'Thank you for your correct response';
+MESSAGE_BUNDLE['core.invalid.answer.try.again'] =
+  'Invalid Answer. Please Try Again';
+MESSAGE_BUNDLE['core.email.sent.successfully'] = 'Email Sent Successfully';
+MESSAGE_BUNDLE['core.sms.sent.successfully'] = 'SMS Sent Successfully';
+MESSAGE_BUNDLE['core.email.cannot.be.sent'] =
+  'Email could not be sent to you. Please try again or Contact the administrator';
+MESSAGE_BUNDLE['core.sms.cannot.be.sent'] =
+  'Email could not be sent to you. Please try again or Contact the administrator';
+MESSAGE_BUNDLE['core.verify.correctness'] =
+  'Verifying correctness. Please wait...';
+MESSAGE_BUNDLE['core.error.valid.entry.code'] =
+  'Problem Validating Entry code. Please confirm you have entered the correct Entry code and Retry';
+MESSAGE_BUNDLE['core.unable.to.login'] =
+  'Unable to log in at this time. Please try again';
+MESSAGE_BUNDLE['core.problem.loggin.in'] =
+  'Problem logging you in, {{message}}';
+MESSAGE_BUNDLE['payroll.please.entera.validbank.accountnumber'] =
+  'Please enter a Valid Bank Account Number';
+MESSAGE_BUNDLE['payroll.please.only.enter.numeric.values'] =
+  'Please only enter numeric values';
+MESSAGE_BUNDLE['payroll.pleaselogin.asa.stafftokey.inupdatekpi'] =
+  'Please login as a Staff to Key In/Update KPI';
+MESSAGE_BUNDLE['payroll.pleaselogin.asa.stafftoenter.progressonkpi'] =
+  'Please login as a Staff to Enter Progress on  KPI';
+MESSAGE_BUNDLE['payroll.please.supply.the description'] =
+  'Please Supply the description';
+MESSAGE_BUNDLE['payroll.please.select.the.start.date'] =
+  'Please Select the Start Date';
+MESSAGE_BUNDLE['payroll.please.select.the.end.date'] =
+  'Please Select the End Date';
+MESSAGE_BUNDLE['payroll.kindly.select.thestaff'] = 'Kindly Select the Staff';
+MESSAGE_BUNDLE[
+  'payroll.you.are.about.toinitiate.apprasial.doyou.wantto.continue'
+] = 'You are about to initate appraisal. Do you want to continue?';
+MESSAGE_BUNDLE[
+  'payroll.you.didnot.pickany.staff.thiswill.closethe.apprasial.for.all.thestaff'
+] =
+  'You did not pick any staff, this will Close the Appraisal for all Staff. Do you want to continue?';
+MESSAGE_BUNDLE[
+  'payroll.youare.abouttoclose.appraisal.closed.appraisal.cannotbe.modified'
+] =
+  'You are about to close appraisal,Closed Appraisal Cannot be Modified. Do you want to continue?';
+MESSAGE_BUNDLE[
+  'payroll.you.are.about.tocancel.apprasial.cancelled.appraisal.cannotbe.modified'
+] =
+  'You are about to cancel appraisal,Cancelled Appraisal Cannot be Modified. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.please.supply.the description'] =
+  'You did not pick any staff, this will Cancel Appraisal for all Staff. Do you want to continue?';
+MESSAGE_BUNDLE[
+  'payroll.youhave.alreadyuploaded.thefile.areyousure.youwish.toupload.samefile'
+] =
+  'You have already uploaded the file. Are you sure you wish to Upload same File';
+MESSAGE_BUNDLE['payroll.onlyfiles.ofextension.typecsv.canbe.uploaded'] =
+  'Only files of extension  type(.csv) can be uploaded';
+MESSAGE_BUNDLE['payroll.please.wait.fileupload.inprogress'] =
+  'Please Wait. File Upload In Progress...';
+MESSAGE_BUNDLE[
+  'payroll.file.required.onlyfilesof.extension.typecsv.canbeuploaded'
+] = 'File required. Only files of extension  type(.csv) can be uploaded!';
+MESSAGE_BUNDLE['payroll.youare.aboutto.close.doyou.wantto.proceed'] =
+  'You are about to close Do you want to Proceed?';
+MESSAGE_BUNDLE['payroll.pleasewait.session.closingin.progress'] =
+  'Please Wait Session Closing In Progress...';
+MESSAGE_BUNDLE['core.cancel'] = 'Cancel';
+MESSAGE_BUNDLE[
+  'core.youhave.alreadyuploaded.thefile.areyousure.youwish.toupload.samefile'
+] =
+  'You have already uploaded the file. Are you sure you wish to Upload same File';
+MESSAGE_BUNDLE['core.onlyfiles.ofextension.typecsv.canbe.uploaded'] =
+  'Only files of extension  type(.csv) can be uploaded';
+MESSAGE_BUNDLE['core.please.wait.fileupload.inprogress'] =
+  'Please Wait. File Upload In Progress...';
+MESSAGE_BUNDLE[
+  'core.file.required.onlyfilesof.extension.typecsv.canbeuploaded'
+] = 'File required. Only files of extension  type(.csv) can be uploaded!';
+MESSAGE_BUNDLE['core.youare.aboutto.close.doyou.wantto.proceed'] =
+  'You are about to close Do you want to Proceed?';
+MESSAGE_BUNDLE['core.pleasewait.session.closingin.progress'] =
+  'Please Wait Session Closing In Progress...';
+MESSAGE_BUNDLE['core.submit.botton'] = 'Submit';
+MESSAGE_BUNDLE['payroll.deactivate'] = 'Deactivate';
+MESSAGE_BUNDLE['payroll.activate'] = 'Activate';
+MESSAGE_BUNDLE['payroll.download.application.form'] =
+  'Download Application Form';
+MESSAGE_BUNDLE['core.introducer.has.not.been.registered'] =
+  'Introducer has not been Registered.';
+MESSAGE_BUNDLE['core.uncheck.to.deactivate'] = 'uncheck to deactivate';
+MESSAGE_BUNDLE['payroll.success'] = 'SUCCESS';
+MESSAGE_BUNDLE['payroll.please.try.again'] = 'PLEASE TRY AGAIN!';
+MESSAGE_BUNDLE[
+  'payroll.problem.encountered.during.the.registration.please.ensure.connectivity'
+] = 'PROBLEM ENCOUNTERED DURING REGISTRATION.PLEASE ENSURE CONNECTIVITY!';
+MESSAGE_BUNDLE['payroll.user.exists.in.the.system.already'] =
+  'USER EXISTS IN THE SYSTEM ALREADY!';
+MESSAGE_BUNDLE['payroll.user.verification.failed'] =
+  'USER VERIFICATION FAILED!';
+MESSAGE_BUNDLE['payroll.user.verification.success'] =
+  'USER VERIFICATION SUCCESS!';
+MESSAGE_BUNDLE[
+  'payroll.problem.encountered.during.verification.please.ensure.connectivity'
+] = 'PROBLEM ENCOUNTERED DURING VERIFICATION.PLEASE ENSURE CONNECTIVITY!';
+MESSAGE_BUNDLE['core.loading.user.pls.wait'] =
+  'Loading users for <strong> {{label}}</strong>. Please wait...';
+MESSAGE_BUNDLE['core.enter.phone.number'] = 'Please enter a Phone Number';
+MESSAGE_BUNDLE['core.enter.surname'] = 'Please enter a Surname';
+MESSAGE_BUNDLE['core.enter.first.name'] = 'Please enter a First Name';
+MESSAGE_BUNDLE['core.updating.user.detail.pls wait'] =
+  'Updating User Details, Please Wait...';
+MESSAGE_BUNDLE['core.loading.userm.imfo'] =
+  'Loading user details. Please wait...';
+MESSAGE_BUNDLE['core.enter.valid.email.address'] =
+  'Please enter a <b>Valid</b> Email Address';
+MESSAGE_BUNDLE['core.loading.user.details.pls.wait'] =
+  'Loading user details. Please wait...';
+MESSAGE_BUNDLE['core.problem.occured.while.loading.user'] =
+  'a problem occurred while loading user details';
+MESSAGE_BUNDLE['core.loading.setup.page.pls.wait'] =
+  'Loading setup page. Please wait...';
+MESSAGE_BUNDLE['core.loading.upload.page.pls.wait'] =
+  'Loading upload page. Please wait...';
+MESSAGE_BUNDLE['core.loading.update.page.pls.wait'] =
+  'Loading setup page. Please wait...';
+MESSAGE_BUNDLE['core.currently.undergoing.amendment'] =
+  'This branch is currently undergoing amendment(s). You will not be able to make modifications until the oustanding amendment(s) is/are approved.';
+MESSAGE_BUNDLE['core.add.new.user'] = 'Add New User';
+MESSAGE_BUNDLE['core.pls.enter.user.email'] =
+  'Please enter a user email address';
+MESSAGE_BUNDLE['core.pls.enter.a.mobile.number'] =
+  'Please enter a mobile number';
+MESSAGE_BUNDLE['core.atleast.one.user.must.exist'] =
+  'At least one user must exist at this level. Cannot remove at this time.';
+MESSAGE_BUNDLE['core.about.to.remove.user'] =
+  'You are about to remove {{ username}}. Do you want to continue?';
+MESSAGE_BUNDLE['core.pls.enter.staff.id'] = 'Please enter staff id/username';
+MESSAGE_BUNDLE['core.username.not.available'] =
+  'Username not available for use';
+MESSAGE_BUNDLE['core.validating.username.pls.wait'] =
+  ' Validating username. Please wait...';
+MESSAGE_BUNDLE['core.user.cannot.be.addedd.to.branch'] =
+  'This New User Cannot Be Immediately Added To The Branch. Please Close this Window and Re-try or contact Remita Support For Assistance.';
+MESSAGE_BUNDLE['core.validating.email.pls.wait'] =
+  'Validating email. Please wait...';
+MESSAGE_BUNDLE['core.validating.phone.pls.wait'] =
+  'Validating phone. Please wait...';
+MESSAGE_BUNDLE['core.email.address.not.available'] =
+  'Email address is not available for use';
+MESSAGE_BUNDLE['core.phone.number.not.available'] =
+  'Phone number is not available for use';
+MESSAGE_BUNDLE['core.email.cannot.be.validated'] =
+  'Email cannot be validated. please try again';
+MESSAGE_BUNDLE['core.phone.number.cannot.be.validated'] =
+  'Phone number cannot be validated. please try again';
+MESSAGE_BUNDLE['core.pls.enter.branch.code'] = 'please enter branch code';
+MESSAGE_BUNDLE['core.branch.code.already.exist'] =
+  'the branch code entered already exists';
+MESSAGE_BUNDLE['core.enter.valid.digit.for.branch.code'] =
+  'enter valid digits for branch code';
+MESSAGE_BUNDLE['core.total.digit.equal'] =
+  'the total number of digits should equal';
+MESSAGE_BUNDLE['core.pls.enter.branch.name'] = 'please enter branch name';
+MESSAGE_BUNDLE['core.pls.enter.income.account'] =
+  'please enter an income account number';
+MESSAGE_BUNDLE['core.enter.valid.account'] = 'enter a valid account number';
+MESSAGE_BUNDLE['core.unavailable.account.for.user'] =
+  'The account number entered is unavailable for use. Please contact support';
+MESSAGE_BUNDLE['core.pls.enter.float.account.number'] =
+  'please enter a float account number';
+MESSAGE_BUNDLE['core.ascending.limit.value.required'] =
+  'Ascending Limit Values Required';
+MESSAGE_BUNDLE['core.no.sharing.account.number'] =
+  'no sharing account number<br/> with branch income account';
+MESSAGE_BUNDLE['core.pls.select.auth.type'] =
+  'please select authentication type';
+MESSAGE_BUNDLE['core.account.number.required'] = 'account number required';
+MESSAGE_BUNDLE['core.pls.select.teller'] = 'please select Teller';
+MESSAGE_BUNDLE['core.pls.select.approver'] = 'please select Approver';
+MESSAGE_BUNDLE['core.searching.for.existing.branch'] =
+  'searching for {{userInfo}} in existing branches, please wait...';
+MESSAGE_BUNDLE['core.only.approver.in.the.branch'] =
+  ' is currently an only approver in a level in {{shortname}} Branch and so cannot be used.';
+MESSAGE_BUNDLE['core.has.transaction.pending'] =
+  ' has transactions pending and so cannot be moved at this time';
+MESSAGE_BUNDLE['core.currencly.belong.need.to.transfer'] =
+  ' currently belongs in {{shortname}} Branch.\nSelecting him implies a transfer to this branch. Do you want to continue?';
+MESSAGE_BUNDLE['core.ensure.all.teller.details.are.entered'] =
+  'Please ensure all teller details are entered before adding a new one.';
+MESSAGE_BUNDLE['core.problem.encountered.whole.searching'] =
+  "a problem was encountered while searching for user's availability in existing branches";
+MESSAGE_BUNDLE['core.pls.ensure.all.approver.details.are.entered'] =
+  'Please ensure all approver details are entered before adding a new one.';
+MESSAGE_BUNDLE['core.all.records.will.reject'] =
+  'All records in this batch will be rejected';
+MESSAGE_BUNDLE['core.invalid.answer.one.last'] =
+  'Invalid Answer. You have one last try after which you will be logged out if unsuccessful. Choose carefully.';
+MESSAGE_BUNDLE['core.correct.response'] =
+  'Thank you for your correct response';
+MESSAGE_BUNDLE['core.invalid.ans.try'] = 'Invalid Answer. Please Try Again';
+MESSAGE_BUNDLE['core.verify.correctness.please.wait'] =
+  'Verifying correctness. Please wait...';
+MESSAGE_BUNDLE['core.confirm.code.sent'] =
+  'Confirmation Code Sent Successfully';
+MESSAGE_BUNDLE['core.confirm.code.sent.ensure.phone.on'] =
+  'Confirmation Code Sent Successfully. Please ensure your Phone is switched on.';
+MESSAGE_BUNDLE['core.confirm.code.not.sent.ensure.phone.off.retry'] =
+  'Confirmation Code could not be sent to you. Please ensure you phone is switched on and Retry.';
+MESSAGE_BUNDLE['core.problem.validating.code'] =
+  'Problem Validating Confirmation Code. Please contact the administrator';
+MESSAGE_BUNDLE['core.sending.confirm.code.please.wait'] =
+  'Sending Confirmation code. Please wait...';
+MESSAGE_BUNDLE['core.load.branch.detail'] =
+  'Loading details for Branch: {{label}}. Please wait...';
+MESSAGE_BUNDLE['core.base.destination.currency.same'] =
+  'The Base Currency and the Destination<br/> Currency must not be the same';
+MESSAGE_BUNDLE['core.uploads'] = 'Uploads';
+MESSAGE_BUNDLE['core.events'] = 'Events';
+MESSAGE_BUNDLE['core.inbox'] = 'Inbox';
+MESSAGE_BUNDLE['core.messagebody.required'] = 'Message Body is required';
+MESSAGE_BUNDLE['core.please.enter.10.digits'] = 'Please enter 10 digits';
+MESSAGE_BUNDLE['core.enter.amount.to.be.paid'] =
+  'Enter the amount to be paid';
+MESSAGE_BUNDLE['core.reenter.same.amount.as.above'] =
+  'Re-enter the same amount to be paid as above';
+MESSAGE_BUNDLE['core.standing.order.pagetitle'] =
+  'Setup Standing Order for Recurring Payments To Vendors  and Suppliers';
+MESSAGE_BUNDLE['core.create.mandate'] = 'Create Mandate';
+MESSAGE_BUNDLE['core.about.to.stop.mandate'] =
+  'You are about to stop this mandate. Are you Sure?';
+MESSAGE_BUNDLE['core.file.required'] = 'File required!';
+MESSAGE_BUNDLE['core.upload.path.incorrect'] = 'Upload Path is not correct!';
+MESSAGE_BUNDLE['core.problem.validating.code'] =
+  'Problem Validating Confirmation Code. Please contact the administrator';
+MESSAGE_BUNDLE['core.confirm.code.to.phone'] =
+  "A Confirmation Code has been sent to your Phone <span class='auth-phone-number'></span>.<br /> <br />";
+MESSAGE_BUNDLE['core.confirm.code.to.email'] =
+  'A Confirmation Code has been sent to your registered email.<br/>';
+MESSAGE_BUNDLE['core.dan.to.email'] =
+  'A DAN Challenge has been sent to your registered email.<br/>';
+MESSAGE_BUNDLE['core.dan.to.sms'] =
+  "A DAN Challenge has been sent to your Phone <span class='auth-phone-number'></span>.<br /> <br />";
+MESSAGE_BUNDLE['core.enter.txn.conrim.code'] =
+  'Enter Transaction Confirmation Code';
+MESSAGE_BUNDLE['core.challenge.answer'] = 'Enter Challenge Answer';
+MESSAGE_BUNDLE['core.send.confirmation.please.wait'] =
+  'Sending Confirmation code. Please wait...';
+MESSAGE_BUNDLE['core.generate.rrr'] =
+  'Generate Remita Retrival Reference(RRR)';
+MESSAGE_BUNDLE['core.employer.tin'] = 'Employer TIN';
+MESSAGE_BUNDLE['core.employe.name'] = 'Employer Name';
+MESSAGE_BUNDLE['core.employer.code'] = 'Employer Code';
+MESSAGE_BUNDLE['core.continue'] = 'Continue';
+MESSAGE_BUNDLE['core.enter.digit'] = 'Please enter 10 digits';
+MESSAGE_BUNDLE['core.amount.paid'] = 'Enter the amount to be paid';
+MESSAGE_BUNDLE['core.reenter.amount'] =
+  'Re-enter the same amount to be paid as above';
+MESSAGE_BUNDLE['core.vendors'] = 'Upload Payment to Vendors and Suppliers';
+MESSAGE_BUNDLE['core.pay.salary'] = 'Pay Salaries';
+MESSAGE_BUNDLE['core.pay.billers'] = 'Pay Registered Remita Billers';
+MESSAGE_BUNDLE['core.pay.pension'] = 'Pay Pension';
+MESSAGE_BUNDLE['core.pay.nsitf'] = 'Pay NSITF';
+MESSAGE_BUNDLE['core.duplicate.card'] =
+  'Duplicate Card Numbers. Please enter unique card numbers';
+MESSAGE_BUNDLE['core.pick.logo'] = 'Pick Logo';
+MESSAGE_BUNDLE['core.upload.logo'] = 'Upload';
+MESSAGE_BUNDLE['core.image.required'] = 'Image is Required!';
+MESSAGE_BUNDLE['core.image.lessthan.500'] =
+  'Image size must be less than 500KB!';
+MESSAGE_BUNDLE['core.image.jpg'] =
+  'You can only Upload JPG, PNG or GIF Image!';
+MESSAGE_BUNDLE['core.adding.multiple.ip.address'] =
+  'You cannot add more than {{ipAddress}} IP addresses';
+MESSAGE_BUNDLE['core.no'] = 'NO';
+MESSAGE_BUNDLE['core.yes'] = 'YES';
+MESSAGE_BUNDLE['core.loading.session.transaction.pls.wait'] =
+  'Loading Session Transaction Details. Please Wait...';
+MESSAGE_BUNDLE['core.downloading.pls.wait'] =
+  'Downloading. After the download, Click on any menu to reload the page. Please Wait...';
+MESSAGE_BUNDLE['core.select.atleast.one.item'] =
+  'ERROR! Please select at least one Item';
+MESSAGE_BUNDLE['core.pls.ensure.one.record.is.selected'] =
+  'Please ensure at least one record is selected for download';
+MESSAGE_BUNDLE['core.pls.ensure.one.record.is.selected.for.feedback'] =
+  'Please ensure at least one record is selected for feedback';
+MESSAGE_BUNDLE['core.pls.enter.valid.reference.number'] =
+  'Please enter a valid Transfer Reference Number.\n It is either you enter an empty space or your Transfer Reference Number starts with an empty space';
+MESSAGE_BUNDLE['core.pls.enter.reference.number'] =
+  'Please enter Transfer Reference Number';
+MESSAGE_BUNDLE['core.pls.enter.select.valid.transfer.date'] =
+  'Please Select Valid Transfer Date';
+MESSAGE_BUNDLE['core.pls.you.need.to.register.remita.card'] =
+  'Please You need to Register Remita Card On Your Remita Transit Account To Use Interswitch Transfer Medium Option';
+MESSAGE_BUNDLE['core.approve.reject.branch.collection'] =
+  'Are you sure you want to approve/reject the Branch Collection?';
+MESSAGE_BUNDLE['core.noting.selected'] = 'Noting is selected.';
+MESSAGE_BUNDLE['payroll.shortname'] = 'Short name';
+MESSAGE_BUNDLE['payroll.you.have.already.set.all.available.branches.up'] =
+  'You Have Already Set All Available Branches Up';
+MESSAGE_BUNDLE['payroll.Please.ensure.all.previous.amounts.are.filled'] =
+  'Please ensure all previous amounts are filled before adding a new limit';
+MESSAGE_BUNDLE['core.please.enter.a.group.description'] =
+  'Please enter a group description';
+MESSAGE_BUNDLE['core.processing.your.cancel.request'] =
+  'Processing your cancel request. Please wait....';
+MESSAGE_BUNDLE['core.processing.your.submit.request'] =
+  'Processing your submit request. Please wait....';
+MESSAGE_BUNDLE['payroll.selectcompany.tosetup'] = 'Select Company to setup';
+MESSAGE_BUNDLE['payroll.cannotentera.percentvaluegreater.than100'] =
+  'you cannot enter a percent value greater than 100!';
+MESSAGE_BUNDLE['payroll.returningvalue.to100'] = 'Returning value to 100';
+MESSAGE_BUNDLE['payroll.enterspecial.allowance'] = 'Enter special Allowance';
+MESSAGE_BUNDLE['payroll.yourprefered.nameisempty'] =
+  'Your Prefered name is empty';
+MESSAGE_BUNDLE['payroll.additional.analysis'] = 'Additional Analysis';
+MESSAGE_BUNDLE['payroll.paygroupdescription.isarequiredfield'] =
+  'Paygroup Description is a required field!';
+MESSAGE_BUNDLE['payroll.refreshingexisting.paygroupslist'] =
+  'Refreshing existing paygroups list...';
+MESSAGE_BUNDLE['payroll.loading.paygroupform'] = 'Loading Paygroup form...';
+MESSAGE_BUNDLE['report.error.deleting.user.defined.report'] =
+  'Error deleting User Defined Report.';
+MESSAGE_BUNDLE['report.retiree.user.defined.report'] =
+  'Retiree User Defined Report';
+MESSAGE_BUNDLE['report.succesfully.deleted'] = 'successfully deleted.';
+MESSAGE_BUNDLE['payroll.please.select.an.operation'] =
+  'Please Select an  operation';
+MESSAGE_BUNDLE['payroll.please.select.pay.item.or.enter.a.number'] =
+  'Please Select Pay Item or Enter a number';
+MESSAGE_BUNDLE['core.confirm.txn'] = 'Confirm Transaction';
+MESSAGE_BUNDLE['core.thousand'] = 'Thousand';
+MESSAGE_BUNDLE['core.million'] = 'Million';
+MESSAGE_BUNDLE['core.billion'] = 'Billion';
+MESSAGE_BUNDLE['core.trillion'] = 'Trillion';
+MESSAGE_BUNDLE['core.zero'] = 'Zero';
+MESSAGE_BUNDLE['core.one'] = 'One';
+MESSAGE_BUNDLE['core.two'] = 'Two';
+MESSAGE_BUNDLE['core.three'] = 'Three';
+MESSAGE_BUNDLE['core.four'] = 'Four';
+MESSAGE_BUNDLE['core.five'] = 'five';
+MESSAGE_BUNDLE['core.six'] = 'six';
+MESSAGE_BUNDLE['core.seven'] = 'seven';
+MESSAGE_BUNDLE['core.eight'] = 'Eight';
+MESSAGE_BUNDLE['core.nine'] = 'Nine';
+MESSAGE_BUNDLE['core.ten'] = 'Ten';
+MESSAGE_BUNDLE['core.eleven'] = 'Eleven';
+MESSAGE_BUNDLE['core.twelve'] = 'Twelve';
+MESSAGE_BUNDLE['core.thirteen'] = 'Thirteen';
+MESSAGE_BUNDLE['core.fourteen'] = 'Fourteen';
+MESSAGE_BUNDLE['core.fifteen'] = 'Fifteen';
+MESSAGE_BUNDLE['core.sixteen'] = 'Sixteen';
+MESSAGE_BUNDLE['core.seventeen'] = 'Seventeen';
+MESSAGE_BUNDLE['core.eighteen'] = 'Eighteen';
+MESSAGE_BUNDLE['core.nineteen'] = 'Nineteen';
+MESSAGE_BUNDLE['core.twenty'] = 'Twenty';
+MESSAGE_BUNDLE['core.thirty'] = 'Thirty';
+MESSAGE_BUNDLE['core.fourty'] = 'Fourty';
+MESSAGE_BUNDLE['core.fifty'] = 'Fifty';
+MESSAGE_BUNDLE['core.sixty'] = 'Sixty';
+MESSAGE_BUNDLE['core.seventy'] = 'Seventy';
+MESSAGE_BUNDLE['core.eighty'] = 'Eighty';
+MESSAGE_BUNDLE['core.ninety'] = 'Ninety';
+MESSAGE_BUNDLE['core.hundred'] = 'Hundred ';
+MESSAGE_BUNDLE['core.only'] = ' Only ';
+MESSAGE_BUNDLE['core.comma.and'] = ' , And ';
+MESSAGE_BUNDLE['core.and'] = 'And ';
+MESSAGE_BUNDLE['core.not.a.number'] = 'not a number ';
+MESSAGE_BUNDLE['core.too.big'] = 'too big';
+MESSAGE_BUNDLE['core.view.payment.details'] = 'View Payment Details';
+MESSAGE_BUNDLE['core.hide.payment.details'] = 'Hide Payment Details';
+MESSAGE_BUNDLE['core.rrr.generated.successful'] =
+  'RRR generated successfully';
+MESSAGE_BUNDLE['core.unpaid.transaction'] =
+  'Based on your feedback of unpayable transactions in session {{sessionNuumber}}, you need return the sum of N {{amount}}  to the sending bank(s).\n Do you want to Proceed? ';
+MESSAGE_BUNDLE['core.invalid.phone.number'] = 'Invalid Phone Number';
+MESSAGE_BUNDLE['core.proceed.to.payment.gateway.pls.wait'] =
+  'Proceeding to Payment Gateway. Please wait...';
+MESSAGE_BUNDLE['core.process.payment'] = 'Process Payment';
+MESSAGE_BUNDLE['core.type.retrieval.ref.if.available'] =
+  'Type Retrieval Ref. if available...';
+MESSAGE_BUNDLE['core.processing.selected.mandate'] =
+  'Processing<br>selected Mandate';
+MESSAGE_BUNDLE['core.searching.for.mandate'] = 'Searching for mandate...';
+MESSAGE_BUNDLE['core.mandate.not.found.loading.new.mandate'] =
+  'Mandate not found, loading new mandate form creation page';
+MESSAGE_BUNDLE['core.mandate.is.already.active'] =
+  'Mandate is already Active and so not available to be acted on.<br/>Please reconfirm the Remita Retrieval Reference';
+MESSAGE_BUNDLE['core.mandate.not.available.to.be.acted.on'] =
+  'Mandate not available to be acted on.<br/>Please reconfirm the Remita Retrieval Reference';
+MESSAGE_BUNDLE['core.surname.is.required'] = 'Surname is Required!!!';
+MESSAGE_BUNDLE['core.firstname.is.required'] = 'First Name is Required!!!';
+MESSAGE_BUNDLE['core.cannot.receive.real.time.online.payments'] =
+  'cannot recieve Real-time Online payments.';
+MESSAGE_BUNDLE['core.do.you.wish.to.continue'] = 'Do you wish to continue?';
+MESSAGE_BUNDLE['core.account.no.is.too.long.typical'] =
+  'Your Account Number is too long. Typical ';
+MESSAGE_BUNDLE['core.account.numbers.have.at.most'] =
+  'Account Numbers have at most ';
+MESSAGE_BUNDLE['core.digits'] = 'Digits.';
+MESSAGE_BUNDLE['core.remove.branch.code.from.account.number'] =
+  'Hint: Remove Branch code from Account Number.';
+MESSAGE_BUNDLE['core.your.account.no.too.short'] =
+  ' Your Account Number is too short. Typical ';
+MESSAGE_BUNDLE['core.account.numbers.have.at.least'] =
+  ' Account Numbers have at least ';
+MESSAGE_BUNDLE['core.invalid.account.number.confirm.your.account.number'] =
+  ' Invalid Account Number, Confirm Your Account Number ';
+MESSAGE_BUNDLE['payroll.onlytransactionyou.havenotactedon.willbeapproved'] =
+  'Only transaction you have not acted on will be approved. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.onlytransactionnotyou.willbeapproved'] =
+  'Only transaction that does not belong to you would be rerouted. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.youhavenotentered.theselecteditem'] =
+  'You have not entered a rejection reason for the selected item';
+MESSAGE_BUNDLE['payroll.youhavenotentered.rejectionreasonsfor'] =
+  'You have not entered rejection reasons for';
+MESSAGE_BUNDLE['payroll.rejected.items'] = 'rejected items';
+MESSAGE_BUNDLE['payroll.problemfoundwhile.gatheringclaim.comments'] =
+  'Problem found while gathering claim comments';
+MESSAGE_BUNDLE['core.problemencountered.duringverification'] =
+  'Problem encountered during verification';
+MESSAGE_BUNDLE['core.pleaseensure.connectivity'] =
+  'Please ensure connectivity';
+MESSAGE_BUNDLE['core.onlythe.fingerregisteredby'] =
+  'Only the finger registered by';
+MESSAGE_BUNDLE['core.canaccess.thistransaction'] =
+  'can access this transaction';
+MESSAGE_BUNDLE['core.pleaseinsert.acorrectfinger'] =
+  'Please insert a correct finger';
+MESSAGE_BUNDLE['core.erroroccured.whileprocessing.yourrequest'] =
+  'An Error Occured while processing your Request';
+MESSAGE_BUNDLE['core.accesscode.hasbeengenerated.andmailed'] =
+  'Access Code Has been Generated and Mailed';
+MESSAGE_BUNDLE['core.accesscode.hasbeengenerated.andmailedto.bracket'] =
+  'Access Code Has been Generated and Mailed to (';
+MESSAGE_BUNDLE['core.bracket.close'] = ')';
+MESSAGE_BUNDLE['core.bracket.open'] = '(';
+MESSAGE_BUNDLE['core.resendingaccess.code.pleasewait'] =
+  'Resending Access Code. Please wait...';
+MESSAGE_BUNDLE['core.invalidaccess.code'] = 'Invalid Access Code';
+MESSAGE_BUNDLE['core.doyouwant.torejectthe.selectedtransactions.bracket'] =
+  'do you want to reject the selected transaction(s)';
+MESSAGE_BUNDLE['core.none'] = 'None';
+MESSAGE_BUNDLE['core.reject.colon'] = 'Reject:';
+MESSAGE_BUNDLE['core.approve.colon'] = 'Approve:';
+MESSAGE_BUNDLE['core.youareabout.tocarryout.thefollowing'] =
+  'You are about to carry out the following:';
+MESSAGE_BUNDLE['core.quickapproval.rejectwillnot.actondisabled'] =
+  'Please note that Quick Approval/Reject will not act on disabled';
+MESSAGE_BUNDLE['core.reject.cap'] = 'REJECT';
+MESSAGE_BUNDLE['core.approve.cap'] = 'APPROVE';
+MESSAGE_BUNDLE['core.radio.buttons'] = 'radio buttons.';
+MESSAGE_BUNDLE['core.pleaseensure.youhaveentered.avalidaccesscode'] =
+  'Please ensure you have entered a valid access code';
+MESSAGE_BUNDLE['core.pleaseensure.youhaveentered.anaccesscode'] =
+  'Please ensure you have entered an access code';
+MESSAGE_BUNDLE['core.validatingaccess.code.pleasewait'] =
+  'Validating access code. Please Wait...';
+MESSAGE_BUNDLE['core.yes.cap'] = 'YES';
+MESSAGE_BUNDLE['core.all.records.in.this.batch.will.be.rejected'] =
+  'All  records in this batch will be rejected';
+MESSAGE_BUNDLE['core.reject.upload.please.wait'] =
+  'REJECTING UPLOAD Please WAIT...';
+MESSAGE_BUNDLE['core.all.batch.reject'] =
+  'All  records in this batch will be rejected';
+MESSAGE_BUNDLE['core.invalid.reference.no'] = 'Invalid Reference Number';
+MESSAGE_BUNDLE['core.searching.rrr'] = 'Searching for RRR, please wait...';
+MESSAGE_BUNDLE['core.no.record.for.rrr'] =
+  'No record found for Reference Number';
+MESSAGE_BUNDLE['core.loading.ben'] =
+  'loading information details for beneficiary...';
+MESSAGE_BUNDLE['core.sub.total'] = 'Sub Total';
+MESSAGE_BUNDLE['core.sure.reject.txn'] =
+  'Are you sure you want to reject this transaction?';
+MESSAGE_BUNDLE['core.dynamic.authentication.number'] = 'Dynamic PIN';
+MESSAGE_BUNDLE['core.is.not.valid'] = 'is not valid';
+MESSAGE_BUNDLE['core.is.not.valid_numeric_only'] =
+  'is not valid - Numeric Input Only';
+MESSAGE_BUNDLE['core.invalid_mobile'] = 'Invalid Mobile Number';
+MESSAGE_BUNDLE['core.is.required'] = 'is Required!';
+MESSAGE_BUNDLE['core.has.special.characters'] = 'has Special Characters';
+MESSAGE_BUNDLE['core.remove.special.xters'] =
+  'Remove All special characters';
+MESSAGE_BUNDLE['core.please.enter.address'] =
+  'Please Enter your Email Address';
+MESSAGE_BUNDLE['core.invalid.email.id'] = 'Invalid E-mail ID';
+MESSAGE_BUNDLE['core.numeric.value'] = 'Enter A Numeric Value';
+MESSAGE_BUNDLE['core.numeric.value.for'] = 'Enter A Numeric Value For';
+MESSAGE_BUNDLE['core.file.used.before'] = 'The file has been used before!';
+MESSAGE_BUNDLE['core.description.max.limit'] =
+  'Description Entered has reached maximum limit.';
+MESSAGE_BUNDLE['core.enter.non.numeric'] = 'Enter Non Numeric Value';
+MESSAGE_BUNDLE['core.enter.alphanumeric'] =
+  'Enter Alphabets and(or) Numeric Value';
+MESSAGE_BUNDLE['core.cannot.remove.last.row'] = 'cannot remove last row!';
+MESSAGE_BUNDLE['core.value.exceeds.100'] = 'Value exceedes the 100 Percent';
+MESSAGE_BUNDLE['core.value.must.not.be.less.than.0'] =
+  'Value must not be less than 0';
+MESSAGE_BUNDLE['core.please.wait.validate.acct'] =
+  'Please Wait while the System validate the Account Number';
+MESSAGE_BUNDLE['core.fill.all.required'] =
+  'Please fill all required fields (highlighted in red)';
+MESSAGE_BUNDLE['core.enter.email.in.the.right'] =
+  'Please enter email in the right format or leave field (in purple highlight) blank!';
+MESSAGE_BUNDLE['core.please.enter.website.addy'] =
+  'Please enter website address in the right format or leave field (in purple highlight) blank!';
+MESSAGE_BUNDLE['core.must.enter.lower.than.100'] =
+  'You must enter a value lower than 100 and higher than zero';
+MESSAGE_BUNDLE['core.cannot.be.zero.or.less'] = 'cannot be  zero or less';
+MESSAGE_BUNDLE['core.cannot.be.zero'] = 'cannot be  zero';
+MESSAGE_BUNDLE['core.acct.too.long'] =
+  'Your Account Number is too long. Typical';
+MESSAGE_BUNDLE['core.acct.too.short'] =
+  'Your Account Number is too Short. Typical';
+MESSAGE_BUNDLE['core.acct.most'] = 'Account Numbers have at most';
+MESSAGE_BUNDLE['core.digits'] = 'Digits';
+MESSAGE_BUNDLE['core.hint.remove.branch.code'] =
+  'Hint: Remove Branch code from Account Number.';
+MESSAGE_BUNDLE['core.error.closing.previous.session'] =
+  'A problem was encountered while closing your previous session. You might have to do this yourself';
+MESSAGE_BUNDLE['core.not.logged.out.of.previous.session'] =
+  'You have not logged out of your previous session. Do you want to close the session and open a new one?';
+MESSAGE_BUNDLE['core.loading.agents'] = 'Loading Agents. Please wait...';
+MESSAGE_BUNDLE['core.you.have.teller.transaction'] =
+  'You Have Teller Transaction(s) Currently Undergoing Amendment. The Approver(s) Have To Finalize The Transactions Before you Can Proceed.';
+MESSAGE_BUNDLE['core.the.selected.user'] = 'the selected user';
+MESSAGE_BUNDLE['core.about.to.remove.user.msg'] =
+  'You are about to remove {{username}}. Do you want to continue?';
+MESSAGE_BUNDLE['core.you.must.at.least.one.agent.setup'] =
+  'You must have at least one agent setup.';
+MESSAGE_BUNDLE['core.please.enter.a.valid.daily.maximum'] =
+  'Please enter a valid daily maximum';
+MESSAGE_BUNDLE['core.please.the.amount'] =
+  'Please the amount must be a valid number greater than {0}';
+MESSAGE_BUNDLE['core.this.new.user.cannot.be.added'] =
+  'This New User Cannot Be Immediately Added To The Branch. Please Close this Window and Re-try or contact Remita Support For Assistance.';
+MESSAGE_BUNDLE['core.please.select.a.teller'] = 'Please Select A Teller';
+MESSAGE_BUNDLE['core.loading.amount.for.selected.teller'] =
+  'Loading Amount for selected Teller...';
+MESSAGE_BUNDLE['core.the.limit.amount'] =
+  'The Limit amount value must greater than or equal to Amount collected';
+MESSAGE_BUNDLE['core.the.limit.amount.maximum'] =
+  'The Limit amount value must greater than or equal to Maximum Agent Limit setup';
+MESSAGE_BUNDLE['core.the.amount.must.greater.than.zero'] =
+  'The amount value must greater than 0';
+MESSAGE_BUNDLE['core.please.select.at.least.a.teller.for.confirmation'] =
+  'Please Select at least a Teller for Confirmation';
+MESSAGE_BUNDLE['core.repayment.amount.must.not.be.greater'] =
+  'Repayment Amount must not be greater than collected Amount';
+MESSAGE_BUNDLE['payroll.run'] = 'Run';
+MESSAGE_BUNDLE['core.search.for.mandate'] = 'Searching for mandate...';
+MESSAGE_BUNDLE['core.mandate.not.found.msg'] =
+  'Mandate not found, loading new mandate form creation page';
+MESSAGE_BUNDLE['core.loading.mandate.info'] = 'Loading mandate information';
+MESSAGE_BUNDLE['core.mandate.already.activated'] =
+  'Mandate is already Active and so not available to be acted on.<br/>Please reconfirm the Remita Retrieval Reference';
+MESSAGE_BUNDLE['core.mandate.not.available.tobe.acted.on'] =
+  'Mandate not available to be acted on.<br/>Please reconfirm the Remita Retrieval Reference';
+MESSAGE_BUNDLE['core.please.select.receiving.account'] =
+  'Please Select Recieving Account';
+MESSAGE_BUNDLE['core.cannot.be.empty'] = ' cannot be Empty.';
+MESSAGE_BUNDLE['core.field.must.not.be.empty'] = ' Field must not be Empty';
+MESSAGE_BUNDLE['core.amount.not.less.than.zero'] =
+  ' Amount cannot be less than or equeal Zero';
+MESSAGE_BUNDLE['core.receiving.account.required'] =
+  ' Receiving Account Number is Required';
+MESSAGE_BUNDLE['core.frequency.required'] = ' Frequency is required';
+MESSAGE_BUNDLE['core.day.required'] = ' Day is required';
+MESSAGE_BUNDLE['core.start.end.date.are.required'] =
+  ' Start and End Dates are required';
+MESSAGE_BUNDLE['core.start.date.geater.or.equal.today'] =
+  ' Start Date must be greater than or Equal to Today';
+MESSAGE_BUNDLE['core.end.date.geater.or.equal.today'] =
+  ' End Date must be greater than or Equal to Today';
+MESSAGE_BUNDLE['core.end.date.geater.than.start.date'] =
+  ' Start Date must not be Greater than End Date';
+MESSAGE_BUNDLE['core.employer.name'] = 'Employer Name';
+MESSAGE_BUNDLE['payroll.is.required'] = 'is required!';
+MESSAGE_BUNDLE['payroll.isnot.valid'] = 'is not valid';
+MESSAGE_BUNDLE['payroll.isnot.valid.numeric.inputonly'] =
+  'is not valid - Numeric Input Only';
+MESSAGE_BUNDLE['payroll.valid.mobile.number'] = 'Invalid Mobile Number';
+MESSAGE_BUNDLE['payroll.pleaseenter.youremailaddress'] =
+  'Please Enter your Email Address';
+MESSAGE_BUNDLE['payroll.hasspecial.characters'] = 'has Special Characters';
+MESSAGE_BUNDLE['payroll.removeall.special.characters'] =
+  'Remove All special characters';
+MESSAGE_BUNDLE['payroll.e.g'] = 'e.g';
+MESSAGE_BUNDLE['payroll.select'] = 'Select';
+MESSAGE_BUNDLE['payroll.cannot.bezero'] = 'cannot be zero';
+MESSAGE_BUNDLE['payroll.entera.numericvalue'] = 'Enter A Numeric Value';
+MESSAGE_BUNDLE['payroll.entera.numericvalue.for'] =
+  'Enter A Numeric Value For';
+MESSAGE_BUNDLE['payroll.filehasbeen.usedbefore'] =
+  'The file has been used before!';
+MESSAGE_BUNDLE['payroll.descriptionentered.hasreached.maximumlimit'] =
+  'Description Entered has reached maximum limit.';
+MESSAGE_BUNDLE['payroll.enternon.numericvalue'] = 'Enter Non Numeric Value';
+MESSAGE_BUNDLE['payroll.enteralphabets.andor.numericvalue'] =
+  'Enter Alphabets and(or) Numeric Value';
+MESSAGE_BUNDLE['payroll.valueexceedes.the100percent'] =
+  'Value exceedes the 100 Percent';
+MESSAGE_BUNDLE['payroll.valuemustnot.belessthan0'] =
+  'Value must not be less than 0';
+MESSAGE_BUNDLE['payroll.pleasewaitwhile.thesystemvalidate.theaccountnumber'] =
+  'Please Wait while the System validate the Account Number';
+MESSAGE_BUNDLE['payroll.youraccount.numberis.toolongTypical'] =
+  'Your Account Number is too long. Typical';
+MESSAGE_BUNDLE['payroll.youraccount.numberis.tooshortTypical'] =
+  'Your Account Number is too Short. Typical';
+MESSAGE_BUNDLE['payroll.accountnumbers.haveatmost'] =
+  ' Account Numbers have at most';
+MESSAGE_BUNDLE['payroll.digits'] = 'Digits';
+MESSAGE_BUNDLE['payroll.hint.removebranch.codefrom.accountnumber'] =
+  'Hint: Remove Branch code from Account Number';
+MESSAGE_BUNDLE['payroll.pleasefill.allrequiredfields.highlightedinred'] =
+  'Please fill all required fields (highlighted in red)!';
+MESSAGE_BUNDLE['payroll.pleaseenteremail.intherightformat.orleavefield'] =
+  'Please enter email in the right format or leave field (in purple highlight) blank!';
+MESSAGE_BUNDLE[
+  'payroll.pleaseenterwebsite.addressintherightformat.orleavefield'
+] =
+  'Please enter website address in the right format or leave field (in purple highlight) blank';
+MESSAGE_BUNDLE['payroll.youmustenter.avaluelowerthan100.andhigherthanzero'] =
+  'You must enter a value lower than 100 and higher than zero';
+MESSAGE_BUNDLE['payroll.cannotbe.zeroorless'] = 'cannot be  zero or less';
+MESSAGE_BUNDLE['core.you.have.not.selected.any.item.in.this.batch'] =
+  'You have not selected any item in this batch.';
+MESSAGE_BUNDLE['core.do.you.really.want.to.reject.all.the.records'] =
+  'Do you really want to reject ALL the records?';
+MESSAGE_BUNDLE['core.entire.batch.was.rejected'] =
+  'Entire Batch was Rejected.';
+MESSAGE_BUNDLE['payroll.isnot.valid'] = 'is not valid';
+MESSAGE_BUNDLE['payroll.enternon.numericvalue'] = 'Enter Non Numeric Value';
+MESSAGE_BUNDLE['payroll.enteralphabets.andor.numericvalue'] =
+  'Enter Alphabets and(or) Numeric Value';
+MESSAGE_BUNDLE['payroll.valueexceedes.the100percent'] =
+  'Value exceedes the 100 Percent';
+MESSAGE_BUNDLE['payroll.valuemustnot.belessthan0'] =
+  'Value must not be less than 0';
+MESSAGE_BUNDLE['payroll.pleasewaitwhile.thesystemvalidate.theaccountnumber'] =
+  'Please Wait while the System validate the Account Number';
+MESSAGE_BUNDLE['payroll.youraccount.numberis.toolongTypical'] =
+  'Your Account Number is too long. Typical';
+MESSAGE_BUNDLE['payroll.youraccount.numberis.tooshortTypical'] =
+  'Your Account Number is too Short. Typical';
+MESSAGE_BUNDLE['payroll.accountnumbers.haveatmost'] =
+  'Account Numbers have at most';
+MESSAGE_BUNDLE['payroll.digits'] = 'Digits';
+MESSAGE_BUNDLE['payroll.hint.removebranch.codefrom.accountnumber'] =
+  'Hint: Remove Branch code from Account Number';
+MESSAGE_BUNDLE['payroll.pleasefill.allrequiredfields.highlightedinred'] =
+  'Please fill all required fields (highlighted in red)!';
+MESSAGE_BUNDLE['payroll.pleaseenteremail.intherightformat.orleavefield'] =
+  'Please enter email in the right format or leave field (in purple highlight) blank!';
+MESSAGE_BUNDLE[
+  'payroll.pleaseenterwebsite.addressintherightformat.orleavefield'
+] =
+  'Please enter website address in the right format or leave field (in purple highlight) blank';
+MESSAGE_BUNDLE['payroll.youmustenter.avaluelowerthan100.andhigherthanzero'] =
+  'You must enter a value lower than 100 and higher than zero';
+MESSAGE_BUNDLE['payroll.cannotbe.zeroorless'] = 'cannot be  zero or less';
+MESSAGE_BUNDLE['payroll.no.value.selected.please.select.an.item'] =
+  'no value selected. Please Select an Item';
+MESSAGE_BUNDLE['core.all.unchecked.records.will.be.rejected'] =
+  'All unchecked records will be rejected';
+MESSAGE_BUNDLE['core.item.not.selected'] =
+  'You have not selected any item in this batch. \n Do you really want to reject ALL the records?';
+MESSAGE_BUNDLE['core.compare.with.is.blank.do.you.wish.to.continue'] =
+  'Compare with is Blank, Do you wish to continue';
+MESSAGE_BUNDLE['core.entire.batch.rejected'] = 'Entire Batch was Rejected.';
+MESSAGE_BUNDLE['core.click.here.to.setup.dan'] = 'Click here to setup DAN';
+MESSAGE_BUNDLE['core.approve.budget.beakdown'] =
+  'You are about to APPROVE modifications to the Budget Breakdown structure. Do you want to continue?';
+MESSAGE_BUNDLE['core.reject.budget.beakdown'] =
+  'You are about to REJECT modifications to the Budget Breakdown structure. Do you want to continue?';
+MESSAGE_BUNDLE[
+  'core.you.are.about.to.confirm.this.mobile.account.registration'
+] =
+  'You are about to Confirm this mobile account registration. Do you want to continue?';
+MESSAGE_BUNDLE[
+  'core.you.are.about.to.reject.this.mobile.account.registration'
+] =
+  'You are about to Reject this mobile account registration. Do you want to continue?';
+MESSAGE_BUNDLE['core.you.are.about.to.forward.this.remita.card.request.form'] =
+  'You Are About To Forward This Remita Registration Form To The Head Office. Do You Want To Continue?';
+MESSAGE_BUNDLE['core.you.are.sure.you.want.to.reject'] =
+  'Are You Sure, You Want To Reject This Application Form?';
+MESSAGE_BUNDLE['core.generated.on'] = 'Generated on';
+MESSAGE_BUNDLE['core.confirm.that.you.want.to.compare.with'] =
+  'Confirm that you want to compare with';
+MESSAGE_BUNDLE['core.batch.no.dash'] = '-Batch No:';
+MESSAGE_BUNDLE['core.only.files.of.typecvs.can.be.uploaded'] =
+  'Only files of type (.csv) can be uploaded!';
+MESSAGE_BUNDLE['core.at.least.one.approve.item.must.be.selected'] =
+  'At least one Approve Item must be selected';
+MESSAGE_BUNDLE[
+  'core.please.ensure.an.action.was.selected.for.every.modification'
+] = 'Please Ensure An Action was selected for every modification';
+MESSAGE_BUNDLE['core.please.select.an.action'] = 'Please Select an Action';
+MESSAGE_BUNDLE['core.problem.loading.record.list'] =
+  'Problem Loading Record List';
+MESSAGE_BUNDLE['core.searching.please.wait'] = 'Searching, Please wait...';
+MESSAGE_BUNDLE['core.all.records.will.be.rejected'] =
+  'All record(s) will be rejected';
+MESSAGE_BUNDLE['core.please.enter.a.valid.amount'] =
+  'Please enter a valid amount';
+MESSAGE_BUNDLE['core.please.enter.pan'] = 'Please enter PAN';
+MESSAGE_BUNDLE['core.please.enter.an.amount'] = 'Please enter an amount';
+MESSAGE_BUNDLE['core.invalid.remita.card.it.should.start.with'] =
+  'Invalid Remita Card! It should start with';
+MESSAGE_BUNDLE['payroll.card.has.not.been.registered'] =
+  'Card has not been Registered.';
+MESSAGE_BUNDLE['core.you.do.not.select.any.item.in.this.batch'] =
+  'You have not selected any item in this batch.';
+MESSAGE_BUNDLE['core.card.has.not.be.registered'] =
+  'Card has not been Registered.';
+MESSAGE_BUNDLE['core.please.select.a.source.for.the.cheques'] =
+  'Please select a source for the cheques';
+MESSAGE_BUNDLE['core.invalid.card.still.selected'] =
+  'Invalid Card Still Selected';
+MESSAGE_BUNDLE['core.you.have.not.selected.any.item.in.this.batch'] =
+  'You have not selected any item in this batch.  ';
+MESSAGE_BUNDLE['core.do.you.really.want.to.reject.all.the.records'] =
+  '  Do you really want to reject ALL the records?';
+MESSAGE_BUNDLE['core.please.enter.a.valid.number'] =
+  'Please enter a valid number';
+MESSAGE_BUNDLE['core.please.enter.a.default.rate'] =
+  'Please enter a default rate';
+MESSAGE_BUNDLE['core.loading.rates.setup.page'] = 'Loading rates setup page';
+MESSAGE_BUNDLE['core.error.saving.claims'] = 'Error Saving Claims';
+MESSAGE_BUNDLE['core.name.is.a.required.field'] = 'Name is a required field';
+MESSAGE_BUNDLE['core.please.ensure.at.least.one.record.is.selected'] =
+  'please ensure at least one record is selected';
+MESSAGE_BUNDLE['core.sure.to.delete.the.selected.claim.types'] =
+  'Are you sure you want to delete the selected Claim Type(s)';
+MESSAGE_BUNDLE['core.a.problem.was.encountered.while.saving.rates'] =
+  'a problem was encountered while saving rates';
+MESSAGE_BUNDLE['core.saving'] = 'Saving';
+MESSAGE_BUNDLE['core.pin.is.required'] = 'PIN is required.';
+MESSAGE_BUNDLE['core.validating.pin.please.wait'] =
+  'Validating PIN Please Wait....';
+MESSAGE_BUNDLE['core.incorrect.pin'] = 'INCORRECT PIN';
+MESSAGE_BUNDLE['core.validating.account.identification.code'] =
+  'Validating Account Identification Code';
+MESSAGE_BUNDLE['core.print.details'] = 'Print Details';
+MESSAGE_BUNDLE['core.incorrect.fingerprint'] = 'INCORRECT FINGER PRINT';
+MESSAGE_BUNDLE['core.fingerprint.ok'] = 'FINGER PRINT OK....';
+MESSAGE_BUNDLE['core.working.on.your.request.please.wait'] =
+  'Working on your Request...Please Wait';
+MESSAGE_BUNDLE['core.approved'] = 'Approved';
+MESSAGE_BUNDLE['core.rejected'] = 'Rejected';
+MESSAGE_BUNDLE['core.has.been.forwarded.to'] = 'Has Been Forwarded to ';
+MESSAGE_BUNDLE['core.for.approval'] = ' for Approval.';
+MESSAGE_BUNDLE['core.please.select.transactions.to.process'] =
+  'Please select transaction(s) to process';
+MESSAGE_BUNDLE['core.supply.challenge.answer'] = 'Please supply an answer';
+MESSAGE_BUNDLE['core.enter.numeric.value.amount.to.pay'] =
+  'Enter A Numeric Value For Amount To Pay';
+MESSAGE_BUNDLE['payroll.invalid.email.id'] = 'Invalid Email';
+MESSAGE_BUNDLE['remita.net'] = 'https://www..remita.net';
+MESSAGE_BUNDLE['core.captcha.do.not.match'] = 'Please check the captcha box';
+MESSAGE_BUNDLE['missing-input-secret'] = 'The secret parameter is missing.';
+MESSAGE_BUNDLE['invalid-input-secret'] =
+  'The secret parameter is invalid or malformed.';
+MESSAGE_BUNDLE['missing-input-response'] =
+  'The response parameter is missing.';
+MESSAGE_BUNDLE['invalid-input-response'] =
+  'The response parameter is invalid or malformed.';
+MESSAGE_BUNDLE['bad-request'] = 'The request is invalid or malformed.';
+MESSAGE_BUNDLE['maximum-debit-amount-per-transaction'] =
+  'Maximum Debit Amount per Transaction.';
+MESSAGE_BUNDLE['max-no-of-debits-in-a-calendar-month'] =
+  'Max. No of Debits in a Calendar Month.';
+MESSAGE_BUNDLE['total-payable'] = 'Total Payable';
+MESSAGE_BUNDLE['every'] = 'Every';
+MESSAGE_BUNDLE['payroll.please.select.suspension.to.process'] =
+  'Please select suspension(s) to process';
+MESSAGE_BUNDLE['payroll.sure.to.remove.selected.suspension'] =
+  'Are you sure you want to remove the selected Suspension?';
+MESSAGE_BUNDLE['core.error.unable.to.upload.files'] =
+  'ERROR: unable to upload files';
+MESSAGE_BUNDLE['core.error.upload.failed'] = 'Upload Failed';
+MESSAGE_BUNDLE['core.count'] = 'Count';
+MESSAGE_BUNDLE['core.please.select.service'] =
+  'Please Select Service/Purpose ';
+MESSAGE_BUNDLE['core.show.details'] = 'SHOW DETAILS';
+MESSAGE_BUNDLE['core.hide.details'] = 'HIDE DETAILS';
+MESSAGE_BUNDLE['core.proceed.to.internet.bank'] = 'Proceed to Internet Bank';
+MESSAGE_BUNDLE['core.wrong.value.provided'] =
+  'The Value you provided is wrong';
+MESSAGE_BUNDLE['core.please.select.one.item'] =
+  'Please select one item from the select list';
+MESSAGE_BUNDLE['core.problem.loading.banks'] =
+  'A problem was encountered while loading banks';
+MESSAGE_BUNDLE['core.amount.payable'] = 'Amount Payable';
+MESSAGE_BUNDLE['core.beneficiary'] = 'Beneficiary';
+MESSAGE_BUNDLE['core.join.the.big.league'] = 'Join the Big League';
+MESSAGE_BUNDLE['core.with.remita'] = 'with Remita';
+MESSAGE_BUNDLE['core.about.business'] = 'About the business';
+MESSAGE_BUNDLE['core.business.name'] = 'Business Name';
+MESSAGE_BUNDLE['core.business.url'] = 'Business URL';
+MESSAGE_BUNDLE['core.name'] = 'Name';
+MESSAGE_BUNDLE['core.position'] = 'Position';
+MESSAGE_BUNDLE['core.email'] = 'Email';
+MESSAGE_BUNDLE['core.phone.no'] = 'Phone Number';
+MESSAGE_BUNDLE['core.get.registered'] = 'Get Registered';
+MESSAGE_BUNDLE['core.default.success.message'] = 'Process Successful';
+MESSAGE_BUNDLE['core.default.error.message'] =
+  'A problem was encountered. Operation unsuccessful';
+MESSAGE_BUNDLE['core.invalid.file.uploaded'] = 'Upload not Successful';
+MESSAGE_BUNDLE['core.otp.request.successful'] = 'OTP Request Successful';
+MESSAGE_BUNDLE['core.no.otp'] = 'OTP Request Unsuccessful';
+MESSAGE_BUNDLE['core.invalid.otp'] = 'OTP Validation Unsuccessful';
+MESSAGE_BUNDLE['core.account.added.successfully'] =
+  'Account added successfully.';
+MESSAGE_BUNDLE['core.account.add.failed'] = 'Account addition failed.';
+MESSAGE_BUNDLE['core.click.home.in.five'] =
+  'Click here if Dashboard is not displayed in 5 seconds...';
+MESSAGE_BUNDLE['core.mandate.activated'] = 'Mandate Activated';
+MESSAGE_BUNDLE['core.invalid.payment.details'] = 'Invalid payment details';
+MESSAGE_BUNDLE['core.please.fill.the.amount.to.pay.field'] =
+  'Please fill the AMOUNT TO PAY Field';
+MESSAGE_BUNDLE['core.select.a.bank'] = 'Select A Bank';
+MESSAGE_BUNDLE['core.bank.account.number'] = 'Bank Account Number';
+MESSAGE_BUNDLE['core.loading.data'] = 'Loading data, Please wa it ...';
+MESSAGE_BUNDLE['core.this.RRR.has.been.processed'] =
+  'This RRR has been processed';
+MESSAGE_BUNDLE['core.this.mandate.rrr'] = 'This is a mandate RRR';
+MESSAGE_BUNDLE['core.einvoice.successfully.processed'] =
+  'Your E-Invoice  had been  processed successfully';
+MESSAGE_BUNDLE['core.invalid.CVV.number'] = 'Invalid CVV Number';
+MESSAGE_BUNDLE['core.card.is.expired'] =
+  'Invalid Card Details. Please check and re-enter to proceed.';
+MESSAGE_BUNDLE['core.following.entry.not.valid'] =
+  'The Following fields entry are not valid';
+MESSAGE_BUNDLE['core.please.complete.mandtory.field'] =
+  'Please complete all mandatory fields on the form';
+MESSAGE_BUNDLE['core.payment.invoice'] = 'Payment Invoice';
+MESSAGE_BUNDLE['report.select.summarize.by'] = 'Select Summarize by';
+MESSAGE_BUNDLE['report.select.transaction.date.from'] =
+  'Select Transaction Date From';
+MESSAGE_BUNDLE['report.select.transaction.date.to'] =
+  'Select Transaction Date To';
+MESSAGE_BUNDLE['report.please.enter.a.numeric.value.greater.than.0'] =
+  'Please enter a numeric value greater than 0';
+MESSAGE_BUNDLE['core.problem.registering'] =
+  'A Problem was encountered while completing the registration process. Please try again or contact an administrator';
+MESSAGE_BUNDLE['core.registration.error'] =
+  'Problems where encountered while completing your registration.';
+MESSAGE_BUNDLE['core.registration.error.title'] =
+  'Registration Unsuccessful';
+MESSAGE_BUNDLE['core.biller.category'] = 'Biller Category';
+MESSAGE_BUNDLE['core.problem.getting.account.details'] =
+  'Problem getting account details';
+MESSAGE_BUNDLE['core.account.added.successfully.pending.verification'] =
+  'Account added successfully. Next Stop, Verify Account';
+MESSAGE_BUNDLE['core.not.available'] = 'Not Available';
+MESSAGE_BUNDLE['core.must.select.update.options'] =
+  'You must have at least one record updated. Thank you';
+MESSAGE_BUNDLE['core.mobile.account.update.successful'] =
+  'Mobile Accounts updated successfully!';
+MESSAGE_BUNDLE['core.confirmed'] = 'Confirmed';
+MESSAGE_BUNDLE['core.suspect'] = 'Suspect';
+MESSAGE_BUNDLE['core.closed'] = 'Closed';
+MESSAGE_BUNDLE['core.confirmed.account'] = 'Confirmed. Good to go';
+MESSAGE_BUNDLE['core.suspect.account'] =
+  'Suspect. Further Investigation Required';
+MESSAGE_BUNDLE['core.deactivated.account'] = 'Deactivate and Blacklist';
+MESSAGE_BUNDLE['core.pending.account'] = 'Pending Confirmation';
+MESSAGE_BUNDLE['core.na'] = 'N/A';
+MESSAGE_BUNDLE['core.no.record'] = 'No records found.';
+MESSAGE_BUNDLE['core.user.blocked.successfully'] =
+  'User blocked successfully.';
+MESSAGE_BUNDLE['core.user.reset.successfully'] = 'User reset successfully.';
+MESSAGE_BUNDLE['core.reason.required'] = 'Reason required.';
+MESSAGE_BUNDLE['core.about.to.activate.device'] =
+  'You are about to activate this device';
+MESSAGE_BUNDLE['core.about.to.deactivate.device'] =
+  'You are about to deactivate this device';
+MESSAGE_BUNDLE['core.report.time'] = 'Report Time';
+MESSAGE_BUNDLE['core.batch.number'] = 'Batch Number';
+MESSAGE_BUNDLE['core.trans.ref'] = 'Transaction Ref';
+MESSAGE_BUNDLE['core.benefiicary.details'] = 'Beneficiary Details';
+MESSAGE_BUNDLE['core.bank'] = 'Bank';
+MESSAGE_BUNDLE['core.branch'] = 'Branch';
+MESSAGE_BUNDLE['core.sort.code'] = 'Sort Code';
+MESSAGE_BUNDLE['core.account.number'] = 'Account Number';
+MESSAGE_BUNDLE['core.brief.description'] = 'Brief Description';
+MESSAGE_BUNDLE['core.detailed.description'] = 'Detailed Description';
+MESSAGE_BUNDLE['core.txn.time'] = 'Transaction Time';
+MESSAGE_BUNDLE['core.amount'] = 'Amount';
+MESSAGE_BUNDLE['core.current.status'] = 'Current Status';
+MESSAGE_BUNDLE['core.transaction.event'] = 'Transaction Event';
+MESSAGE_BUNDLE['core.reject'] = 'Reject';
+MESSAGE_BUNDLE['core.paid'] = 'Paid';
+MESSAGE_BUNDLE['core.fafi'] = 'FAFI';
+MESSAGE_BUNDLE['core.date.time'] = 'Date Time';
+MESSAGE_BUNDLE['core.devices'] = 'Devices';
+MESSAGE_BUNDLE['core.transaction.history'] = 'Transaction History';
+MESSAGE_BUNDLE['core.currency.shortcode'] = 'ng';
+MESSAGE_BUNDLE['core.currency.code'] = 'NGN';
+MESSAGE_BUNDLE['core.sn'] = 'S/N';
+MESSAGE_BUNDLE['core.amount'] = 'Amount';
+MESSAGE_BUNDLE['core.feedbackdate'] = 'Feedback date';
+MESSAGE_BUNDLE['core.transactiondate'] = 'Transaction date';
+MESSAGE_BUNDLE['core.sessionno'] = 'Session No';
+MESSAGE_BUNDLE['core.transactionref'] = 'Transaction Ref';
+MESSAGE_BUNDLE['core.narration'] = 'Narration';
+MESSAGE_BUNDLE['core.no.transaction.history.data.found'] =
+  'No Transaction History data found at this time.';
+MESSAGE_BUNDLE['core.invalid'] = 'Invalid';
+MESSAGE_BUNDLE['core.operation.successful'] = 'Operation Successful';
+MESSAGE_BUNDLE['core.please.select.mandate.to.process'] =
+  'Please Select Mandate to process';
+MESSAGE_BUNDLE['core.company'] = 'Company';
+MESSAGE_BUNDLE['core.click.redirection.in.five'] =
+  'Click here if you are not redirected in 5 seconds...';
+MESSAGE_BUNDLE['core.corporatename.not.available'] =
+  'Corporate Name is not available for use';
+MESSAGE_BUNDLE['core.select.type.of.trxn'] = 'Type of Transaction';
+MESSAGE_BUNDLE['core.select.type.of.pension'] = 'Select Type Of Pension';
+MESSAGE_BUNDLE['core.type.of.pension'] = 'Type Of Pension';
+MESSAGE_BUNDLE['core.select.type.of.oagf'] = 'Select Type Of OAGF';
+MESSAGE_BUNDLE['core.type.of.oagf'] = 'Type Of OAGF';
+MESSAGE_BUNDLE['core.enter.rrr'] = 'Please enter RRR';
+MESSAGE_BUNDLE['core.uploadpath.isnotcorrect'] =
+  'Upload Path is not correct!';
+MESSAGE_BUNDLE['core.lga'] = 'LGA';
+MESSAGE_BUNDLE['core.lga.of.origin'] = 'LGA of Origin';
+MESSAGE_BUNDLE['core.pay.manager.successs.msg'] = 'Operation Successful';
+MESSAGE_BUNDLE['core.are.you.sure.apply.service'] =
+  'Are you sure you want to apply this service';
+MESSAGE_BUNDLE['core.pay.manager.wait.msg'] = 'Please Wait';
+MESSAGE_BUNDLE['core.pay.manager.error.msg'] =
+  'You cannot complete your action at this time, Please try again';
+MESSAGE_BUNDLE['core.no.beneficiaries.select'] =
+  'You have no beneficiaries. Will take beneficiary input to be an account number';
+MESSAGE_BUNDLE['core.select.expense.type'] = 'Select Expense Type';
+MESSAGE_BUNDLE['core.no.payment.selected'] =
+  'You have not added any new payments (You have selected no account to pay from), therefore only pending payments will be send. Do you want to continue?';
+MESSAGE_BUNDLE['core.apply.service.successful'] =
+  'Service Application Successful';
+MESSAGE_BUNDLE['core.only.pending.payments.will.be.submitted'] =
+  'Only pending payments will be submitted. Do you want to continue?';
+MESSAGE_BUNDLE['core.ben.account.required'] = 'Account is required';
+MESSAGE_BUNDLE['core.description.required'] = 'Description is required';
+
+MESSAGE_BUNDLE['core.user.disabled'] = 'User has been disabled';
+MESSAGE_BUNDLE['core.invalid.otp.last.attempt'] =
+  'Invalid OTP. You have <b>ONE</b> last try after which you will be disabled if unsuccessful. Choose carefully';
+MESSAGE_BUNDLE['core.invalid.security.last.attempt'] =
+  'Invalid Answer. You have <b>ONE</b> last try after which you will be disabled if unsuccessful. Choose carefully';
+MESSAGE_BUNDLE['core.problem.loading.your.limit'] =
+  'A problem was encountered while loading your daily limit';
+MESSAGE_BUNDLE['core.above.limit'] =
+  'You cannot enter a value above the limit';
+MESSAGE_BUNDLE['core.service.rendered'] = 'Service rendered';
+MESSAGE_BUNDLE['core.name.not.available'] = 'Name not available for use';
+MESSAGE_BUNDLE['core.enter.all.enabled.transrefs'] =
+  'Enter all enabled Transfer Refs';
+MESSAGE_BUNDLE['core.name.not.available'] = 'Name not available for use';
+MESSAGE_BUNDLE['core.dependent.type'] = 'Dependant Type';
+
+MESSAGE_BUNDLE['core.add.group.member'] = 'Add Group Member';
+MESSAGE_BUNDLE['core.group.members'] = 'Group Members';
+MESSAGE_BUNDLE['core.submit.okay'] = 'Submit';
+MESSAGE_BUNDLE['core.group.name'] = 'Group Name';
+MESSAGE_BUNDLE['core.new.spc'] = 'New';
+MESSAGE_BUNDLE['core.undo.spc'] = 'Undo';
+MESSAGE_BUNDLE['core.new.group.created'] = 'New Group Created Successfully';
+MESSAGE_BUNDLE['core.unsaved.changes.warning'] =
+  'You cannot select another group without losing your changes. Do you want to continue?';
+MESSAGE_BUNDLE['core.supply.user'] = 'Please supply a user';
+MESSAGE_BUNDLE['core.group.cannot.be.empty.warning'] =
+  'Groups cannot be empty. You need to have at least one group member';
+
+MESSAGE_BUNDLE['payroll.description.cannot.empty'] =
+  'Description cannot empty';
+MESSAGE_BUNDLE['payroll.are.you.sure.you.want.to.remove'] =
+  'Are You Sure You want to Remove the selected Rating(s)';
+MESSAGE_BUNDLE['payroll.approvers.field.must.not.be.empty'] =
+  'Approvers field must not be empty!!!';
+MESSAGE_BUNDLE['payroll.are.you.sure.you.want.to.remove.the.selected.rating'] =
+  'Are You Sure You want to Remove the selected Rating(s)';
+MESSAGE_BUNDLE['payroll.supply.the.description'] =
+  'Please Supply the description';
+MESSAGE_BUNDLE['payroll.please.select.the.start.date'] =
+  'Please Select the Start Date';
+MESSAGE_BUNDLE['payroll.please.select.the.end.date'] =
+  'Please Select the End Date';
+MESSAGE_BUNDLE['payroll.you.are.about.to.initiate.appraisal'] =
+  'You are about to initate appraisal. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.you.did.not.pick.any.staff.this.will.close'] =
+  'You did not pick any staff, this will Close the Appraisal for all Staff. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.you.are.about.to.close.appraisal.closed'] =
+  'You are about to close appraisal,Closed Appraisal Cannot be Modified. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.you.are.about.to.cancel.appraisal.cancel'] =
+  'You are about to cancel appraisal,Cancelled Appraisal Cannot be Modified. Do you want to continue?';
+MESSAGE_BUNDLE['payroll.you.did.not.pick.any.staff.this.will.cancel'] =
+  'You did not pick any staff, this will Cancel Appraisal for all Staff. Do you want to continue?';
+MESSAGE_BUNDLE['core.accout.not.available.for.use'] =
+  'Account Number is not available';
+MESSAGE_BUNDLE['core.code.not.available.for.use'] = 'Code Already Exists';
+
+MESSAGE_BUNDLE['pmr.default.error.message'] =
+  'Error processing request. Please try again.';
+MESSAGE_BUNDLE['pmr.default.success.message'] = 'Successfully!';
+MESSAGE_BUNDLE['pmr.no.additional.information.found.message'] =
+  'You Have Not Created An Additional Information Yet. Please Define An Additional Information To Proceed.';
+MESSAGE_BUNDLE['pmr.payment.success.message'] =
+  'Payment Initiation Successful. Your Transaction has been sent for funding.';
+
+MESSAGE_BUNDLE['report.remita.ref'] = 'Remita Ref.';
+MESSAGE_BUNDLE['report.date'] = 'Date';
+MESSAGE_BUNDLE['report.statement.date'] = 'Statement Date';
+MESSAGE_BUNDLE['report.debit.bank'] = 'Debit Bank';
+MESSAGE_BUNDLE['report.credit.bank'] = 'Credit Bank';
+MESSAGE_BUNDLE['report.summary.by.bank'] = 'Summary by Bank';
+MESSAGE_BUNDLE['report.transaction.date'] = 'Transaction Date';
+MESSAGE_BUNDLE['report.session.number'] = 'Session Number';
+MESSAGE_BUNDLE['report.transaction.status'] = 'Transaction Status';
+MESSAGE_BUNDLE['number.is.negative'] =
+  'Number should not be negative or equal to zero';
+MESSAGE_BUNDLE['report.be.advicedv.mfb.exists'] =
+  'Please be adviced {VARIAHOLDER_MFB_ID} exists';
+MESSAGE_BUNDLE['report.are.you.sure.you.want.to.create.mfb'] =
+  'Are You sure you want to create {VARIAHOLDER_MFB_ID} MFB?';
+MESSAGE_BUNDLE['report.mfbid.and.mfbname.must.not.be.empty'] =
+  'MFB ID and MFB Name must not be empty.';
+MESSAGE_BUNDLE['report.mfbid.mfbname.and.account.number.must.not.be.empty'] =
+  'You cannot create a New MFB with MFB ID, MFB Name and Account Number being empty.';
+MESSAGE_BUNDLE['report.please.ensure.all.fields.are.not.empty'] =
+  'Please ensure all fields are not empty.';
+MESSAGE_BUNDLE['core.select.funding.account'] =
+  'Please Select A Funding Account';
+MESSAGE_BUNDLE['core.bank.code'] = 'Bank Codes';
+MESSAGE_BUNDLE['core.bank.codes'] = 'Bank Codes';
+MESSAGE_BUNDLE['core.type.of.data'] = 'Type of Data';
+MESSAGE_BUNDLE['core.field.length'] = 'Field Length';
+MESSAGE_BUNDLE['report.call.type'] = 'Call Type';
+MESSAGE_BUNDLE['core.account'] = 'Account';
+MESSAGE_BUNDLE['core.problem.loading.service'] =
+  'A problem was encountered while loading the service. Please try again or contact the adminsitrator';
+MESSAGE_BUNDLE['core.add.amount.by.payer'] =
+  'PAYER - Add to Amount payable by the payer';
+MESSAGE_BUNDLE['core.deduct.amount.from.payer'] =
+  '{{companyName}} - Deduct from Amount paid by payer';
+
+MESSAGE_BUNDLE['core.username'] = 'Username';
+MESSAGE_BUNDLE['core.password'] = 'Password';
+MESSAGE_BUNDLE['core.corporate'] = 'Corporate';
+MESSAGE_BUNDLE['core.personal'] = 'Personal';
+MESSAGE_BUNDLE['core.organisation.id'] = 'Organisation ID';
+MESSAGE_BUNDLE['core.login'] = 'Login';
+MESSAGE_BUNDLE['core.forget.your.password'] = 'Forgot your password?';
+MESSAGE_BUNDLE['core.deduct.amount.from.payer'] =
+  'Deduct from Amount paid by payer';
+MESSAGE_BUNDLE['core.you.are.about.to.update.service.state.continue'] =
+  'You are about to update the service state. Do you want to continue?';
+MESSAGE_BUNDLE['core.deduct.amount.from.payer'] =
+  'Deduct from Amount paid by payer';
+MESSAGE_BUNDLE['core.problem.loading.service'] =
+  'A problem was encountered while loading the service. Please try again or contact the adminsitrator';
+
+MESSAGE_BUNDLE['core.please.select.a.service.type.for.mandate.payment'] =
+  'Please select a service type for mandate payment';
+MESSAGE_BUNDLE['core.please.select.a.service.to.get.sample.template.file'] =
+  'Please select a service type to get sample template file';
+MESSAGE_BUNDLE['core.please.select.a.service.type'] =
+  'Please select a service type.';
+MESSAGE_BUNDLE['core.problem.loading.services'] =
+  'A Problem was encountered while preparing services for setup. Please contact support';
+MESSAGE_BUNDLE['core.service.saved.successfully'] =
+  'Service saved successfully';
+MESSAGE_BUNDLE['core.problem.loading.services'] =
+  'A Problem was encountered while preparing services for setup. Please contact support';
+MESSAGE_BUNDLE['core.enter.username.or.email'] = 'Email or User Name';
+
+MESSAGE_BUNDLE['payroll.percentage.cannot.be.greater.than'] =
+  'Percentage Cannot be greater than 100';
+MESSAGE_BUNDLE['payroll.amount.cannot.be.greater.than.net'] =
+  'Amount Cannot be greater than net pay';
+MESSAGE_BUNDLE['payroll.only.enter.numeric.values'] =
+  'Please only enter numeric values ';
+MESSAGE_BUNDLE['report.appraiser.period'] = 'Appraiser Period';
+MESSAGE_BUNDLE['report.appraisal.period'] = 'Appraisal Period';
+MESSAGE_BUNDLE['core.uploading.file'] =
+  'Uploading File... Please wait for Preview';
+
+MESSAGE_BUNDLE['payroll.amount.must.be.greater.than.zero'] =
+  'Amount must be greater than zero';
+MESSAGE_BUNDLE['payroll.commercial.bank.account.number.must.be.ten.digits'] =
+  'Account Number for commercial banks must be 10 digits only';
+MESSAGE_BUNDLE[
+  'payroll.microfinance.banks.accounts.can.contain.alphanumeric.characters'
+] =
+  'Account Number for Microfinance banks must contain alphanumeric characters only';
+MESSAGE_BUNDLE['payroll.confirm.disengage.employee'] =
+  'Are you sure you want to disengage employee?';
+MESSAGE_BUNDLE['payroll.confirm.reengage.employee'] =
+  'Are you sure you want to re-engage employee?';
+
+MESSAGE_BUNDLE['core.password.cannot.be.same.with.old'] =
+  'Password cannot be same with old';
+MESSAGE_BUNDLE['core.redirect.in'] = 'You will be redirected in';
+MESSAGE_BUNDLE['core.you.must.agree.to.terms'] =
+  'You must agree the terms and conditions';
+MESSAGE_BUNDLE['core.personal.profile'] = 'MY PERSONAL PROFILE';
+
+MESSAGE_BUNDLE['core.go.live.response'] = 'Request Sent Successfully';
+MESSAGE_BUNDLE['core.go.live.response'] =
+  'Your Request has been sent. Activation is pending Approval';
+MESSAGE_BUNDLE['core.corporate.add.alternate.users'] =
+  'Alternate approver(s)/initiators(s) are mandatory before submission';
+MESSAGE_BUNDLE['core.corporate.duplicate.accounts'] =
+  'Account has already been added';
+MESSAGE_BUNDLE['core.corporate.duplicate.users'] =
+  'User has already been added';
+
+MESSAGE_BUNDLE['core.corporate.sme'] = 'Corporate/SME Name';
+MESSAGE_BUNDLE['core.micro.sme'] = 'Micro SME Name';
+MESSAGE_BUNDLE['core.please.enter'] = 'Please enter your';
+MESSAGE_BUNDLE['core.government.mda'] = 'Government/MDA Name';
+MESSAGE_BUNDLE['core.please.ent'] = 'Please Enter your';
+MESSAGE_BUNDLE['core.account.to.recieve.payments'] =
+  'Receive Funds into this Account';
+MESSAGE_BUNDLE['core.receive.payments.status.email'] =
+  'Receive Payments status at this email';
+MESSAGE_BUNDLE['core.allow.part.payment'] = 'Allow Part Payment';
+MESSAGE_BUNDLE['core.product.amount.fixed.by'] =
+  'Product Amount is fixed by you';
+MESSAGE_BUNDLE['core.amount.must.be.greater.than.zero'] =
+  'Amount must be greater than 0';
+MESSAGE_BUNDLE['core.more.than.one.subitem'] =
+  'Select more than one Sub-item';
+MESSAGE_BUNDLE['core.please.select.regtype'] =
+  'Please Select From - SME/Corporate etc';
+MESSAGE_BUNDLE['core.microsme'] = 'Micro SME';
+MESSAGE_BUNDLE['core.corporatesme'] = 'Corporate/SME';
+MESSAGE_BUNDLE['core.governmentmda'] = 'Government/MDA';
+
+MESSAGE_BUNDLE['core.compute.salaries'] = 'Compute Salaries';
+MESSAGE_BUNDLE['core.generated.staff.number'] =
+  'Auto-generated Staff Number';
+MESSAGE_BUNDLE['core.standard.reports'] = 'Standard Reports';
+MESSAGE_BUNDLE['core.access.loans'] =
+  'Access Loans Through External Lenders';
+MESSAGE_BUNDLE['core.integradted.epayments'] = 'Integrated e-payments';
+MESSAGE_BUNDLE['core.unlimited.employees'] = 'Unlimited Employees';
+MESSAGE_BUNDLE['core.compute.employee.tax'] = 'Compute Employee Tax';
+MESSAGE_BUNDLE['core.compute.pension'] =
+  'Compute Pension (Employee & Employer)';
+MESSAGE_BUNDLE['core.multiple.allowances'] =
+  'Multiple Allowances & Deductions';
+MESSAGE_BUNDLE['core.submit.schedules'] =
+  'Submit Schedules to PFAs, PFCs, Tax & Cooperative Bodies';
+MESSAGE_BUNDLE['core.detailed.payslips'] = 'Detailed Payslips';
+MESSAGE_BUNDLE['core.custom.staff.number'] = 'Custom Staff Number';
+MESSAGE_BUNDLE['core.employee.self.service'] = 'Employee Self Service';
+MESSAGE_BUNDLE['core.monthly.variance.audit'] = 'Monthly Variance Audit';
+MESSAGE_BUNDLE['core.advanced.reporting'] =
+  'Advanced Reporting (User-Defined Reports, etc.)';
+MESSAGE_BUNDLE['core.time.sheet'] = 'Time Sheet & Overtime Management';
+MESSAGE_BUNDLE['core.approval.workflow'] = 'Approval Workflow';
+MESSAGE_BUNDLE['core.staff.loans'] = 'Staff Loans';
+MESSAGE_BUNDLE['report.please.select.report.type'] =
+  'Please select Report Type';
+MESSAGE_BUNDLE['report.weekly.report.span'] = 'Weekly Report Span';
+MESSAGE_BUNDLE['report.monthly.report.span'] = 'Monthly Report Span';
+MESSAGE_BUNDLE['report.week'] = 'Week';
+MESSAGE_BUNDLE['report.month'] = 'Month';
+MESSAGE_BUNDLE['report.weeks'] = 'Weeks';
+MESSAGE_BUNDLE['report.months'] = 'Months';
+MESSAGE_BUNDLE['report.weekly'] = 'Weekly';
+MESSAGE_BUNDLE['report.monthly'] = 'Monthly';
+MESSAGE_BUNDLE['report.weekly.analysis'] = 'Weekly Analysis';
+MESSAGE_BUNDLE['report.monthly.analysis'] = 'Monthly Analysis';
+MESSAGE_BUNDLE['report.last.week.analysis'] =
+  'Last NUMBER_PLACE_HOLDER week analysis';
+MESSAGE_BUNDLE['report.last.month.analysis'] =
+  'Last NUMBER_PLACE_HOLDER month analysis';
+MESSAGE_BUNDLE['report.last.weeks.analysis'] =
+  'Last NUMBER_PLACE_HOLDER weeks analysis';
+MESSAGE_BUNDLE['report.last.months.analysis'] =
+  'Last NUMBER_PLACE_HOLDER months analysis';
+MESSAGE_BUNDLE['report.select.reporttype'] = 'Select Report Type';
+MESSAGE_BUNDLE['report.specify.duration.span'] = 'Specify Duration Span';
+MESSAGE_BUNDLE['report.average.monthly.transactions.cap'] =
+  'AVG TRANSACTIONS';
+MESSAGE_BUNDLE['report.average.weekly.transactions.2.cap'] =
+  'AVG TRANSACTIONS';
+MESSAGE_BUNDLE['report.average.monthly.transactions.2.cap'] =
+  'AVERAGE MONTHLY TRANSACTIONS';
+MESSAGE_BUNDLE['report.average.weekly.transactions.cap'] =
+  'AVERAGE WEEKLY TRANSACTIONS';
+MESSAGE_BUNDLE['report.last.2.months.percentage.transactions.cap'] =
+  'LAST 2 MONTHS PERCENTAGE TRANSACTION';
+MESSAGE_BUNDLE['report.last.2.months.transactions.cap'] =
+  'LAST 2 MONTHS TRANSACTION';
+MESSAGE_BUNDLE['report.specify.duration.span'] = 'Specify Duration Span';
+MESSAGE_BUNDLE['core.avs.failed'] = 'Problem getting account info';
+MESSAGE_BUNDLE['core.avs.not.found'] = 'Account not found';
+MESSAGE_BUNDLE['core.avs.account.name'] = 'Account Name';
+MESSAGE_BUNDLE['core.avs.account.number'] = 'Account Number';
+MESSAGE_BUNDLE['core.avs.not.found'] = 'Account not found';
+
+// Remita Biometric Verification
+MESSAGE_BUNDLE['rbv.nin.not.found.message'] =
+  'NIN not found for Staff. Kindly enter NIN to continue.';
+MESSAGE_BUNDLE['rbv.scanner.types.not.found'] =
+  'Scanner Types could not be fetched at the moment. Please try again later...';
+MESSAGE_BUNDLE['rbv.websockets.not.found'] =
+  'Oh no, you need a browser that supports WebSockets. How about <a href="http://www.google.com/chrome">Google Chrome</a>?';
+MESSAGE_BUNDLE['rbv.default.fingerprint.state.message'] =
+  'Place your finger on the device now';
+MESSAGE_BUNDLE['rbv.scan.reference.blank.message'] =
+  'Scan Reference field cannot be left blank. Please ensure that the fingerprint was scanned successfully.';
+MESSAGE_BUNDLE['rbv.staff.id.nin.blank.message'] =
+  'Staff ID and NIN fields cannot be left blank. Please enter a Staff ID and NIN Number.';
+MESSAGE_BUNDLE['rbv.staff.data.empty.state.message'] =
+  "Please input the Staff ID and corresponding NIN number to verify the Staff's data.";
+MESSAGE_BUNDLE['rbv.websocket.connection.error'] =
+  'Sorry, Websocket failed to connect at the moment. Please try again later.';
+MESSAGE_BUNDLE['rbv.default.fingerprint.state.message'] =
+  'Click on the load scanner button to start.';
+MESSAGE_BUNDLE['rbv.selected.device'] = 'Selected Device:';
+MESSAGE_BUNDLE['rbv.preinitialising'] = 'Pre initialising...';
+MESSAGE_BUNDLE['rbv.precapturing'] = 'Pre capturing...';
+MESSAGE_BUNDLE['rbv.connecting'] = 'Connecting...';
+MESSAGE_BUNDLE['rbv.loading'] = 'Loading...';
+MESSAGE_BUNDLE['rbv.error.capturing.fingerprint'] =
+  'Sorry, an error occurred while capturing fingerprint. Please try again.';
+
+MESSAGE_BUNDLE['core.service.charge.setup'] = 'Setup';
+
+MESSAGE_BUNDLE['core.location.required'] = 'Please enter a location';
+MESSAGE_BUNDLE['core.location.saved'] = 'Your location has been saved';
+MESSAGE_BUNDLE['core.location.exists'] = 'This location already exists';
+MESSAGE_BUNDLE['core.location.edit.warning.one'] =
+  'NOTE:- You are currently editing LOCATION:';
+MESSAGE_BUNDLE['core.location.edit.warning.two'] =
+  'click CLEAR if you want to add a new location instead';
+MESSAGE_BUNDLE['core.location.admin.required'] =
+  'Location needs atleast one Admin, select from the search option';
+MESSAGE_BUNDLE['core.location.admin.used'] =
+  'This admin has already been added';
+
+MESSAGE_BUNDLE['report.admin.outflow.title'] = 'ADMIN: Outflow Report';
+MESSAGE_BUNDLE['report.bank.outflow.title'] = 'BANK: Outflow Report';
+MESSAGE_BUNDLE['report.cbn.outflow.title'] = 'CBN: Outflow Report';
+MESSAGE_BUNDLE['report.hmo.outflow.title'] = 'HMO: Outflow Report';
+MESSAGE_BUNDLE['report.hospital.outflow.title'] = 'HOSPITAL: Outflow Report';
+MESSAGE_BUNDLE['report.admin.inflow.title'] = 'ADMIN: Inflow Report';
+MESSAGE_BUNDLE['report.cbn.inflow.title'] = 'CBN: Inflow Report';
+MESSAGE_BUNDLE['report.bank.inflow.title'] = 'BANK: Inflow Report';
+MESSAGE_BUNDLE['report.corp.inflow.title'] = 'CORP: Inflow Report';
+MESSAGE_BUNDLE['report.hmo.inflow.title'] = 'HMO: Inflow Report';
+MESSAGE_BUNDLE['report.hospital.inflow.title'] = 'HOSPITAL: Inflow Report';
+
+MESSAGE_BUNDLE['core.channel.select.payer.to.pay'] =
+  'Please select Payer to Pay option';
+MESSAGE_BUNDLE['core.channel.rate.charge.type'] =
+  'Please select a Rate Charge Type';
+MESSAGE_BUNDLE['core.channel.rate.charge'] = 'Please type your rate charge';
+MESSAGE_BUNDLE['core.channel.rate.charge.min.amount'] =
+  'Please type your minimum rate charge amount';
+MESSAGE_BUNDLE['core.channel.rate.charge.max.amount'] =
+  'Please type your maximum rate charge amount';
+MESSAGE_BUNDLE['core.channel.convenience.fee.type'] =
+  'Please select a Convenience Fee Type';
+MESSAGE_BUNDLE['core.channel.convenience.fee'] =
+  'Please type your Convenience Fee';
+MESSAGE_BUNDLE['core.channel.convenience.fee.minimum.amount'] =
+  'Please type your minimum covenience fee amount';
+MESSAGE_BUNDLE['core.channel.convenience.fee.maximum.amount'] =
+  'Please type your maximum covenience fee amount';
+
+MESSAGE_BUNDLE['core.channel.max.amount.should.be.greater.than.min.amount'] =
+  'Max amount cannot be less than Min amount';
+MESSAGE_BUNDLE['core.cvv'] = 'CVV';
+MESSAGE_BUNDLE['core.account.please.provide.a.valid.expiry.date'] =
+  'Please provide a valid expiry date';
+
+MESSAGE_BUNDLE['core.credit.card.number'] = 'Card Number';
+MESSAGE_BUNDLE['core.credit.card.expiry.date'] = 'Expiry Date';
+MESSAGE_BUNDLE['core.credit.card.expiry.date.expires.before.mandate.end.date'] =
+  'Please ensure your card is not expiring before mandate end date.';
+MESSAGE_BUNDLE['report.inflow.remitaref'] = 'Remita Reference';
+
+MESSAGE_BUNDLE['core.maximum.file.upload.exceeded'] =
+  'Sorry! You have exceeded the maxinmum number of files for upload';
+MESSAGE_BUNDLE['core.successfully.generated'] =
+  'The file has been successfully generated. Please download the file by clicking on the button below.';
+MESSAGE_BUNDLE['core.problem.loading.table'] =
+  'A Problem was encountered while loading the list. Please contact support';
+MESSAGE_BUNDLE['core.affiliate.registered'] =
+  'An email has been sent to the registered user to complete the registration process';
+
+MESSAGE_BUNDLE['report.there.is.no.transaction.for.last'] =
+  'There is no transaction for last 1NUMBER_PLACE_HOLDER 1STRING_PLACE_HOLDER in 2NUMBER_PLACE_HOLDER';
+MESSAGE_BUNDLE['report.when.you.spool.analysis.for.year'] =
+  'Please be advised, when you spool analysis for year 1NUMBER_PLACE_HOLDER, report span always ends at December 1NUMBER_PLACE_HOLDER';
+MESSAGE_BUNDLE['core.account.added.for.collections.now.proceed.for.payment'] =
+  'Your account has been added for collections. Please proceed to activate for payments';
+MESSAGE_BUNDLE['core.activate.for.debit'] = 'Activate to Make Payments';
+MESSAGE_BUNDLE['core.active'] = 'Verified';
+MESSAGE_BUNDLE['core.deactivated'] = 'Deactivated';
+MESSAGE_BUNDLE['core.account.updated'] = 'Account Status Updated';
+MESSAGE_BUNDLE['core.sure.to.not.allow'] = 'Are you sure you want to disable';
+MESSAGE_BUNDLE['core.sure.to.allow'] = 'Are you sure you want to allow';
+MESSAGE_BUNDLE['core.on.this.profile'] = 'on this profile';
+MESSAGE_BUNDLE['core.problem.getting.channels'] = 'Problem loading Payment Channels';
+
+MESSAGE_BUNDLE['core.fee.setup.duplicate.services'] = 'Duplicate service types are not allowed';
+MESSAGE_BUNDLE['core.fee.setup.duplicate.channels'] = 'Duplicate channels are not allowed';
+MESSAGE_BUNDLE['core.fee.setup.unit.charge.must.be.less.than.max.charge'] = 'Unit Charge cannot be greater than max charge';
+MESSAGE_BUNDLE['core.fee.setup.cannot.select.duplicate.channel.per.service'] = 'Cannot select duplicate channel per service type';
+MESSAGE_BUNDLE['core.forgot.password.not.allowed'] = 'Forgot password not allowed for this account';
+MESSAGE_BUNDLE['core.fee.setup.sum.values.must.not.be.greater.than.hundred'] = 'Sum value of Introducer Fee, Systemspecs Fee and Funding Bank Fee cannot be greater than 100';
+
+MESSAGE_BUNDLE['core.account.deactivation'] = 'Account Deactivation';
+MESSAGE_BUNDLE['core.account.activation'] = 'Account Activation';
+MESSAGE_BUNDLE['core.account.confirm.deactivation'] = 'Are you sure you want to deactivate';
+MESSAGE_BUNDLE['core.account.confirm.activation'] = 'Are you sure you want to activate';
+MESSAGE_BUNDLE['core.account.for.debit'] = ' for debit?';
+
+MESSAGE_BUNDLE['access.code.sent.to.phone'] = 'Access Mail has been Generated and Sent to your Phone';
+
+MESSAGE_BUNDLE['core.optional'] = 'optional';
+MESSAGE_BUNDLE['core.problem.submitting.form'] = 'Problem submitting data';
+
+MESSAGE_BUNDLE['duplicate.debit.accounts.selected'] = 'A rule already exists for this account';
+MESSAGE_BUNDLE['same.credit.and.debit.account.selected'] = 'Cannot debit and credit the same account';
+MESSAGE_BUNDLE['debit.account.selected.as.credit.account'] = 'Cannot use this account as a credit account';
+MESSAGE_BUNDLE['credit.account.selected.as.debit.account'] = 'Cannot use this account as a debit account';
+
+MESSAGE_BUNDLE['core.problem.fetching.accounts'] = 'Problem Fetching Accounts';
+MESSAGE_BUNDLE['core.problem.fetching.auto.sweep.rules'] = 'Problem loading Auto Sweep Rules';
+
+MESSAGE_BUNDLE['core.sorry.only.otp.enabled.banks.are.eligible.for this.feature'] = 'Sorry this feature is only enabled for OTP enabled banks';
+MESSAGE_BUNDLE['core.paid.transit.mirror.count'] = ' paid  TRANSIT CBN MIRROR {{cbnMirrorConfirm_count}} transaction';
+MESSAGE_BUNDLE['core.confirm.code.sent.ensure.email.on'] = 'Confirmation Code Sent Successfully. Please check your email';

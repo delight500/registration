@@ -1,0 +1,68 @@
+/*	Typography presets
+	------------------	
+	
+	@font-face {
+    font-family: 'CASansRegular';
+        src: url('../fonts/CASans.eot');
+        src: url('../fonts/CASans.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/CASans.woff') format('woff'),
+            url('../fonts/CASans.ttf') format('truetype'),
+            url('../fonts/CASans.svg#CASansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CASansBold';
+    src: url('../fonts/CASans-Bold.eot');
+    src: url('../fonts/CASans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CASans-Bold.woff') format('woff'),
+        url('../fonts/CASans-Bold.ttf') format('truetype'),
+        url('../fonts/CASans-Bold.svg#CASansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+/*.huge, h1 {
+	font-size: 20px;
+	line-height: 35px;
+	color:#229008;
+	text-transform:uppercase;
+	font-weight:normal;
+}*/
+
+.large, h1 {
+	font-size: 14px;
+	line-height: 20px;
+    /*font-family: 'CASansBold';
+    font-weight: normal;*/
+}
+
+.bigger, h3 {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.big, h4 {
+	font-size: 12px;
+	line-height: 14px;
+	font-weight:bold;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 13px;
+}
+
+.small, small {
+	font-size: 10px;
+	line-height: 11px;
+    color: #666;
+}

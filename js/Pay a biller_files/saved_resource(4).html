@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://secure7.arcot.com/acspage/cap?RID=26057&VAA=A -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+            <!-- Meta -->
+            <title id="title"></title>
+            
+
+            <!-- Disable phone number linking -->
+            <meta name="format-detection" content="telephone=no">
+			<meta http-equiv="X-UA-Compatible" content="IE=100">
+			
+			            <!--[if lt IE 9]>
+            <script src="GenericOTP/js/html5.js"></script>
+            <![endif]-->
+
+			
+             <!-- Jquery -->
+            <script src="./jquery.min.js.download"></script>
+
+            <!-- Media Queries for IE -->
+            <script src="./jquery.mediaqueries1.19.js.download"></script>
+
+            <script language="javascript">
+               
+                
+                var termUrl="https://migs.mastercard.com.au/ssl?paymentId=4958003833364080865";
+                var acsCookie="fzSyHr6KYa5Y7TlytkTLsVAJkW5iCmcqyGWTriJs98Jc4w3/1L2UiuIKlRj2YugT6SAJeEqPGAHCzuF8+NhsGs4PUk7h+KayBaGR0vXJuSNpVZJ+9MyAWUHlx9DJ7qAbH+Py/dTlYr8sIFujS53UtyVRol/e2XrbJMkXE5hjq1folYIvhdsgJPoIu7S3nKT19ROIXF27M7exoxSE7Wqz89SV4+HgtOAjKfwvwsi7i9jhl1fOxp6dehhJ0NXAm+QODBrzju5F1skyaCqhtUlyEvVfX4ZAfemDHa0dc8sQDUCfLyDEGp/MgUca2XmJt/NfspDNqeMkksdPMBVRlfIgHbWYuOdA3SykkkRv1EsgSIxHyPu2tZe86E3MPqp6NI7k";
+                var deviceId="";
+                var cookieType="0";
+                var defaultAuthselect="";
+                var localeFolder="GenericOTP/";
+                var brandLogo="vpas_logo.gif";
+                var bankLogo="sec7_FBN.gif";
+                var path="GenericOTP/json/sec7_FBN.json";
+                var bankDirCssPath="GenericOTP/css/sec7_FBN.css";
+				var CustData ='';
+                var calloutMsg = '';
+				if(CustData == ''){
+				  calloutMsg = '{"callout_msg":{"error_msg":"[RESENTEXCEEDED],[ATTEMPTSEXCEEDED]","success_msg":"[SMS_DELIVERY_SUCCESS],[RESEND_SUCCESS]","mobnum":"1141","locale":"en_US","email":"abo*********@yahoo.com","time_period":"20000"}}';
+				} else {
+				   calloutMsg = CustData;
+				}
+				
+				var calloutmsgJsonObj = jQuery.parseJSON(calloutMsg);
+				CustData=calloutMsg;
+            </script>
+
+            <!-- Global Stylesheets -->
+            <link rel="stylesheet" href="./reset.css" media="all">
+            <link rel="stylesheet" href="./fonts.css" media="all">
+            <link rel="stylesheet" href="./style.css" media="all">
+
+			<link rel="stylesheet" href="./10col.css" media="all">
+
+            <!-- Media Queries / LESS -->
+            <link rel="stylesheet" href="./10col.css" media="only screen and (min-width: 992px)">
+            <link rel="stylesheet" href="./8col.css" media="only screen and (min-width: 768px) and (max-width: 991px)">
+            <link rel="stylesheet" href="./3col.css" media="only screen and (max-width: 767px)">
+            <link rel="stylesheet" href="./5col.css" media="only screen and (min-width: 390px) and (max-width: 767px)">
+	    
+	    			<link rel="stylesheet" href="./sec7_FBN.css" media="all">
+
+            <!-- Smartphone stuff -->
+            <meta name="viewport" content="width=device-width; initial-scale=1">
+            <!-- Add "maximum-scale=1.0, user-scalable=no" to fix the Mobile Safari auto-zoom bug on orientation changes, but keep in mind that it will disable user-zooming completely. Bad for accessibility. -->
+
+            <!-- Favicons, 16x16 -->
+            <link rel="shortcut icon" href="https://secure7.arcot.com/acspage/GenericOTP/images/favicon.ico" type="image/x-icon">
+            <link rel="icon" href="https://secure7.arcot.com/acspage/GenericOTP/images/favicon.ico" type="image/x-icon">
+
+            <!-- Fancy Apple icons, 144x144 -->
+            <link rel="apple-touch-icon" sizes="114x114" href="https://secure7.arcot.com/acspage/assets/114-icon.png">
+
+            <!-- Fancy Apple 'fake webapp' support -->
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <link rel="apple-touch-startup-image" href="https://secure7.arcot.com/acspage/images/splash.png">
+
+           
+
+            <script language="javascript" src="./x-out.js.download"></script>
+            <script language="javascript" src="./pwdbase.js.download"></script>
+            <script language="javascript" src="./optin.js.download"></script>
+
+        </head>
+
+        <body onload="OnPageInit();" onfocus="onFocusHandler();" onbeforeunload="onBeforeUnloadHandler(this);" onunload="onUnloadHandler(this);">
+        <form name="optInForm" method="POST" autocomplete="OFF" onsubmit="return OnUserInput(&#39;&#39;);" role="form">
+            <div class="wrapper">
+                <header role="banner">
+                    <div class="logo-left">
+                        <img id="banklogo" src="./sec7_FBN.gif" title="First Bank Nigeria" alt="First Bank Nigeria">
+                    </div>
+                    <div class="logo-right">
+                        <img id="brandlogo" src="./vpas_logo.gif" title="MasterCard SecureCode" alt="MasterCard SecureCode">
+                    </div>
+                </header>
+				
+                <section class="gradient" role="main">
+                    <div id="locale" style="display:none"></div>
+                    <div class="content-container"><h1 id="optinheader">Make your online transaction more secure with One Time Password verification.</h1><p id="optsubheader"></p></div>
+                    <div class="info-container" id="info_error"><span>Your One Time Password OTP for this transaction has been sent to your registered mobile number ending with 1141 and  emailed to abo*********@yahoo.com</span></div>
+		     <p id="info_message"></p>
+                    <div class="form-container">
+                        <div class="form-content">
+                            <div class="read-only">
+                              <label class="read" for="merchant" id="optinmerchant">Merchant:</label>
+                              <label class="read-value" for="merchant">REMITA WEB PYMNT</label>
+                            </div>
+                            <div class="read-only">
+                              <label class="read" for="amount" id="optinamount">Amount:</label>
+                              <label class="read-value" for="amount">10,210.00&nbsp;NGN</label>
+                            </div>
+                            <div class="read-only">
+                              <label class="read" for="date" id="optindate">Date:</label>
+                              <label class="read-value" for="date">04:12:2019</label>
+                            </div>
+                            <div class="read-only">
+                              <label class="read" for="cardNumber" id="optincardNumber">Card Number:</label>
+                              <label class="read-value" for="cardNumber">XXXX XXXX XXXX 0201</label>
+                            </div>
+                            <div>
+                              <label for="enterPIN" id="optinenterPIN" class="read">OTP:</label>
+                              <input name="otp" type="password" class="text" value="" maxlength="6" id="enterPIN" text="text-box">
+                              <span id="resend" class="read"></span>
+                            </div>
+							 <div id="noteContent" style="display: none"></div>
+                            <div id="disclaimerContent" style="display: block;">
+
+                            <input name="disclaimer" type="checkbox" class="check" id="disclaimer">
+                            <label for="terms" class="disclaimer" id="disclaimerText">I agree to “<a href="https://secure7.arcot.com/acspage/cap?RID=26057&amp;VAA=A#" onclick="popUpHelp(&#39;GenericOTP/sec7_FBN_en_US_terms.htm?bankdirname=sec7_FBN&amp;brandlogo=vpas_logo.gif&amp;banklogo=sec7_FBN.gif&amp;locale=en_US&#39;);">Terms and Conditions</a>”</label>
+                            <span id="resend" class="read"></span>
+                        </div>
+                            <!--<div class="disclaimer-container"><fieldset><legend></legend><input name="" type="checkbox" class="check" value="" id="disclaimer"><label class="disclaimer" for="disclaimer">I agree that by clicking the box i have read, understood and accepted the 3D Secure Terms and Conditions (available at www.hsbc.ae).</label></fieldset></div>-->
+                        </div>
+                    </div>
+                    <div class="controls"><button type="submit" value="Submit OTP" class="orange" onclick="return OnUserInput(&#39;en_GB&#39;);" id="sendotp" title="Submit">Submit</button><button type="button" value="cancel" class="orange" onclick="return OnCancelHandlerToCallout();" id="cancel" title="Cancel">Cancel</button><span id="helpcontentfromjson" style="display: none;"><button type="button" value="help" class="orange" onclick="return popUpHelp(&#39;GenericOTP/help.htm?bankdirname=sec7_FBN&amp;brandlogo=vpas_logo.gif&amp;banklogo=sec7_FBN.gif&amp;locale=&#39;+locale);" id="help">Help</button></span><span id="helpcontentfromhtml" style="display: inline;"><button type="button" value="help" class="orange" onclick="return popUpHelp(&#39;GenericOTP/sec7_FBN_help.htm?bankdirname=sec7_FBN&amp;brandlogo=vpas_logo.gif&amp;banklogo=sec7_FBN.gif&amp;locale=&#39;+locale);" id="dynamichelp" title="Help">Help</button></span></div>
+                </section>
+                <footer role="contentinfo"><span class="small" id="footertext"></span></footer>
+            </div>
+			<input type="hidden" name="PaReq" value="eAFVUtty2jAUfM9M/sHj58a6GJHCHJQxlwQmwXUTM530zdgacAZfImQgeczH9MP6JT0C07R60u6RVmf3CG4OxcbZKb3Nq3LgMo+6jirTKsvL1cBdxLdXX90beXkB8VorNX5SaaOVhLnabpOVcvIM71AufNFhrNtzJUTBo3qV0CpKFPQ4kDPEizpdJ6WRkKSvw1kohc8EF0BaCIXSs7H0qbiOFpxTuzgKnGgok0LJx8l8FgfOj8nQiZ7nYQzkSENaNaXRb1J0u0DOABq9kWtj6j4h+/3e06rITeKVyhAgtgbks6eosd1t0eAhz+RyEdZGPOTX6cuqfvs5fW78nl5XmkWdARB7ArLEKMkp6zFOOw7jfcr7wgdy5CEpbEcyvAud3x+/GP3CGfUoRbOnAtT2veAEMEaGZoH8SwLGrXEeZ1NnBOpQV6VCcczm7x7Ip4HR1EacGgyT7rL3cLhZfY9H029PD8v7ZT0m+2AUBBP00R6yijmGh5njNFoAxMqQdqYY1HHqyPz3Gy4v/gCb5rvY">
+			<input type="hidden" name="MD" value="10253541169">
+			
+            <input type="hidden" name="submitted" value="0"><input type="hidden" name="TermUrl" value="https://migs.mastercard.com.au/ssl?paymentId=4958003833364080865"><input type="hidden" name="optIn" value="-1"><input type="hidden" name="issuerAnswer" value=""><input type="hidden" name="pin" size="1" maxlength="3" class="monospace"><input type="hidden" name="AcsCookie" value="fzSyHr6KYa5Y7TlytkTLsVAJkW5iCmcqyGWTriJs98Jc4w3/1L2UiuIKlRj2YugT6SAJeEqPGAHCzuF8+NhsGs4PUk7h+KayBaGR0vXJuSNpVZJ+9MyAWUHlx9DJ7qAbH+Py/dTlYr8sIFujS53UtyVRol/e2XrbJMkXE5hjq1folYIvhdsgJPoIu7S3nKT19ROIXF27M7exoxSE7Wqz89SV4+HgtOAjKfwvwsi7i9jhl1fOxp6dehhJ0NXAm+QODBrzju5F1skyaCqhtUlyEvVfX4ZAfemDHa0dc8sQDUCfLyDEGp/MgUca2XmJt/NfspDNqeMkksdPMBVRlfIgHbWYuOdA3SykkkRv1EsgSIxHyPu2tZe86E3MPqp6NI7k"><input type="hidden" name="DeviceID" value=""><input type="hidden" name="ChangeLocale" value=""><input type="hidden" name="AbridgedADSSelected" value=""><input type="hidden" name="CookieType" value="0"><input type="hidden" name="cancelHit" value=""><input type="hidden" name="ABSlog" value="GPP"><input type="hidden" name="deviceDNA" value=""><input type="hidden" name="executionTime" value=""><input type="hidden" name="dnaError" value=""><input type="hidden" name="mesc" value=""><input type="hidden" name="mescIterationCount" value="0"><input type="hidden" name="desc" value=""><input type="hidden" name="isDNADone" value="false"><input type="hidden" name="arcotFlashCookie" value=""><input type="hidden" name="authDefaultSelect" value=""><input type="hidden" name="authType" value=""><input type="hidden" name="CustData" value=""></form>
+
+        
+
+    
+</body></html>

@@ -1,0 +1,424 @@
+var navigating = false;
+var IsCancelButton = false;
+var refreshing = false;
+var closing = true;
+var callout_mobileno = "";
+var otpdata = "";
+var resendTime = "";
+var resendSuccess = "";
+var callout_msg = calloutMsg;
+
+var callout_email = getKeyValuesFromCalloutMsg("email");
+var locale = getKeyValuesFromCalloutMsg('locale');
+var error_msg = getKeyValuesFromCalloutMsg("error_msg");
+var success_msg = getKeyValuesFromCalloutMsg("success_msg");
+var resendTime = getKeyValuesFromCalloutMsg("time_period");
+var callout_mobileno = getKeyValuesFromCalloutMsg("mobnum");
+
+var bankStrings;
+
+
+//To get value from callout message for provided key;
+function getKeyValuesFromCalloutMsg(key) {
+    var value = "";
+    value = calloutmsgJsonObj.callout_msg[key];
+    if (typeof value === 'undefined') {
+        value = "";
+    }
+    return value;
+}
+//To get value from JSON file
+function getJsonValue(key) {
+    var info_message = key;
+    if (typeof info_message === 'undefined') {
+        return ""; // do not display message;
+    } else {
+        return info_message;
+    }
+}
+
+//To include Bank's JSON file in the html page
+$('<script>').attr('language', 'javascript').attr('src', path).appendTo('head');
+
+
+//Parse the json and get the object. So that you can easly access the values from this object
+if (locale === 'en_US') {
+    bankStrings = JSON.parse(en_US);
+} else if (locale === 'en_GB') {
+    bankStrings = JSON.parse(en_GB);
+} else if (locale === 'ar_AA') {
+    bankStrings = JSON.parse(ar_AA);
+}else if (locale === 'pt_PT') {
+            bankStrings = JSON.parse(pt_PT);
+        }
+
+
+
+function enableIt() {
+	
+	
+  if (callout_msg.indexOf("[RESENTEXCEEDED]") == -1) {
+        document.getElementById('info_error').className = "info-container";
+        document.getElementById('resend').innerHTML = '<a href="#" title="' + getJsonValue(bankStrings.resendotp) + '" onclick="return reSend();">' + getJsonValue(bankStrings.resendotp) + '</a>';
+        //document.getElementById("resend").innerHTML = bankStrings.resendotp;
+        document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg6);
+    }else{
+        //document.getElementById('info_error').className = "info-container";
+    }
+}
+
+
+
+function OnPageInit() {
+
+    $(document).ready(function () {
+        // set hidden variables
+
+        $('<input>').attr('type', 'hidden').attr('name', 'submitted').attr('value', '0').appendTo('form');
+        //$('<input>').attr('type', 'hidden').attr('name', 'PaReq').attr('value', payRequest).appendTo('form');
+        //$('<input>').attr('type', 'hidden').attr('name', 'MD').attr('value', merchantData).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'TermUrl').attr('value', termUrl).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'optIn').attr('value', '-1').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'issuerAnswer').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'pin').attr('SIZE', '1').attr('MAXLENGTH', '3').attr('CLASS', 'monospace').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'AcsCookie').attr('value', acsCookie).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'DeviceID').attr('value', deviceId).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'ChangeLocale').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'AbridgedADSSelected').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'CookieType').attr('value', cookieType).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'cancelHit').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'ABSlog').attr('value', 'GPP').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'deviceDNA').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'executionTime').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'dnaError').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'mesc').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'mescIterationCount').attr('value', '0').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'desc').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'isDNADone').attr('value', 'false').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'arcotFlashCookie').attr('value', '').appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'authDefaultSelect').attr('value', defaultAuthselect).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'authType').attr('value', defaultAuthselect).appendTo('form');
+        $('<input>').attr('type', 'hidden').attr('name', 'CustData').attr('value', '').appendTo('form');
+
+        // set images
+        var brandLogoPath = localeFolder.concat("images/").concat(brandLogo);
+        var bankLogoPath = localeFolder.concat("images/").concat(bankLogo);
+        $('#brandlogo').attr('src', brandLogoPath).attr('title', getJsonValue(bankStrings.brandalt)).attr('alt', getJsonValue(bankStrings.brandalt));
+        $('#banklogo').attr('src', bankLogoPath).attr('title', getJsonValue(bankStrings.bankalt)).attr('alt', getJsonValue(bankStrings.bankalt));
+
+
+        //document.getElementById("title").innerHTML = bankStrings.brandalt;
+        //$( "#title" ).html(getJsonValue(bankStrings.optinheader));
+        document.getElementById("optinheader").innerHTML = getJsonValue(bankStrings.optinheader);
+        //$( "#optsubheader" ).html(getJsonValue(bankStrings.pwdsubheader));
+        document.getElementById("optsubheader").innerHTML = getJsonValue(bankStrings.pwdsubheader);
+        document.getElementById("optinmerchant").innerHTML = getJsonValue(bankStrings.optinmerchant);
+        document.getElementById("optinamount").innerHTML = getJsonValue(bankStrings.optinamount);
+        document.getElementById("optindate").innerHTML = getJsonValue(bankStrings.optindate);
+        document.getElementById("optincardNumber").innerHTML = getJsonValue(bankStrings.optincardNumber);
+        document.getElementById("optinenterPIN").innerHTML = getJsonValue(bankStrings.optinenterPIN);
+        if (document.getElementById("sendotp") != null) {
+            $( "#sendotp" ).html(getJsonValue(bankStrings.submitotp));
+            document.getElementById("sendotp").innerHTML = getJsonValue(bankStrings.submitotp);
+            document.getElementById("sendotp").alt = getJsonValue(bankStrings.submitotp);
+            document.getElementById("sendotp").title = getJsonValue(bankStrings.submitotp);
+        }
+        if (document.getElementById("cancel") != null) {
+            document.getElementById("cancel").innerHTML = getJsonValue(bankStrings.cancel);
+            document.getElementById("cancel").alt = getJsonValue(bankStrings.cancel);
+            document.getElementById("cancel").title = getJsonValue(bankStrings.cancel);
+        }
+		/*This below condition is used to display help content from seperate HTML or Json*/
+        if (document.getElementById("help") != null || document.getElementById("dynamichelp")!= null) {
+            document.getElementById("help").innerHTML = getJsonValue(bankStrings.help);
+			document.getElementById("dynamichelp").innerHTML = getJsonValue(bankStrings.help);
+			if(getJsonValue(bankStrings.help)!="")
+			{
+				if((getJsonValue(bankStrings.helpcontentsfromhtml))=="TRUE")
+				{
+					document.getElementById("helpcontentfromjson").style.display="none";
+					document.getElementById("helpcontentfromhtml").style.display="inline";
+					document.getElementById("dynamichelp").alt = getJsonValue(bankStrings.help);
+					document.getElementById("dynamichelp").title = getJsonValue(bankStrings.help);
+				}
+				else{
+					document.getElementById("helpcontentfromjson").style.display="inline";
+					document.getElementById("helpcontentfromhtml").style.display="none";
+					document.getElementById("help").alt = getJsonValue(bankStrings.help);
+					document.getElementById("help").title = getJsonValue(bankStrings.help);
+				}
+			}
+			else{
+				document.getElementById("helpcontentfromjson").style.display="none";
+				document.getElementById("helpcontentfromhtml").style.display="none";
+			}
+			
+			
+        }
+        document.getElementById("footertext").innerHTML = getJsonValue(bankStrings.footertext);
+        var noteContent = getJsonValue(bankStrings.noteContent_optin);
+        if (noteContent != "") {
+            $("#noteContent").css("display", "block");
+            document.getElementById("noteContent").innerHTML = noteContent;
+        }
+        var disclaimer = getJsonValue(bankStrings.disclaimer_opt);
+        if (disclaimer != "") {
+            $("#disclaimerContent").css("display", "block");
+
+            document.getElementById("disclaimerText").innerHTML = disclaimer;
+        }
+        var mltlocale = getJsonValue(bankStrings.mltlocale);
+        if (mltlocale != "") {
+            $("#locale").css("display", "block");
+            $("#locale").css("float", "right");
+            $("#locale").css("width", "90%");
+            $("#locale").css("text-align", "right");
+            $("#locale").css("padding", "0 10px");
+
+            $("#locale").html('<a href="#" onclick="return onLocaleChange(\'' + getJsonValue(bankStrings.mltlocaleid) + '\');"  title="' + mltlocale + '">' + getJsonValue(bankStrings.mltlocale) + '</a>');
+            //document.getElementById('locale').innerHTML = '<a href="javascript:void(0)" onclick="return onLocaleChange('+getJsonValue(bankStrings.mltlocaleid)+');"  title="'+mltlocale+'">' + getJsonValue(bankStrings.mltlocale) + '</a>';
+        }
+
+
+        //Both email and mobile present
+        if (success_msg.indexOf('[RESEND_SUCCESS]') != -1) {
+
+            if (getJsonValue(bankStrings.customresendtext) != "") {
+                document.getElementById('info_error').className = "info-container";
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.customresendtext);
+             } else if(callout_mobileno != '' && callout_email != '' && callout_mobileno != '[NOMOBILEPRESENT]' && callout_email != '[NOEMAILPRESENT]') {
+
+                document.getElementById('info_error').className = "info-container";
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg3) + callout_mobileno + getJsonValue(bankStrings.and) + getJsonValue(bankStrings.alsoemail) + callout_email + getJsonValue(bankStrings.span);
+            } else if (callout_mobileno != '' && callout_mobileno != '[NOMOBILEPRESENT]') {
+
+                document.getElementById('info_error').className = "info-container";
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg3) + callout_mobileno + getJsonValue(bankStrings.span);
+            } else if (callout_email != '' && callout_email != '[NOEMAILPRESENT]') {
+
+                document.getElementById('info_error').className = "info-container";
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg7) + callout_email + getJsonValue(bankStrings.span);
+            } else {
+                document.getElementById('info_error').className = "info-container";
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg3) + getJsonValue(bankStrings.and) + getJsonValue(bankStrings.alsoemail) + getJsonValue(bankStrings.span);
+            }
+        } else if (success_msg.indexOf('[RESEND_SMS_SUCCESS]') != -1) {
+            document.getElementById('info_error').className = "info-container";
+            if (getJsonValue(bankStrings.resendmsgwithmobile)) {
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg3) + callout_mobileno + getJsonValue(bankStrings.span);
+            } else {
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg3) + getJsonValue(bankStrings.span);
+            }
+        } else if (success_msg.indexOf('[RESEND_EMAIL_SUCCESS]') != -1) {
+            document.getElementById('info_error').className = "info-container";
+            document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg7) + getJsonValue(bankStrings.span);
+        } else if (callout_mobileno != '' && callout_email != '' && callout_mobileno != '[NOMOBILEPRESENT]' && callout_email != '[NOEMAILPRESENT]') {
+            document.getElementById('info_error').className = "info-container";
+            document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg2) + callout_mobileno + getJsonValue(bankStrings.and) + getJsonValue(bankStrings.alsoemail) + callout_email + getJsonValue(bankStrings.span);
+        } else if (callout_mobileno != '' && callout_mobileno != '[NOMOBILEPRESENT]') {
+            //Only mobile present
+            document.getElementById('info_error').className = "info-container";
+            document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg2) + callout_mobileno + getJsonValue(bankStrings.span);
+        } else if (callout_email != '' && callout_mobileno != '[NOEMAILPRESENT]') {
+            //Only Email present
+            document.getElementById('info_error').className = "info-container";
+            document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg10) + callout_email + getJsonValue(bankStrings.span);
+        } else {
+            //document.getElementById('info_error').style.display = 'none';
+        }
+        if (error_msg.indexOf('[OTPFAILED]') != -1) {
+            {
+                document.getElementById('info_error').className = "error-container";
+                document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.pwdmsg4);
+            }
+        } else {
+            //document.getElementById('info_error').style.display = 'none';
+        }
+        if (resendTime != "") {
+            //this calls enableIt 'resendTime' second configured in callout  afte the page has loaded
+            setTimeout(enableIt, resendTime);
+        } else if (callout_msg.indexOf("[RESENTEXCEEDED]") == -1) {
+            document.getElementById('resend').innerHTML = '<a href="#" onclick="return reSend();"  title="' + getJsonValue(bankStrings.resendotp) + '">' + getJsonValue(bankStrings.resendotp) + '</a>';
+        }
+
+        var info_message = bankStrings.info_message;
+        if (typeof info_message === 'undefined') {
+            // do not display message;
+        } else {
+            document.getElementById('info_message').innerHTML = info_message;
+        }
+
+        closing = true;
+        window.history.go(1);
+        self.focus();
+        if (locale === 'ar_AA') {
+            $("body").attr("dir", "rtl").find("body").addClass("right-to-left");
+            $(".read").addClass("read readar");
+            $(".text").addClass("text text-ar");
+            $(".read-value").addClass("read-value read-valuear");
+            $(".text-box").addClass("text-boxar");
+            $("#info_error").addClass("info_errorar");
+            $(".info-container").addClass("info-container info-containerar");
+            $("button").attr("dir", "rtl");
+            $("#info_error span").attr("background-position", "360px center");
+			$("#disclaimer").addClass("checkar");
+			$("#disclaimerText").addClass("disclaimerar");
+        }
+    });
+}
+
+function onBeforeUnloadHandler(object) {
+    if (!refreshing && closing) {
+        event.returnValue = bankStrings.optincloseevent;
+    }
+}
+
+function onFocusHandler() {
+    closing = true;
+}
+// Configurable parameters:
+
+var loadError = null;
+
+function objError(evnt) {
+    loadError = "error";
+}
+
+
+function reSend() {
+    var resendmode = getJsonValue(bankStrings.resendoption);
+    if (resendmode != "")
+        document.optInForm.pin.value = resendmode;
+    else
+        document.optInForm.pin.value = "RESEND";
+    return OnSubmitHandler();
+}
+
+function OnUserInput(userInput) {
+    closing = false;
+    document.optInForm.optIn.value = 1;
+
+    if ((userInput == 'RESEND')) {
+        reSend();
+    } else if (userInput == 'CANCEL') {
+        document.optInForm.pin.value = "Cancel";
+    } else if (userInput == 2) {
+        document.optInForm.pin.value = "NOTNOW";
+    } else {
+        document.optInForm.pin.value = "OTP~" + document.optInForm.otp.value;
+        if (($.trim(document.optInForm.otp.value)).length === 0) {
+            document.getElementById('info_error').className = "error-container";
+            document.getElementById('info_error').innerHTML = bankStrings.optinmsg4;
+			CustData='';
+            return false;
+        }
+        var disclaimer_opt_mend = getJsonValue(bankStrings.disclaimer_opt_mend);
+        var disclaimerCheck = $("#disclaimer").is(":checked");
+
+        if (disclaimer_opt_mend == "TRUE" && disclaimerCheck != true) {
+            document.getElementById('info_error').className = "error-container";
+            document.getElementById('info_error').innerHTML = getJsonValue(bankStrings.disclaimerError);
+            return false;
+        }
+    }
+    document.optInForm.submit();
+    return false;
+}
+
+
+function closeButton(object) {
+    if (confirm(bankStrings.confirmtext)) {
+        document.optInForm.submit();
+        cancel = true;
+    } else {
+        closing = true;
+    }
+}
+
+function popUpHelp(strURL) {
+    var popUp = window.open(strURL, 'popUp', 'width=400,height=420,scrollbars=yes,screenX=100,screenY=100,left=100,top=100"');
+    popUp.focus();
+}
+
+
+function onLocaleChange(lang) {
+
+	var mltlocale = getJsonValue(bankStrings.mltlocale);
+    closing = false;
+    //alert("lang:"+lang);
+    //document.optInForm.ChangeLocale.value = lang;
+    document.optInForm.pin.value = "LOCALE~" + lang;
+	
+	if (mltlocale != "") {
+		
+		CustData = CustData.replace('"locale":"'+locale+'"', '"locale":"'+getJsonValue(bankStrings.mltlocaleid)+'"');
+		document.optInForm.CustData.value = CustData;
+	}
+    document.optInForm.optIn.value = 1;
+    document.optInForm.submit();
+    //OnSubmitHandler()
+    return false;
+}
+
+function IsNetscapeOnSolaris() {
+    var agent = window.navigator.userAgent;
+    if ((agent.indexOf('Mozilla') != -1) && (agent.indexOf('compatible') == -1)) {
+        if (agent.indexOf('SunOS') != -1)
+            return true;
+        else
+            return false;
+    } else {
+        return false;
+    }
+}
+
+function ForceCancel() {
+    if (confirm(bankStrings.confirmtext)) {
+        closing = false;
+        document.optInForm.CustData.value = 'cancel';
+        document.optInForm.cancelHit.value = "%#*@_TIMEDOUT_@*#%";
+        if (IsNetscapeOnSolaris()) {
+            setTimeout('document.optInForm.submit()', 500);
+        } else {
+            document.optInForm.submit();
+        }
+    }
+}
+
+function OnCancelHandlerToCallout() {
+    //This is now handled in callout
+    //document.passwdForm.CustData.value = 'cancel';
+    IsCancelButton = true;
+    document.optInForm.optIn.value = 1;
+    document.optInForm.pin.value = "CANCEL";
+    if (confirm(getJsonValue(bankStrings.confirmtext))) {
+		closing = false;
+        document.optInForm.submit();
+        return false;
+    } else {
+        return false;
+    }
+
+}
+
+
+function reSend() {
+    closing = false;
+
+    document.optInForm.optIn.value = 1;
+    var resendmode = getJsonValue(bankStrings.resendoption);
+    if (resendmode != "")
+        document.optInForm.pin.value = resendmode;
+    else
+        document.optInForm.pin.value = "RESEND";
+    document.optInForm.submit();
+    return false;
+}
+
+/*$('#enterPIN').live('keypress',function (e) {
+
+    if(e.keyCode == 13) {
+        OnUserInput('en_GB');
+        //e.preventDefault();
+    }                                               
+});*/

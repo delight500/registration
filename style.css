@@ -1,0 +1,27 @@
+
+  /* .btn {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #5F9EA0;
+    border: none;
+    border-radius: 5px;
+  } */
+  .error {
+    width: 320px; 
+    height: 40px;
+    margin: auto; 
+    padding: 10px; 
+    border: 1px solid #a94442; 
+    color: rgb(255, 255, 255); 
+    background: #c40000; 
+    border-radius: 5px; 
+    text-align: left;
+    opacity: 0.4;
+  }
+  .success {
+    color: #3c763d; 
+    background: #dff0d8; 
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+  }

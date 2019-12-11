@@ -1,0 +1,36 @@
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+	body {
+		width: 99%;
+		padding:0px;
+		-webkit-transition: width 0.5s linear;
+-moz-transition: width 0.5s linear;
+-ms-transition: width 0.5s linear;
+-o-transition: width 0.5s linear;
+transition: width 0.5s linear;
+	}
+
+
+.wrapper {
+	width:99%;
+	min-height:400px;
+	position:absolute;
+	margin:0px auto;
+	border:0px solid #adafaf;
+		left:0;
+	top:0;
+    padding: 0px;
+}
+
+.form-content input.text {
+    width:37%;
+}
+
+.form-content .label.disclaimer, .form-content div label.disclaimer {
+    width:89%;
+}
